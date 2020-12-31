@@ -1,0 +1,45 @@
+{
+	"preset": "ts-jest",
+	"testEnvironment": "node",
+	"roots": ["src"],
+	"collectCoverageFrom": ["**/*.ts"],
+	"coveragePathIgnorePatterns": [
+		"/values/",
+		"src/generated/",
+		"src/consts/validValues/",
+		"src/repository/",
+		"/__snapshots__/",
+		"/__test__/",
+		"index.ts",
+		"MeasureType.ts"
+	],
+	"coverageDirectory": "coverage",
+	"coverageReporters": ["lcov"],
+	"coverageThreshold": {
+		"global": {
+			"statements": 77,
+			"branches": 60,
+			"functions": 64,
+			"lines": 78
+		},
+		"src/service/object/OITMService.ts": {
+			"branches": 86,
+			"functions": 89,
+			"lines": 90,
+			"statements": 90
+		},
+		"src/service/object/ODOCService.ts": {
+			"branches": 71,
+			"functions": 86,
+			"lines": 85,
+			"statements": 85
+		},
+		"src/service/object/**/!(ODOCService|OITMService).ts": {
+			"branches": 90,
+			"functions": 90,
+			"lines": 90,
+			"statements": 90
+		}
+	},
+	"clearMocks": true
+}

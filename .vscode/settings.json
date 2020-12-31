@@ -1,0 +1,34 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"search.useIgnoreFiles": false,
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"files.associations": {
+		"*.bo": "json",
+		"*.api": "json"
+	},
+	"json.schemas": [
+		{
+			"fileMatch": ["*.table.json", "*.tableExtend.json"],
+			"url": "./resources/schema/table/index.json"
+		},
+		{
+			"fileMatch": ["*.bo"],
+			"url": "./resources/schema/bo/index.json"
+		},
+		{
+			"fileMatch": ["*.bizobj.json"],
+			"url": "./resources/schema/bizobj/index.json"
+		},
+		{
+			"fileMatch": ["*.api"],
+			"url": "./resources/schema/api/index.json"
+		},
+		{
+			"fileMatch": ["*.stringList.json"],
+			"url": "./resources/schema/stringList/stringList.json"
+		}
+	]
+}

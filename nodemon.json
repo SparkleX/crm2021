@@ -1,0 +1,10 @@
+{
+    "ignore": [
+        "node_modules"
+    ],
+    "watch": [
+        "src"
+    ],
+    "ext": "*",
+    "exec": "tsc && npm start"
+}
