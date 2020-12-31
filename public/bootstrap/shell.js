@@ -88,7 +88,7 @@ function bootstrap(fnCallback) {
 	jQuery.sap.require("sap.ushell.services.Container");
 	var config = window["sap-ushell-config"];
 	var apps = jQuery.getJSON({
-		url : "/bootstrap/apps.json",
+		url : "web/bootstrap/apps.json",
 		dataType : "json",
 		async : false
 	});
