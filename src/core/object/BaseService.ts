@@ -8,7 +8,10 @@ export abstract class BaseService<TDomain, TRepo extends BaseRepo<TDomain>> {
 		this.repo = repo;
 		this.table = this.constructor.name.substr(0, 4);
 	}
-
+	public async findAll() : Promise<TDomain[]> {
+		const rt = await this.repo.findAll();
+		return rt;
+	}
 	protected async onIsValid(data: TDomain): Promise<void> {}
 
 	public async create(data: TDomain): Promise<TDomain> {

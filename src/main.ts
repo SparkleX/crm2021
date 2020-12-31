@@ -3,12 +3,26 @@ import Koa from "koa";
 import koaLogger from "koa-logger";
 import koaMount from "koa-mount";
 import bodyParser from "koa-bodyparser";
+import { contextMw } from "./context/ContextMw";
+import * as controller from "./controller";
+
 
 const app = new Koa();
 app.use(koaLogger());
 app.use(bodyParser());
 
 app.use(koaMount("/web", koaStatic("public")));
+
+const oApiKoa = new Koa();
+app.use(koaMount("/api", contextMw));
+for (const routerName in controller as any) {
+	if (!routerName.startsWith("o") || !routerName.endsWith("Controller")) {
+		continue;
+	}
+	const router = controller[routerName];
+	oApiKoa.use(router.routes());
+}
+app.use(koaMount("/api", oApiKoa));
 
 const port = process.env.PORT || 3000;
 app.listen(port);
