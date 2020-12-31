@@ -11,19 +11,8 @@ sap.ui.define([
 
 	theClass.prototype.onInit=function() {
 		BaseDetailController.prototype.onInit.call(this);
-
 	}
 	
-	theClass.prototype.onDefaultAddress=function(evt) {
-		var source = evt.getSource();
-		var index = source.getParent().getIndex();
-		var model = source.getModel();
-		var data = model.getData();
-		for(let o of data.CRD1) {
-			o.dfltAddr = 'N';
-		}
-		data.CRD1[index].dfltAddr = 'Y';
 
-	}
 	return theClass;
 });

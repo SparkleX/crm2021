@@ -9,7 +9,7 @@
 	"OCRD-App": {
 		"additionalInformation": "SAPUI5.Component=c1.app.OCRD",
 		"applicationType": "URL",
-		"url": "/app/OCRD",
+		"url": "/web/app/OCRD",
 		"description": "Search, modify BP",
 		"title": "Businss Partners"
 	},

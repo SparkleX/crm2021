@@ -2,22 +2,31 @@
 	controllerName="c1.app.OCRD.controller.List"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
-	xmlns:table="c1.core.ui.table"
 	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc.View"
-	xmlns:widget="c1.core.widget"
+
 	displayBlock="true">
 	<Page title="{i18n>list/title}">
 	<content>
-		<table:ListViewTable dataTable="OCRD" id="listTable" rows="{list>/}" rowActionCount="1" selectionMode="MultiToggle">
-			<table:extension>
-				<OverflowToolbar>
-					<Button icon="sap-icon://add" type="Transparent" press="onAdd"/>
-					<Button icon="sap-icon://delete" type="Transparent" press="onDelete"/>
-					<Button icon="sap-icon://action-settings" type="Transparent" press="onTestClick"/>
-				</OverflowToolbar>
-			</table:extension>
-		</table:ListViewTable>
+		<List items="{/}" headerText="Business Partners">
+		<ObjectListItem
+			title="{_id}"
+			type="Active"
+			press="onListItemPress"
+			number="123"
+			numberUnit="{CurrencyCode}">
+			<firstStatus>
+				<ObjectStatus
+					text="{Status}"
+					state="{
+						path: 'Status',
+						formatter: 'sap.m.sample.ObjectListItem.Formatter.status'
+					}" />
+			</firstStatus>
+			<ObjectAttribute text="{WeightMeasure} {WeightUnit}" />
+			<ObjectAttribute text="{Width} x {Depth} x {Height} {DimUnit}" />
+		</ObjectListItem>
+		</List>
 	</content>
 	</Page>
 </mvc:View>

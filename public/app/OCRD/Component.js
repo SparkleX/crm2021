@@ -1,8 +1,7 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
-	"sap/ui/model/json/JSONModel",
-	"c1/core/util/CoreUtil"
-], function (UIComponent, JSONModel, CoreUtil) {
+	"sap/ui/model/json/JSONModel"
+], function (UIComponent, JSONModel) {
 	"use strict";
 	return UIComponent.extend("c1.app.OCRD.Component", {
 		metadata : {
@@ -10,7 +9,6 @@ sap.ui.define([
 		},
 		init : function () {
 			UIComponent.prototype.init.apply(this, arguments);
-			CoreUtil.init();
 			this.getRouter().initialize();
 		}
 	});
