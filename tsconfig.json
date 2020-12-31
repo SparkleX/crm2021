@@ -10,8 +10,6 @@
 		"alwaysStrict": true,
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
-		"incremental": true,
-		"tsBuildInfoFile": ".tsBuildInfoFile"
 	},
 	"include": ["src"],
 	"exclude": ["node_modules", "**/*.spec.ts", "**/__test__/**"]
