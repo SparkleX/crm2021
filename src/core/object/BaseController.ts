@@ -5,6 +5,14 @@ import { Context } from "koa";
 export class BaseController {
 	public static extend(service: BaseService<any, any>): koaRouter {
 		const router = new koaRouter();
+
+
+		router.get("/:id", async (ctx) => {
+			ctx.body = ctx.params.id;
+		});
+		router.get("/:id/actions", async (ctx) => {
+			ctx.body = "actions";
+		});
 		router.get("/", async (ctx) => {
 			const id = ctx.request.query.id;
 			if (id) {
