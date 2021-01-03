@@ -4,7 +4,6 @@
 		  xmlns:layout="sap.ui.layout"
 		  xmlns:table="sap.ui.table"
 		  xmlns:mvc="sap.ui.core.mvc"
-		  xmlns:widget="c1.core.widget"
 		  displayBlock="true">
 <!-- 	<semantic:FullscreenPage title="{i18n>detail/title}" showNavButton="true" navButtonPress="onNavBack" showFooter="false" titleLevel="H1">
 		<semantic:content> 		
@@ -31,6 +30,7 @@
 						</uxap:snappedContent>
 
 						<uxap:actions>
+							<uxap:ObjectPageHeaderActionButton id="saveButton" text="Save" type="Transparent" hideText="false" press="onSave" />
 							<uxap:ObjectPageHeaderActionButton id="editButton" text="Edit" type="Emphasized" hideText="false" press="onEdit" />
 							<uxap:ObjectPageHeaderActionButton id="newButton" type="Transparent" text="New" hideText="false" hideIcon="true" press="onNew" />
 							<uxap:ObjectPageHeaderActionButton id="deleteButton" type="Transparent" text="Delete" hideText="false" hideIcon="true" press="onDelete" />
@@ -54,11 +54,14 @@
 									<layout:BlockLayout>
 										<layout:BlockLayoutRow>
 											<layout:BlockLayoutCell title="Basic Information">
-												<widget:LabelFormatInput label="Business Partner Code" dataValue="{/bpCode}" dataFormat="OCRD.bpCode"/>
+												<!--<widget:LabelFormatInput label="Business Partner Code" dataValue="{/bpCode}" dataFormat="OCRD.bpCode"/>
 												<widget:LabelFormatInput label="Business Partner Name" dataValue="{/bpName}" dataFormat="OCRD.bpName"/>
-											</layout:BlockLayoutCell>
+											--></layout:BlockLayoutCell>
 											<layout:BlockLayoutCell title="Basic Information">
-												<widget:LabelSelect label="Business Partner Type" dataValue="{/bpType}" dataFormat="OCRD.bpType"/>
+												<m:Label text="ObjectID" labelFor="_id" />
+												<m:Input id="_id" required="true" value = "{/_id}"/>
+												<m:Label text="BP Name" labelFor="name" />
+												<m:Input id="name" required="true" value = "{/name}"/>												
 											</layout:BlockLayoutCell>											
 										</layout:BlockLayoutRow>
 										
@@ -71,28 +74,7 @@
 						<uxap:subSections>
 							<uxap:ObjectPageSubSection>
 								<uxap:blocks>
-									<widget:Grid rows="{/CRD1}">
-										<widget:columns>
-											<table:Column>
-												<m:Label text="Default" />
-												<table:template>
-													<m:RadioButton text="" selected="{= ${dfltAddr} === 'Y'}" select="onDefaultAddress"/>
-												</table:template>
-											</table:Column>
-											<table:Column>
-												<m:Label text="Name" />
-												<table:template>
-													<widget:FormatInput dataValue="{name}" dataFormat="CRD1.name"/>
-												</table:template>
-											</table:Column>
-											<table:Column >
-												<m:Label text="Address" />
-												<table:template>
-													<widget:FormatInput dataValue="{address}" dataFormat="CRD1.address"/>
-												</table:template>
-											</table:Column>
-										</widget:columns>
-									</widget:Grid>
+
 								</uxap:blocks>
 							</uxap:ObjectPageSubSection>
 						</uxap:subSections>

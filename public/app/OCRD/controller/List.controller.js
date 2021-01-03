@@ -7,20 +7,25 @@ sap.ui.define([
 	"use strict";
 
 	var theClass = Controller.extend("c1.app.OCRD.controller.List", {
-		dataTable : "OCRD"
+		dataTable: "OCRD"
 	});
-	
-	theClass.prototype.onInit=function() {
-		var oData = [
-			{
-				_id : "World"
-			}, {
-			_id : "2"
-			}
-		];
+
+	theClass.prototype.onInit = function () {
 		var oModel = new JSONModel("/api/Partner");
 		this.getView().setModel(oModel);
-	}
+	};
+
+	theClass.prototype.onListItemPress = function (oEvent) {
+
+		var oItem = oEvent.getSource();
+		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+		const id = oItem.getTitle();
+		oRouter.navTo("detail", {
+			id: id
+		});
+		//oRouter.navTo("detail");
+	};
+
 	return theClass;
 
 });

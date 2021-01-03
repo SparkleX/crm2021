@@ -1,12 +1,17 @@
 import { BaseRepo } from "..";
 
 export abstract class BaseService<TDomain, TRepo extends BaseRepo<TDomain>> {
+
 	protected repo: TRepo;
 	public table: string;
 
 	constructor(repo: TRepo) {
 		this.repo = repo;
 		this.table = this.constructor.name.substr(0, 4);
+	}
+	public async findById(id: string): Promise<TDomain> {
+		const rt = await this.repo.findById(id);
+		return rt;
 	}
 	public async findAll() : Promise<TDomain[]> {
 		const rt = await this.repo.findAll();
@@ -20,11 +25,11 @@ export abstract class BaseService<TDomain, TRepo extends BaseRepo<TDomain>> {
 		return oKey;
 	}
 
-	public async update(key: TDomain, data: TDomain): Promise<TDomain> {
+	public async update(id: string, data: TDomain): Promise<TDomain> {
 		this.onIsValid(data);
 		await this.onIsValid(data);
-		const oKey = await this.repo.update(data, data);
-		return oKey;
+		await this.repo.update(id, data);
+		return data;
 	}
 
 	public async delete(key: TDomain): Promise<void> {
