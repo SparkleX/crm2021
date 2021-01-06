@@ -1,0 +1,28 @@
+{
+	"Type": "sap.ui.core.mvc.View",
+	"controllerName": "sap.m.sample.ProgressIndicator.controller.ProgressIndicator",
+	"content": [
+		{
+			"Type": "sap.ui.layout.VerticalLayout",
+			"content": [
+				{
+					"Type": "sap.ui.unified.FileUploader",
+					"id": "fileUploader",
+					"buttonOnly": true,
+					"name": "myFileUpload",
+					"uploadUrl": "upload/",
+					"buttonText": "Scan",
+					"fileType": "pdf",
+					"tooltip": "Upload your file to the local server",
+					"uploadOnChange": true,
+					"uploadComplete": "handleUploadComplete"
+				},
+				{
+					"Type": "sap.m.Button",
+					"text": "Upload File",
+					"press": "doIt"
+				}
+			]
+		}
+	]
+}
