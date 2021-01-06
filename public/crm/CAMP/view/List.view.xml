@@ -10,7 +10,7 @@
 				<Panel>
 					<content>
 						<l:VerticalLayout>
-							<l:HorizontalLayout>
+							<Toolbar width="100%">
 								<Select enabled="{/Enabled}" editable="{/Editable}" forceSelection="false" selectedKey="{/SelectedProduct2}" items="{
 							path: '/ProductCollection2',
 							sorter: { path: 'Name' }
@@ -19,13 +19,17 @@
 								</Select>
 								<Label text="Group By"/>
 								<Select />
-							</l:HorizontalLayout>
-							<Toolbar width="100%">
+								<ToolbarSpacer/>
+								<SearchField width="300px"/>
+								<Button icon="sap-icon://filter"></Button>
+								<Button icon="sap-icon://business-objects-experience"></Button>
+							</Toolbar>
+							<OverflowToolbar>
 								<Button text="{i18n>edit}"></Button>
 								<Button text="New" press=".onNew"></Button>
 								<Button text="Export"></Button>
 								<Button text="Copy"></Button>
-								
+
 								<MenuButton text="Add Response">
 									<menu>
 										<Menu>
@@ -40,7 +44,8 @@
 									</menu>
 								</MenuButton>
 								<MenuButton text="Change Status"></MenuButton>
-							</Toolbar>
+
+							</OverflowToolbar>
 							<table:Table id="table1">
 								<table:columns>
 									<table:Column width="11rem">
@@ -58,35 +63,30 @@
 								</table:columns>
 							</table:Table>
 						</l:VerticalLayout>
-					</content>
-				</Panel>
-				<Panel>
-					<headerToolbar>
+
 						<OverflowToolbar>
-							<Title text="Details"/>
+						<Label text="Details" />
 						</OverflowToolbar>
-					</headerToolbar>
-					<content>
-					<l:BlockLayout>
-						<l:BlockLayoutRow>
-							<l:BlockLayoutCell title="General">
-								<Label text="Campaign" />
-								<Input editable="false"/>
-								<Label text="Start Date" />
-								<Input editable="false"/>
-								<Label text="End Date" />
-								<Input editable="false"/>	
-								<Label text="Additional Information" width = "100%"/>
-								<TextArea  width = "100%" editable="false"/>																								
-							</l:BlockLayoutCell>
-							<l:BlockLayoutCell	title="Administrative Data">
-								<Label text="Created On" />
-								<Input editable="false"/>
-								<Label text="Created By" />
-								<Input editable="false"/>								
-							</l:BlockLayoutCell>
-						</l:BlockLayoutRow>
-					</l:BlockLayout>
+						<l:BlockLayout keepFontSize="true">
+							<l:BlockLayoutRow>
+								<l:BlockLayoutCell title="General">
+									<Label text="Campaign" />
+									<Input editable="false"/>
+									<Label text="Start Date" />
+									<Input editable="false"/>
+									<Label text="End Date" />
+									<Input editable="false"/>
+									<Label text="Additional Information" width = "100%"/>
+									<TextArea  width = "100%" editable="false"/>
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell title="Administrative Data">
+									<Label text="Created On" />
+									<Input editable="false"/>
+									<Label text="Created By" />
+									<Input editable="false"/>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+						</l:BlockLayout>
 					</content>
 				</Panel>
 			</content>
