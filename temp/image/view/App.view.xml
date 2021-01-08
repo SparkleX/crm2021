@@ -1,0 +1,13 @@
+<mvc:View controllerName="sap.m.sample.ProgressIndicator.controller.App"
+	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" 
+	id="idView">
+	<u:FileUploader buttonOnly="true" uploadUrl="upload/" fileType="jpg,pdf" uploadOnChange= "true" uploadComplete="handleUploadComplete"/>
+	<u:FileUploader iconOnly="true" multiple="false" buttonOnly="true" icon="sap-icon://add-photo" uploadOnChange="false" sendXHR="true" useMultipart="false" fileType="JPG,JPEG,jpeg,jpg,PNG,png" sameFilenameAllowed="true" typeMissmatch="onTypeMissmatch" change="onChangeCamera" />	
+
+	<Toolbar id="idToolbar"><Button text="123" press="test"/><Button text="123" press="test"/></Toolbar>
+	
+
+</mvc:View>

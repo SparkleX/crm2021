@@ -1,0 +1,8 @@
+---
+applications:
+  - name: image
+    random-route: true
+    path: image
+    memory: 128M
+    routes:
+      - route: ppap3141516.cfapps.eu10.hana.ondemand.com

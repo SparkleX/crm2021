@@ -1,0 +1,32 @@
+{
+	"sap.app": {
+		"id": "sap.m.sample.ProgressIndicator",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sap.m.sample.ProgressIndicator.view.App",
+			"type": "XML",
+			"async": true
+		},
+		"dependencies": {
+			"libs": {
+				"sap.ui.unified": {},
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"config": {
+			"sample": {
+				"files": [
+					"view/App.view.xml",
+					"controller/App.controller.js",
+					"manifest.json"
+				]
+			}
+		}
+	}
+}
