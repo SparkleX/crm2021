@@ -1,0 +1,114 @@
+<mvc:View controllerName="sap.sme.crm.CAMP.controller.List"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:table="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc.View" displayBlock="true">
+	<Shell appWidthLimited="false">
+		<Page title="Campaigns">
+			<content>
+				<Panel>
+					<content>
+						<l:VerticalLayout>
+							<Toolbar width="100%">
+								<Select enabled="{/Enabled}" editable="{/Editable}" forceSelection="false" selectedKey="{/SelectedProduct2}" items="{
+							path: '/ProductCollection2',
+							sorter: { path: 'Name' }
+						}">
+									<core:Item key="{ProductId}" text="{Name}" />
+								</Select>
+								<Label text="Group By"/>
+								<Select />
+								<ToolbarSpacer/>
+								<SearchField width="300px"/>
+								<Button icon="sap-icon://filter"></Button>
+								<Button icon="sap-icon://business-objects-experience"></Button>
+							</Toolbar>
+							<OverflowToolbar>
+								<Button text="{i18n>edit}"></Button>
+								<Button text="New" press=".onNew"></Button>
+								<Button text="Export"></Button>
+								<Button text="Copy"></Button>
+
+								<MenuButton text="Add Response">
+									<menu>
+										<Menu>
+											<MenuItem text="Edit" icon="sap-icon://edit" press="onPress">
+												<customData>
+													<core:CustomData key="target" value="p1" />
+												</customData>
+											</MenuItem>
+											<MenuItem text="Save" icon="sap-icon://save" press="onPress" />
+											<MenuItem text="Open" icon="sap-icon://open-folder" press="onPress" />
+										</Menu>
+									</menu>
+								</MenuButton>
+								<MenuButton text="Change Status"></MenuButton>
+
+							</OverflowToolbar>
+							<table:Table id="table1">
+								<table:columns>
+									<table:Column width="11rem">
+										<Label text="Product Name" />
+										<table:template>
+											<Text text="{Name}" wrapping="false" />
+										</table:template>
+									</table:Column>
+									<table:Column width="11rem">
+										<Label text="Product Id" />
+										<table:template>
+											<Input value="{ProductId}"/>
+										</table:template>
+									</table:Column>
+								</table:columns>
+							</table:Table>
+						</l:VerticalLayout>
+
+						<OverflowToolbar>
+						<Label text="Details" />
+						</OverflowToolbar>
+						<l:BlockLayout keepFontSize="true">
+							<l:BlockLayoutRow>
+								<l:BlockLayoutCell title="General">
+									<Label text="Campaign" />
+									<Input editable="false"/>
+									<Label text="Start Date" />
+									<Input editable="false"/>
+									<Label text="End Date" />
+									<Input editable="false"/>
+									<Label text="Additional Information" width = "100%"/>
+									<TextArea  width = "100%" editable="false"/>
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell title="Administrative Data">
+									<Label text="Created On" />
+									<Input editable="false"/>
+									<Label text="Created By" />
+									<Input editable="false"/>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+						</l:BlockLayout>
+					</content>
+				</Panel>
+			</content>
+		</Page>
+	</Shell>
+
+
+
+
+
+	<!--<Page title="{i18n>list/title}">
+		<content>
+			<List items="{/}" headerText="Business Partners"> <ObjectListItem title="{_id}" type="Active" press="onListItemPress" number="123" numberUnit="{CurrencyCode}">
+				<firstStatus> <ObjectStatus text="{Status}" state="{
+							path: 'Status',
+							formatter: 'sap.m.sample.ObjectListItem.Formatter.status'
+						}" />
+				</firstStatus>
+				<ObjectAttribute text="{WeightMeasure} {WeightUnit}" />
+				<ObjectAttribute text="{Width} x {Depth} x {Height} {DimUnit}" />
+			</ObjectListItem>
+			</List>
+		</content>
+	</Page>-->
+</mvc:View>
