@@ -5,7 +5,7 @@ import koaMount from "koa-mount";
 import bodyParser from "koa-bodyparser";
 import { contextMw } from "./context/ContextMw";
 import * as controller from "./controller";
-
+import { Context } from "koa";
 
 const app = new Koa();
 app.use(koaLogger());
@@ -23,6 +23,13 @@ for (const routerName in controller as any) {
 	oApiKoa.use(router.routes());
 }
 app.use(koaMount("/api", oApiKoa));
+
+app.use(koaMount("/", function (ctx: Context) {
+		ctx.body = "Hello World";
+		ctx.redirect("/web/index.html");
+	})
+);
+
 
 const port = process.env.PORT || 3000;
 app.listen(port);
