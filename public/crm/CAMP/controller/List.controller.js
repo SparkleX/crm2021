@@ -9,16 +9,13 @@ sap.ui.define(
 	function (Controller, MessageToast, Fragment, JSONModel, ControllerUtils) {
 		"use strict";
 
-		var theClass = Controller.extend("sap.sme.crm.CAMP.controller.List", {
-			dataTable: "OCRD"
-		});
+		var theClass = Controller.extend("sap.sme.crm.CAMP.controller.List", {});
 
 		theClass.prototype.onInit = function () {
 			var oModel = new JSONModel("/api/Partner");
 			this.getView().setModel(oModel);
-			ControllerUtils.test();
 		};
-		theClass.prototype.onNew = function (oEvent) {
+		theClass.prototype.onClickNew = function (oEvent) {
 			//var oItem = oEvent.getSource();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			//const id = oItem.getTitle();

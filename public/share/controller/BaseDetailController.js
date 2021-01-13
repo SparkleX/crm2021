@@ -1,12 +1,23 @@
 sap.ui.define(
-	["sap/nsme/share/controller/BaseDetailController", "sap/m/MessageToast", "sap/ui/core/Fragment", "sap/ui/model/json/JSONModel"],
+	["sap/ui/core/mvc/Controller", "sap/m/MessageToast", "sap/ui/core/Fragment", "sap/ui/model/json/JSONModel"],
 	function (Controller, MessageToast, Fragment, JSONModel) {
 		"use strict";
-		var theClass = Controller.extend("sap.sme.crm.CAMP.controller.Detail", {
-			dataTable: "OCRD"
+
+		const ViewMode = "ViewMode";
+		const AddMode = "AddMode";
+		const EditMode = "AddMode";
+
+		const idObjectPageLayout = "objectPageLayout";
+
+		var theClass = Controller.extend("sap.nsme.share.controller.BaseDetailController", {
+			metadata: {
+				properties: {
+					formMode: { type: "string", defaultValue: "ViewMode" }
+				}
+			}
 		});
 
-		/*theClass.prototype.onInit = function () {
+		theClass.prototype.onInit = function () {
 			var component = this.getOwnerComponent();
 			var oRouter = component.getRouter();
 			oRouter.getRoute("detail").attachMatched(function (oEvent) {
@@ -48,7 +59,7 @@ sap.ui.define(
 					MessageToast.show("Deleted");
 				}
 			});
-		};*/
+		};
 		return theClass;
 	}
 );

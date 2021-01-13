@@ -24,8 +24,7 @@ for (const routerName in controller as any) {
 }
 app.use(koaMount("/api", oApiKoa));
 
-app.use(koaMount("/", function (ctx: Context) {
-		ctx.body = "Hello World";
+app.use(koaMount("/index.html", function (ctx: Context) {
 		ctx.redirect("/web/index.html");
 	})
 );

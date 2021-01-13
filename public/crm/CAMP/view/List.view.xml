@@ -82,9 +82,17 @@
 			</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
-								<l:VerticalLayout>
-
 			<table:Table id="table1">
+				<table:extension>
+					<OverflowToolbar>
+						<Button text="New" type="Emphasized"  press="onClickNew" />
+						<Button icon="sap-icon://add" type="Transparent"  press="onAdd" />
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://delete" type="Transparent" press="onDelete" />
+						<Button icon="sap-icon://action-settings" type="Transparent" press="onTestClick" />
+
+					</OverflowToolbar>
+				</table:extension>				
 				<table:columns>
 					<table:Column width="11rem">
 						<Label text="Product Name" />
@@ -100,31 +108,6 @@
 					</table:Column>
 				</table:columns>
 			</table:Table>
-			<OverflowToolbar>
-				<Label text="Details" />
-			</OverflowToolbar>
-			<l:BlockLayout keepFontSize="true">
-				<l:BlockLayoutRow>
-					<l:BlockLayoutCell title="General">
-						<Label text="Campaign" />
-						<Input editable="false"/>
-						<Label text="Start Date" />
-						<Input editable="false"/>
-						<Label text="End Date" />
-						<Input editable="false"/>
-						<Label text="Additional Information" width = "100%"/>
-						<TextArea  width = "100%" editable="false"/>
-					</l:BlockLayoutCell>
-					<l:BlockLayoutCell title="Administrative Data">
-						<Label text="Created On" />
-						<Input editable="false"/>
-						<Label text="Created By" />
-						<Input editable="false"/>
-					</l:BlockLayoutCell>
-				</l:BlockLayoutRow>
-			</l:BlockLayout>
-			</l:VerticalLayout>
-
 		</f:content>
 	</f:DynamicPage>
 </mvc:View>
