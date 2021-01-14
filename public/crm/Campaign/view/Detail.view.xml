@@ -1,19 +1,16 @@
-<mvc:View id="idBpDetail" controllerName="sap.sme.crm.Campaign.controller.Detail"
-	xmlns:uxap="sap.uxap"
-	xmlns="sap.m"
-	xmlns:layout="sap.ui.layout"
-	xmlns:table="sap.ui.table"
-	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
-	<!-- 	<semantic:FullscreenPage title="{i18n>detail/title}" showNavButton="true" navButtonPress="onNavBack" showFooter="false" titleLevel="H1">
-		<semantic:content> 		
-		</semantic:content>
-	</semantic:FullscreenPage>
--->
-	<uxap:ObjectPageLayout id="objectPageLayout" showFooter="true"  showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" headerContentPinnable="true" isChildPage="true" enableLazyLoading="false" upperCaseAnchorBar="false">
+<mvc:View id="idBpDetail" controllerName="sap.sme.crm.Campaign.controller.Detail" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	<uxap:ObjectPageLayout id="objectPageLayout" toggleHeaderOnTitleClick="false" preserveHeaderStateOnScroll="true" headerContentPinnable="false" upperCaseAnchorBar="false">
 		<uxap:headerTitle>
-			<uxap:ObjectPageDynamicHeaderTitle areaShrinkRatio="1:1.6:1.6">
+			<uxap:ObjectPageDynamicHeaderTitle>
 				<uxap:expandedHeading>
-					<Title text="New Campaign" wrapping="true" />
+					<layout:HorizontalLayout>
+						<Title text="Campaign" wrapping="false"/>
+						<Title text="" width="20pt"/>
+						<uxap:ObjectPageHeaderActionButton id="sysFirstButton" icon="sap-icon://collapse-group" type="Transparent" tooltip="First" press="onFirst" />
+						<uxap:ObjectPageHeaderActionButton id="sysPrevButton" icon="sap-icon://navigation-up-arrow" type="Transparent" tooltip="Prev" press="onPrev" />
+						<uxap:ObjectPageHeaderActionButton id="sysNextButton" icon="sap-icon://navigation-down-arrow" type="Transparent" tooltip="Next" press="onNext" />
+						<uxap:ObjectPageHeaderActionButton id="sysLastButton" icon="sap-icon://expand-group" type="Transparent" tooltip="Last" press="onLast" />
+					</layout:HorizontalLayout>
 				</uxap:expandedHeading>
 
 				<uxap:snappedHeading>
@@ -21,33 +18,29 @@
 				</uxap:snappedHeading>
 
 				<uxap:expandedContent>
-					<Text text="{/id}" />
+					<Text text="{/_id}" />
 				</uxap:expandedContent>
 
 				<uxap:snappedContent>
-					<Text text="{/id}" />
+					<Text text="{/_id}" />
 				</uxap:snappedContent>
 
-				<uxap:actions>
-					
-				</uxap:actions>
+				<uxap:actions></uxap:actions>
 				<uxap:navigationActions>
-					<Toolbar width="100%">
-
-					<uxap:ObjectPageHeaderActionButton id="newButton" type="Transparent" text="New" hideText="false" hideIcon="true" press="onNew" />
-					<uxap:ObjectPageHeaderActionButton id="editButton" text="Edit" type="Emphasized" hideText="false" press="onEdit" />
-					<uxap:ObjectPageHeaderActionButton id="deleteButton" type="Transparent" text="Delete" hideText="false" hideIcon="true" press="onDelete" />
-					<uxap:ObjectPageHeaderActionButton icon="sap-icon://synchronize" type="Transparent" tooltip="First" press="onRefresh" />
-					<ToolbarSpacer/>
-					<uxap:ObjectPageHeaderActionButton icon="sap-icon://slim-arrow-up" type="Transparent" tooltip="Previous" press="onPrev" />
-					<uxap:ObjectPageHeaderActionButton icon="sap-icon://slim-arrow-down" type="Transparent" tooltip="Next" press="onNext" />
-					<uxap:ObjectPageHeaderActionButton icon="sap-icon://slim-arrow-up" type="Transparent" tooltip="Previous" press="onPrev" />
-					<uxap:ObjectPageHeaderActionButton icon="sap-icon://slim-arrow-down" type="Transparent" tooltip="Next" press="onNext" />
-					</Toolbar>
+					<uxap:ObjectPageHeaderActionButton id="sysNewButton" type="Transparent" text="New" hideText="false" hideIcon="true" press="onNew" />
+					<uxap:ObjectPageHeaderActionButton id="sysEditButton" text="Edit" type="Emphasized" hideText="false" press="onEdit" />
+					<uxap:ObjectPageHeaderActionButton id="sysDeleteButton" type="Transparent" text="Delete" hideText="false" hideIcon="true" press="onDelete" />
 				</uxap:navigationActions>
 			</uxap:ObjectPageDynamicHeaderTitle>
-		</uxap:headerTitle>
 
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<layout:HorizontalLayout>
+				<Label text="Test 1" />
+				<Label text="Test 2" />
+				<Label text="Test 3" />
+			</layout:HorizontalLayout>
+		</uxap:headerContent>
 		<uxap:sections>
 			<uxap:ObjectPageSection id="idSectionA">
 				<uxap:subSections>
@@ -56,36 +49,36 @@
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
 									<layout:BlockLayoutCell title="General">
-										<Label text="Campaign ID"/>
-										<Input value="{/_id}"/>
-										<Label text="Campaign Description"/>
-										<Input value="{/name}"/>
-										<Label text="Campaign Type"/>
-										<Input/>
-										<Label text="Start Date"/>
-										<DatePicker value="{/startDate}"/>
-										<Label text="End Date"/>
-										<DatePicker  value="{/endDate}"/>
-										<Label text="Status"/>
-										<Input/>
-										<Label text="Target Group"/>
-										<Input/>
-										<Label text="Target Group Status"/>
-										<Input/>
-										<Label text="Target Group Members"/>
-										<Input/>
-										<Label text="Additional Information"/>
-										<Input/>
+										<Label text="Campaign ID" />
+										<Input value="{/_id}" />
+										<Label text="Campaign Description" />
+										<Input value="{/name}" />
+										<Label text="Campaign Type" />
+										<Input />
+										<Label text="Start Date" />
+										<DatePicker value="{/startDate}" />
+										<Label text="End Date" />
+										<DatePicker value="{/endDate}" />
+										<Label text="Status" />
+										<Input />
+										<Label text="Target Group" />
+										<Input />
+										<Label text="Target Group Status" />
+										<Input />
+										<Label text="Target Group Members" />
+										<Input />
+										<Label text="Additional Information" />
+										<Input />
 									</layout:BlockLayoutCell>
 									<layout:BlockLayoutCell title="Administrative Data">
-										<Label text="Created On"/>
-										<DateTimePicker/>
-										<Label text="Created By"/>
-										<DateTimePicker/>
-										<Label text="Executed On"/>
-										<Input/>
-										<Label text="Executed By"/>
-										<Input/>
+										<Label text="Created On" />
+										<DateTimePicker />
+										<Label text="Created By" />
+										<DateTimePicker />
+										<Label text="Executed On" />
+										<Input />
+										<Label text="Executed By" />
+										<Input />
 									</layout:BlockLayoutCell>
 								</layout:BlockLayoutRow>
 
@@ -100,8 +93,7 @@
 						<uxap:blocks>
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title="Response Options">
-									</layout:BlockLayoutCell>
+									<layout:BlockLayoutCell title="Response Options"></layout:BlockLayoutCell>
 								</layout:BlockLayoutRow>
 							</layout:BlockLayout>
 						</uxap:blocks>
@@ -114,8 +106,7 @@
 						<uxap:blocks>
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title="Response Options">
-									</layout:BlockLayoutCell>
+									<layout:BlockLayoutCell title="Response Options"></layout:BlockLayoutCell>
 								</layout:BlockLayoutRow>
 							</layout:BlockLayout>
 						</uxap:blocks>
@@ -128,8 +119,7 @@
 						<uxap:blocks>
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title="Attachments">
-									</layout:BlockLayoutCell>
+									<layout:BlockLayoutCell title="Attachments"></layout:BlockLayoutCell>
 								</layout:BlockLayoutRow>
 							</layout:BlockLayout>
 						</uxap:blocks>

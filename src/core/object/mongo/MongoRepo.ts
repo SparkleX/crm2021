@@ -33,7 +33,7 @@ export class MongoRepo<TDomain, TKey = TDomain> extends BaseRepo<TDomain, TKey> 
 	public async delete(id: any): Promise<void> {
 		const collection = this.getMongoCollection();
 		var oId = this.convertId(id);
-		collection.deleteOne({ _id: oId });
+		await collection.deleteOne({ _id: oId });
 	}
 	protected getMongoCollection(): Collection<any> {
 		return this.getMongoDb().collection(this.name);

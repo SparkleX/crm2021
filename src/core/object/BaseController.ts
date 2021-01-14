@@ -15,14 +15,14 @@ export class BaseController {
 		router.get("/", async (ctx) => {
 			ctx.body = await service.findAll();
 		});
-		router.post("/:id", async (ctx) => {
+		router.post("/", async (ctx) => {
 			ctx.body = await service.create(ctx.request.body);
 		});
 		router.put("/:id", async (ctx) => {
 			ctx.body = await service.update(ctx.params.id, ctx.request.body);
 		});
 		router.delete("/:id", async (ctx) => {
-			await service.delete(ctx.params.id);
+			ctx.body = await service.delete(ctx.params.id);
 		});
 		return router;
 	}

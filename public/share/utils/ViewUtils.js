@@ -3,14 +3,14 @@ sap.ui.define([], function () {
 	var theClass = {};
 
 	theClass.scan = function (view) {
-		console.debug(view.getId());
+		//console.debug(view.getId());
 		let rt = [];
 		/*if(view.getId()==="__input0"){
 			console.debug(view.getId());	
 		}*/
 		//applyFunction(view);
 		rt.push(view);
-		console.debug(view.getId());
+		//console.debug(view.getId());
 
 		if (view instanceof sap.uxap.BlockBase) {
 			var content = view._getSelectedViewContent();
@@ -25,6 +25,9 @@ sap.ui.define([], function () {
 				rt = rt.concat(list);
 			}
 			return rt;
+		}
+		if(!view.getMetadata) {
+			return [];
 		}
 		var aggrs = view.getMetadata().getAllAggregations();
 		for (name in aggrs) {
