@@ -4,9 +4,10 @@ sap.ui.define(
 		"sap/m/MessageToast",
 		"sap/ui/core/Fragment",
 		"sap/ui/model/json/JSONModel",
-		"sap/ui/core/routing/History"
+		"sap/ui/core/routing/History",
+		"sap/nsme/share/utils/ViewUtils"
 	],
-	function (Controller, MessageToast, Fragment, JSONModel, History) {
+	function (Controller, MessageToast, Fragment, JSONModel, History, ViewUtils) {
 		"use strict";
 
 		const ViewMode = "ViewMode";
@@ -68,6 +69,7 @@ sap.ui.define(
 				case AddMode:
 				case EditMode:
 					oObjectPage.setShowFooter(true);
+					this.setEditable(true);
 					/*oDeleteButton.setVisible(false);
 					oEditButton.setVisible(false);
 					oNewButton.setVisible(false);*/
@@ -79,6 +81,7 @@ sap.ui.define(
 					break;
 				case ViewMode:
 					oObjectPage.setShowFooter(false);
+					this.setEditable(false);
 					/*oDeleteButton.setVisible(true);
 					oEditButton.setVisible(true);
 					oNewButton.setVisible(true);*/
@@ -106,6 +109,12 @@ sap.ui.define(
 		theClass.prototype.onFirst = function () {};
 		theClass.prototype.onLast = function () {};
 
+		theClass.prototype.onNew = function () {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("detail", {
+				id: "#"
+			});
+		}
 		theClass.prototype.onSave = function () {
 			var model = this.getView().getModel();
 			var data = model.getData();
@@ -124,19 +133,6 @@ sap.ui.define(
 		};
 
 		theClass.prototype.onEdit = function () {
-			/*var model = this.getView().getModel();
-			var data = model.getData();
-			console.log(data);
-			var json = JSON.stringify(data);
-			jQuery.ajax({
-				url: `/api/Partner?id=${this.dataId}`,
-				method: "put",
-				contentType: "application/json",
-				data: json,
-				success: function (data) {
-					MessageToast.show("Successful");
-				}
-			});*/
 			this.setFormMode(EditMode);
 		};
 
@@ -159,6 +155,12 @@ sap.ui.define(
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 				oRouter.navTo("overview", true);
 			}
+		};
+
+		theClass.prototype.setEditable = function (readonly) {
+			const items = ViewUtils.scan(this.getView());
+			console.debug(items.length);
+			ViewUtils.setEditable(items, readonly);
 		};
 
 		return theClass;
