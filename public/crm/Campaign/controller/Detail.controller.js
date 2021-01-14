@@ -1,8 +1,13 @@
 sap.ui.define(
-	["sap/nsme/share/controller/BaseDetailController", "sap/m/MessageToast", "sap/ui/core/Fragment", "sap/ui/model/json/JSONModel"],
+	[
+		"sap/nsme/share/controller/BaseDetailController",
+		"sap/m/MessageToast",
+		"sap/ui/core/Fragment",
+		"sap/ui/model/json/JSONModel"
+	],
 	function (Controller, MessageToast, Fragment, JSONModel) {
 		"use strict";
-		var theClass = Controller.extend("sap.sme.crm.CAMP.controller.Detail", {
+		var theClass = Controller.extend("sap.sme.crm.Campaign.controller.Detail", {
 			dataTable: "OCRD"
 		});
 

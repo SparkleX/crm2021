@@ -39,7 +39,7 @@
 										"chipId": "sap_ushell_generated_chip_id",
 										"title": "Campines",
 										"info": "View Campines",
-										"targetURL": "#CAMP-App"
+										"targetURL": "#Campaign-App"
 									}
 								},
 								{
@@ -81,7 +81,7 @@
 										"chipId": "sap_ushell_generated_chip_id",
 										"title": "Campines",
 										"info": "View Campines",
-										"targetURL": "#CAMP-App"
+										"targetURL": "#Campaign-App"
 									}
 								},
 								{
@@ -185,10 +185,10 @@
 							"description": "Search, modify BP",
 							"title": "Target Group"
 						},
-						"CAMP-App": {
-							"additionalInformation": "SAPUI5.Component=sap.sme.crm.CAMP",
+						"Campaign-App": {
+							"additionalInformation": "SAPUI5.Component=sap.sme.crm.Campaign",
 							"applicationType": "URL",
-							"url": "/web/crm/CAMP",
+							"url": "/web/crm/Campaign",
 							"description": "View Campines",
 							"title": "Campines"
 						},

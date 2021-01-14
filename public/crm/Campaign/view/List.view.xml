@@ -1,8 +1,8 @@
-<mvc:View controllerName="sap.sme.crm.CAMP.controller.List"
+<mvc:View controllerName="sap.sme.crm.Campaign.controller.List"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:core="sap.ui.core"
-	xmlns:table="sap.ui.table"
+	xmlns:t="sap.ui.table"
 	xmlns:mvc="sap.ui.core.mvc.View"
 	xmlns:f="sap.f"
 	xmlns:fb="sap.ui.comp.filterbar" 
@@ -82,32 +82,36 @@
 			</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
-			<table:Table id="table1">
-				<table:extension>
+			<t:Table id="table1" rows="{/}" rowActionCount="1">
+				<t:extension>
 					<OverflowToolbar>
 						<Button text="New" type="Emphasized"  press="onClickNew" />
 						<Button icon="sap-icon://add" type="Transparent"  press="onAdd" />
 						<ToolbarSpacer/>
 						<Button icon="sap-icon://delete" type="Transparent" press="onDelete" />
 						<Button icon="sap-icon://action-settings" type="Transparent" press="onTestClick" />
-
 					</OverflowToolbar>
-				</table:extension>				
-				<table:columns>
-					<table:Column width="11rem">
+				</t:extension>				
+				<t:columns>
+					<t:Column width="11rem">
 						<Label text="Product Name" />
-						<table:template>
-							<Text text="{Name}" wrapping="false" />
-						</table:template>
-					</table:Column>
-					<table:Column width="11rem">
+						<t:template>
+							<Text text="{name}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column width="11rem">
 						<Label text="Product Id" />
-						<table:template>
-							<Input value="{ProductId}"/>
-						</table:template>
-					</table:Column>
-				</table:columns>
-			</table:Table>
+						<t:template>
+							<Input value="{_id}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+				<t:rowActionTemplate>
+					<t:RowAction>
+						<t:RowActionItem press="onToDetail"	type="Navigation" icon="sap-icon://feeder-arrow"></t:RowActionItem>
+					</t:RowAction>					
+				</t:rowActionTemplate>
+			</t:Table>
 		</f:content>
 	</f:DynamicPage>
 </mvc:View>

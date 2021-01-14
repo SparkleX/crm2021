@@ -3,6 +3,7 @@ import { BaseRepo } from "../..";
 import { Context } from "../../../context/Context";
 
 export class MongoRepo<TDomain, TKey = TDomain> extends BaseRepo<TDomain, TKey> {
+	
 	public async findById(id: string): Promise<TDomain> {
 		const collection = this.getMongoCollection();
 		var oId = new ObjectID(id);
@@ -32,7 +33,7 @@ export class MongoRepo<TDomain, TKey = TDomain> extends BaseRepo<TDomain, TKey> 
 		collection.deleteOne({ _id: oId });
 	}
 	protected getMongoCollection(): Collection<any> {
-		return this.getMongoDb().collection("Partner");
+		return this.getMongoDb().collection(this.name);
 	}
 	protected getMongoDb(): Db {
 		return this.getMongoClient().db("test");
