@@ -1,11 +1,17 @@
-<mvc:View id="idBpDetail" controllerName="sap.sme.crm.Campaign.controller.Detail" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+<mvc:View id="idBpDetail" controllerName="sap.sme.crm.Campaign.controller.Detail"
+	xmlns:t="sap.ui.table"
+	xmlns:uxap="sap.uxap"
+	xmlns="sap.m"
+	xmlns:layout="sap.ui.layout"
+	xmlns:table="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
 	<uxap:ObjectPageLayout id="objectPageLayout" toggleHeaderOnTitleClick="false" preserveHeaderStateOnScroll="true" headerContentPinnable="false" upperCaseAnchorBar="false">
 		<uxap:headerTitle>
 			<uxap:ObjectPageDynamicHeaderTitle>
 				<uxap:expandedHeading>
 					<layout:HorizontalLayout>
-						<Title text="Campaign" wrapping="false"/>
-						<Title text="" width="20pt"/>
+						<Title text="Campaign" wrapping="false" />
+						<Title text="" width="20pt" />
 						<uxap:ObjectPageHeaderActionButton id="sysFirstButton" icon="sap-icon://collapse-group" type="Transparent" tooltip="First" press="onFirst" />
 						<uxap:ObjectPageHeaderActionButton id="sysPrevButton" icon="sap-icon://navigation-up-arrow" type="Transparent" tooltip="Prev" press="onPrev" />
 						<uxap:ObjectPageHeaderActionButton id="sysNextButton" icon="sap-icon://navigation-down-arrow" type="Transparent" tooltip="Next" press="onNext" />
@@ -106,7 +112,30 @@
 						<uxap:blocks>
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title="Response Options"></layout:BlockLayoutCell>
+									<layout:BlockLayoutCell title="Response Options">
+										<t:Table id="table1" rows="{/Lines}">
+										<t:extension>
+											<OverflowToolbar>
+												<Button icon="sap-icon://add" press="onRowAdd" />
+												<Button icon="sap-icon://delete" press="onRowDelete"></Button>
+											</OverflowToolbar>
+										</t:extension>											
+											<t:columns>
+												<t:Column>
+													<Label text="Product Name" />
+													<t:template>
+														<Input value="{name}" wrapping="false" />
+													</t:template>
+												</t:Column>
+												<t:Column>
+													<Label text="Product Id" />
+													<t:template>
+														<Input value="{_id}" />
+													</t:template>
+												</t:Column>
+											</t:columns>
+										</t:Table>
+									</layout:BlockLayoutCell>
 								</layout:BlockLayoutRow>
 							</layout:BlockLayout>
 						</uxap:blocks>

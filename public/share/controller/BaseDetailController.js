@@ -5,9 +5,10 @@ sap.ui.define(
 		"sap/ui/core/Fragment",
 		"sap/ui/model/json/JSONModel",
 		"sap/ui/core/routing/History",
-		"sap/nsme/share/utils/ViewUtils"
+		"sap/nsme/share/utils/ViewUtils",
+		"sap/nsme/share/utils/TableUtils"
 	],
-	function (Controller, MessageToast, Fragment, JSONModel, History, ViewUtils) {
+	function (Controller, MessageToast, Fragment, JSONModel, History, ViewUtils, TableUtils) {
 		"use strict";
 
 		const ViewMode = "ViewMode";
@@ -92,7 +93,7 @@ sap.ui.define(
 			}
 		};
 		theClass.prototype.onInitData = function () {
-			var oModel = new JSONModel();
+			var oModel = new JSONModel({ Lines:[{_id:"1", name:"n1"}]});
 			this.getView().setModel(oModel);
 			// to be override
 		};
@@ -133,11 +134,10 @@ sap.ui.define(
 					var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
 					oRouter.navTo("detail", {
 						id: data
-					});	
+					});
 				}
 			});
 			//this.setFormMode(ViewMode);
-		
 		};
 
 		theClass.prototype.onEdit = function () {
@@ -172,6 +172,41 @@ sap.ui.define(
 			const items = ViewUtils.scan(this.getView());
 			console.debug(items.length);
 			ViewUtils.setEditable(items, readonly);
+		};
+		theClass.prototype.onRowAdd = function (readonly) {
+			const items = ViewUtils.scan(this.getView());
+			console.debug(items.length);
+			ViewUtils.setEditable(items, readonly);
+		};
+		theClass.prototype.onRowAdd = function (evt) {
+			const oButton = evt.getSource();
+			const oTable = oButton.getParent().getParent();
+			const oModel = oTable.getModel();
+			const path = oTable.getBinding().getPath();
+			let data = oModel.getProperty(path);
+			if(!data) {
+				data = [{}];
+				oModel.setProperty(path, data);
+			} else {
+				data.push({});
+			}
+			oModel.refresh(true);
+		};
+		theClass.prototype.onRowDelete = function (evt) {
+			const oButton = evt.getSource();
+			const oTable = oButton.getParent().getParent(); //.getSelectedIndex()
+			const index = oTable.getSelectedIndex();
+			const oModel = oTable.getModel();
+			const pathTable = oTable.getBinding().getPath()
+			const array = oModel.getProperty(pathTable);
+			const bindContext = oTable.getRows()[index].getBindingContext();
+			var object = bindContext.getObject();
+			var idx = array.indexOf(object);
+			if (idx >= 0) {
+				array.splice(idx, 1);
+			}
+			oModel.refresh();
+
 		};
 
 		return theClass;
