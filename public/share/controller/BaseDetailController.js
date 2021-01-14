@@ -93,7 +93,7 @@ sap.ui.define(
 			}
 		};
 		theClass.prototype.onInitData = function () {
-			var oModel = new JSONModel({ Lines:[{_id:"1", name:"n1"}]});
+			var oModel = new JSONModel();
 			this.getView().setModel(oModel);
 			// to be override
 		};
@@ -184,7 +184,7 @@ sap.ui.define(
 			const oModel = oTable.getModel();
 			const path = oTable.getBinding().getPath();
 			let data = oModel.getProperty(path);
-			if(!data) {
+			if (!data) {
 				data = [{}];
 				oModel.setProperty(path, data);
 			} else {
@@ -197,7 +197,7 @@ sap.ui.define(
 			const oTable = oButton.getParent().getParent(); //.getSelectedIndex()
 			const index = oTable.getSelectedIndex();
 			const oModel = oTable.getModel();
-			const pathTable = oTable.getBinding().getPath()
+			const pathTable = oTable.getBinding().getPath();
 			const array = oModel.getProperty(pathTable);
 			const bindContext = oTable.getRows()[index].getBindingContext();
 			var object = bindContext.getObject();
@@ -206,7 +206,6 @@ sap.ui.define(
 				array.splice(idx, 1);
 			}
 			oModel.refresh();
-
 		};
 
 		return theClass;

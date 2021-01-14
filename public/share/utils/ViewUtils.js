@@ -56,6 +56,12 @@ sap.ui.define([], function () {
 			if(item.setEditable) {
 				item.setEditable(value);
 			}
+			if(item.getMetadata) {
+				const itemClass = item.getMetadata().getName();
+				switch(itemClass) {
+					case "sap.m.Button": item.setVisible(value);
+				}
+			}
 		}
 	}
 	return theClass;
