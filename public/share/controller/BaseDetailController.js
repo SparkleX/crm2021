@@ -132,9 +132,13 @@ sap.ui.define(
 				success: function (data) {
 					MessageToast.show("Successful");
 					var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
-					oRouter.navTo("detail", {
-						id: data
-					});
+					if (that.formMode == EditMode) {
+						that.setFormMode(ViewMode);
+					} else {
+						oRouter.navTo("detail", {
+							id: data
+						});
+					}
 				}
 			});
 			//this.setFormMode(ViewMode);

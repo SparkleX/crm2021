@@ -28,6 +28,7 @@ export class MongoRepo<TDomain, TKey = TDomain> extends BaseRepo<TDomain, TKey> 
 		delete data["_id"];
 		var oId = this.convertId(id);
 		const rt = await collection.updateOne({ _id: oId }, { $set: data });
+		data["_id"] = id;
 		return data;
 	}
 	public async delete(id: any): Promise<void> {

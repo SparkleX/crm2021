@@ -26,7 +26,6 @@ export abstract class BaseService<TDomain, TRepo extends BaseRepo<TDomain>> {
 	}
 
 	public async update(id: string, data: TDomain): Promise<TDomain> {
-		this.onIsValid(data);
 		await this.onIsValid(data);
 		await this.repo.update(id, data);
 		return data;
