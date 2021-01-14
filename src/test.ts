@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, ObjectID } from "mongodb";
 import * as assert from "assert";
 
 // Connection URL
@@ -16,7 +16,9 @@ async function test() {
 
 	const db = client.db(dbName);
 	const collection = db.collection("Campaign");
-	const data = await collection.find().toArray();
+	//const data = await collection.find().toArray();
+	//var oId = new ObjectID("5fffb6f669d63300080c3df0");
+	const data = await collection.findOne({ _id: "5fffb6f669d63300080c3df0" });
 	console.debug(data);
 	await client.close();
 	//});

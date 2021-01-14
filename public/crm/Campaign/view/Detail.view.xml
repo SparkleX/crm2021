@@ -57,15 +57,15 @@
 								<layout:BlockLayoutRow>
 									<layout:BlockLayoutCell title="General">
 										<Label text="Campaign ID"/>
-										<Input/>
+										<Input value="{/_id}"/>
 										<Label text="Campaign Description"/>
-										<Input/>
+										<Input value="{/name}"/>
 										<Label text="Campaign Type"/>
 										<Input/>
 										<Label text="Start Date"/>
-										<DatePicker/>
+										<DatePicker value="{/startDate}"/>
 										<Label text="End Date"/>
-										<DatePicker/>
+										<DatePicker  value="{/endDate}"/>
 										<Label text="Status"/>
 										<Input/>
 										<Label text="Target Group"/>

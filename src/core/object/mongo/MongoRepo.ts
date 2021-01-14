@@ -3,11 +3,14 @@ import { BaseRepo } from "../..";
 import { Context } from "../../../context/Context";
 
 export class MongoRepo<TDomain, TKey = TDomain> extends BaseRepo<TDomain, TKey> {
-	
+	public convertId(id: string): any {
+		//var oId = new ObjectID(id);
+		return id;
+	}
 	public async findById(id: string): Promise<TDomain> {
 		const collection = this.getMongoCollection();
-		var oId = new ObjectID(id);
-		const rt = await collection.findOne({ _id: oId });
+		var od = this.convertId(id);
+		const rt = await collection.findOne({ _id: od });
 		return rt;
 	}
 	public async findAll(): Promise<TDomain[]> {
@@ -23,13 +26,13 @@ export class MongoRepo<TDomain, TKey = TDomain> extends BaseRepo<TDomain, TKey> 
 	public async update(id: string, data: TDomain): Promise<TDomain> {
 		const collection = this.getMongoCollection();
 		delete data["_id"];
-		var oId = new ObjectID(id);
+		var oId = this.convertId(id);
 		const rt = await collection.updateOne({ _id: oId }, { $set: data });
 		return data;
 	}
 	public async delete(id: any): Promise<void> {
 		const collection = this.getMongoCollection();
-		var oId = new ObjectID(id);
+		var oId = this.convertId(id);
 		collection.deleteOne({ _id: oId });
 	}
 	protected getMongoCollection(): Collection<any> {

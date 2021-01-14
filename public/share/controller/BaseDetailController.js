@@ -34,7 +34,11 @@ sap.ui.define(
 				}
 			}
 		});
-
+		theClass.prototype.getTableName = function () {
+			const ns = this.getMetadata().getNamespace();
+			const name = ns.split(".")[3];
+			return name;
+		};
 		theClass.prototype.onInit = function () {
 			var component = this.getOwnerComponent();
 			var oRouter = component.getRouter();
@@ -90,8 +94,10 @@ sap.ui.define(
 			// to be override
 		};
 		theClass.prototype.onLoadData = function (id) {
-			var oModel = new JSONModel(`/api/Partner?id=${id}`);
+			const name = this.getTableName();
+			var oModel = new JSONModel(`/api/${name}/${id}`);
 			this.getView().setModel(oModel);
+			oModel.refresh(true);
 			//this.getView().invalidate();
 		};
 
@@ -101,19 +107,19 @@ sap.ui.define(
 		theClass.prototype.onLast = function () {};
 
 		theClass.prototype.onSave = function () {
-			/*var model = this.getView().getModel();
+			var model = this.getView().getModel();
 			var data = model.getData();
-			console.log(data);
 			var json = JSON.stringify(data);
+			const name = this.getTableName();
 			jQuery.ajax({
-				url: `/api/Partner?id=${this.dataId}`,
-				method: "put",
+				url: `/api/${name}/${this.dataId}`,
+				method: this.formMode == AddMode ? "post" : "put",
 				contentType: "application/json",
 				data: json,
 				success: function (data) {
 					MessageToast.show("Successful");
 				}
-			});*/
+			});
 			this.setFormMode(ViewMode);
 		};
 
