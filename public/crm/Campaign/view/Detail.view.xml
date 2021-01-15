@@ -76,7 +76,7 @@
 										<!--<core:ListItem key="{codes>value}" text="{codes>value}" additionalText= "{codes>desc}"/>-->
 										</widget:Select>
 										<Label text="Target Group" />
-										<Input />
+										<Input showValueHelp="true" />
 										<Label text="Target Group Status" />
 										<Input />
 										<Label text="Target Group Members" />
