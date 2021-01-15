@@ -54,6 +54,16 @@ sap.ui.define(
 					this.onLoadData(this.dataId);
 				}
 			}, this);
+
+			const that = this;
+			jQuery.ajax({
+				url: "/api/codes",
+				success: function (data) {
+					const oCodesModel = new JSONModel(data);
+					that.getView().setModel(oCodesModel, "codes");
+					//oCodesModel.refresh(true)
+				}
+			});
 		};
 		theClass.prototype.setFormMode = function (value) {
 			this.formMode = value;

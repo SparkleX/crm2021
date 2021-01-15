@@ -68,12 +68,12 @@
 										<Label text="End Date" />
 										<DatePicker value="{/endDate}" />
 										<Label text="Status" />
-
-										<widget:Select showSecondaryValues= "true" width="100%" dataBind="Campaign.Status" selectedKey="{/Status}" items="{
-					path: '/Lines',
-					sorter: { path: 'Name' }
-				}">
-											<core:ListItem key="{_id}" text="{_id}" additionalText= "{name}"/>
+										<Select showSecondaryValues= "true" width="100%" dataBind="Campaign.Status" selectedKey="{/Status}" items="{codes>/common.YesNo}">
+											<core:ListItem key="{codes>value}" text="{codes>desc}" additionalText= "{codes>value}"/>
+										</Select>
+										<Label text="Status2" />
+										<widget:Select  selectedKey="{/Status}" items="{codes>/common.YesNo}">
+										<!--<core:ListItem key="{codes>value}" text="{codes>value}" additionalText= "{codes>desc}"/>-->
 										</widget:Select>
 										<Label text="Target Group" />
 										<Input />

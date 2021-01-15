@@ -6,6 +6,7 @@ import bodyParser from "koa-bodyparser";
 import { contextMw } from "./context/ContextMw";
 import * as controller from "./controller";
 import { Context } from "koa";
+import { oCodesController } from "./controller/codes/CodesController";
 
 const app = new Koa();
 app.use(koaLogger());
@@ -22,6 +23,8 @@ for (const routerName in controller as any) {
 	const router = controller[routerName];
 	oApiKoa.use(router.routes());
 }
+oApiKoa.use(oCodesController.routes());
+
 app.use(koaMount("/api", oApiKoa));
 
 app.use(koaMount("/index.html", function (ctx: Context) {
