@@ -3,14 +3,66 @@ sap.ui.define(
 		"sap/nsme/share/controller/BaseDetailController",
 		"sap/m/MessageToast",
 		"sap/ui/core/Fragment",
-		"sap/ui/model/json/JSONModel"
+		"sap/ui/model/json/JSONModel",
+		//"sap/nsme/share/choose/controller/TargetGroup",
+		"sap/nsme/share/choose/ValueSelector",
 	],
-	function (Controller, MessageToast, Fragment, JSONModel) {
+	function (Controller, MessageToast, Fragment, JSONModel,ValueSelector) {
 		"use strict";
 		var theClass = Controller.extend("sap.sme.crm.Campaign.controller.Detail", {
 			dataTable: "OCRD"
 		});
+		theClass.prototype.onChoose = function (data) {
+			alert(data);
+		};
+		theClass.prototype.onValueHelpRequested = function () {
+			//alert('a');
 
+			//var aCols = this.oColModel.getData().cols;
+
+			/*this._oValueHelpDialog = sap.ui.xmlfragment("sap.nsme.share.choose.view.TargetGroup", this);
+			this.getView().addDependent(this._oValueHelpDialog);
+
+			this._oValueHelpDialog.getTableAsync().then(function (oTable) {*/
+			/*oTable.setModel(this.oProductsModel);
+				oTable.setModel(this.oColModel, "columns");
+
+				if (oTable.bindRows) {
+					oTable.bindAggregation("rows", "/ProductCollection");
+				}
+
+				if (oTable.bindItems) {
+					oTable.bindAggregation("items", "/ProductCollection", function () {
+						return new ColumnListItem({
+							cells: aCols.map(function (column) {
+								return new Label({ text: "{" + column.template + "}" });
+							})
+						});
+					});
+				}
+				this._oValueHelpDialog.update();*/
+			//}.bind(this));
+
+			//this._oValueHelpDialog.setTokens(this._oMultiInput.getTokens());
+			//this._oValueHelpDialog.open();
+			ValueSelector.show("TargetGroup", this.getView(), this.onChoose);
+			/*var controller =  new TargetGroup();
+			var oView = this.getView();
+			if (!this.pDialog) {
+				this.pDialog = Fragment.load({
+					id: oView.getId(),
+					name: "sap.nsme.share.choose.view.TargetGroup",
+					controller: controller
+				}).then(function (oDialog) {
+					// connect dialog to the root view of this component (models, lifecycle)
+					//oView.addDependent(oDialog);
+					return oDialog;
+				});
+			}
+			this.pDialog.then(function (oDialog) {
+				oDialog.open();
+			});*/
+		};
 		/*theClass.prototype.onInit = function () {
 			var component = this.getOwnerComponent();
 			var oRouter = component.getRouter();
