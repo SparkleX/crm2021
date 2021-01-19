@@ -1,0 +1,35 @@
+{
+	"title": "Table",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"fatherNode": {
+			"type": "string"
+		},
+		"fields": {
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "Field.json"
+			}
+		},
+		"fieldOrder": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"transient": {
+			"type": "boolean"
+		},
+		"primaryKey" : {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		}
+	},
+	"required": []
+}

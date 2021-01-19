@@ -6,7 +6,8 @@ sap.ui.define(
 			metadata: {
 				properties: {
 					editable: { type: "boolean", group: "Behavior", defaultValue: true },
-					linkTo: { type: "string", group: "Behavior", defaultValue: null }
+					linkTo: { type: "string", group: "Behavior", defaultValue: null },
+					value: { type: "string", group: "Data", defaultValue: null, bindable: "bindable" }
 				},
 				aggregations: {
 					_link: { type: "sap.m.Link", multiple: false, visibility: "hidden" },
@@ -51,6 +52,7 @@ sap.ui.define(
 		theClass.prototype.onChoose = function (value) {
 			var oInput = this.getInputControl();
 			const oLink = this.getLinkControl();
+			this.setValue(value.key);
 			oInput.setSelectedKey(value.key);
 			oInput.setValue(value.text);
 			oLink.setText(value.text);
@@ -58,6 +60,14 @@ sap.ui.define(
 		theClass.prototype.onLinkPress = function (evt) {
 			var oInput = this.getInputControl();
 			alert(oInput.getSelectedKey());
+		};
+		theClass.prototype.setValue = function (value) {
+			this.setProperty("value", value, true);
+		};
+		theClass.prototype.getValue = function () {
+			var oInput = this.getInputControl();
+			const rt = oInput.getSelectedKey();
+			return rt;
 		};
 		return theClass;
 	}

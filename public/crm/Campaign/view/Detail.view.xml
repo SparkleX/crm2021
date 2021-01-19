@@ -75,7 +75,7 @@
 										<Input showValueHelp="true" valueHelpRequest=".onValueHelpRequested" />
 
 										<Label text="Target Group Status" />
-										<widget:ValueSelect linkTo="TargetGroup" />
+										<widget:ValueSelect linkTo="TargetGroup" value="{/TargetGroup}"/>
 										<Label text="Target Group Members" />
 										<Input />
 										<Label text="Additional Information" />

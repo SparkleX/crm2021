@@ -1,0 +1,68 @@
+{
+	"title": "Field",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"type": {
+			"type": "string",
+			"enum": [
+				"string",
+				"text",
+				"number",
+				"decimal",
+				"date",
+				"time"
+			]
+		},
+		"size": {
+			"type": "number"
+		},
+		"defaultValue": {
+			"type": "string"
+		},
+		"validValues": {
+			"type": "object",
+			"additionalProperties": {
+				"type": "string"
+			}
+		},
+		"validValueOrder": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"transient": {
+			"type": "boolean"
+		},
+		"invisible": {
+			"type": "boolean"
+		},
+		"fieldType": {
+			"type": "number"
+		},
+		"linkTo": {
+			"type": "string"
+		},
+		"linkToFilter": {
+			"type": "string"
+		},
+		"linkToCodeList": {
+			"type": "boolean",
+			"$comment": "enable link to code list"
+		},
+		"boolValue": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"minItems": 2,
+			"maxItems": 2,
+			"uniqueItems": true
+		},
+		"note": {
+			"type": "string"
+		}
+	},
+	"required": []
+}
