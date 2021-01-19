@@ -11,7 +11,7 @@
 		cancel=".onCancel"
 		afterClose=".onValueHelpAfterClose"
 		key="id"
-		descriptionKey="Name" 
+		descriptionKey="name" 
 		onValueHelpRequested="onValueHelpRequested"
 		supportMultiselect="false"
 	>

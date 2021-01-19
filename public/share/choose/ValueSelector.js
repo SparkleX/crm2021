@@ -21,10 +21,10 @@ sap.ui.define(
 				});
 			}
 			this.pDialog.then(function (oDialog) {
-				var oRowModel = new JSONModel([
+				var oRowModel = new JSONModel({data:[
 					{ id: 1, name: "A" },
 					{ id: 2, name: "B" }
-				]);
+				]});
 				var oColModel = new JSONModel({
 					cols: [
 						{
@@ -47,11 +47,11 @@ sap.ui.define(
 					oTable.setModel(oColModel, "columns");
 
 					if (oTable.bindRows) {
-						oTable.bindAggregation("rows", "/");
+						oTable.bindAggregation("rows", "/data");
 					}
 
 					if (oTable.bindItems) {
-						oTable.bindAggregation("items", "/", function () {
+						oTable.bindAggregation("items", "/data", function () {
 							return new ColumnListItem({
 								cells: aCols.map(function (column) {
 									return new Label({ text: "{" + column.template + "}" });
@@ -62,8 +62,8 @@ sap.ui.define(
 					oDialog.update();
 				});
 				var oToken = new Token();
-				oToken.setKey("/id");
-				oToken.setText("/name");
+				//oToken.setKey("id");
+				//oToken.setText("name");
 				oDialog.setTokens([oToken]);
 				oDialog.open();
 			});

@@ -8,11 +8,13 @@ sap.ui.define(
 
 		theClass.prototype.onOk = function (oEvent) {
 			var aTokens = oEvent.getParameter("tokens");
-			alert(aTokens[0].getKey());
-			this._callback("VAL RETURN");
+			var token = aTokens[0];
+			var ret = { key: token.getKey(), text: token.getText() };
+			this._callback(ret);
+			this._dialog.close();
 		};
 		theClass.prototype.onValueHelpRequested = function () {
-			alert('1');
+			alert("1");
 		};
 		theClass.prototype.onCancel = function () {
 			this._dialog.close();
