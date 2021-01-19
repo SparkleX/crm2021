@@ -4,10 +4,8 @@ sap.ui.define(
 		"sap/m/MessageToast",
 		"sap/ui/core/Fragment",
 		"sap/ui/model/json/JSONModel",
-		//"sap/nsme/share/choose/controller/TargetGroup",
-		"sap/nsme/share/choose/ValueSelector",
 	],
-	function (Controller, MessageToast, Fragment, JSONModel,ValueSelector) {
+	function (Controller, MessageToast, Fragment, JSONModel) {
 		"use strict";
 		var theClass = Controller.extend("sap.sme.crm.Campaign.controller.Detail", {
 			dataTable: "OCRD"
@@ -45,7 +43,7 @@ sap.ui.define(
 
 			//this._oValueHelpDialog.setTokens(this._oMultiInput.getTokens());
 			//this._oValueHelpDialog.open();
-			ValueSelector.show("TargetGroup", this.getView(), this.onChoose);
+			//ValueSelector.show("TargetGroup", this.getView(), this.onChoose);
 			/*var controller =  new TargetGroup();
 			var oView = this.getView();
 			if (!this.pDialog) {

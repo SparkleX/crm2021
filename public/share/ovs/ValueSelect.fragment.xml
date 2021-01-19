@@ -4,7 +4,7 @@
 	xmlns:core="sap.ui.core"
 	controllerName = "sap.nsme.share.choose.controller.TargetGroup">
 	<comp:ValueHelpDialog
-		id = "CFLTargetGroup"
+		id = "OVS"
 		filterMode = "true"
 		title="Product"
 		ok=".onOk"

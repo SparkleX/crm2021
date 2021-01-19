@@ -1,6 +1,6 @@
 sap.ui.define(
-	["sap/ui/core/Control", "sap/m/Link", "sap/m/Input", "sap/nsme/share/choose/ValueSelector"],
-	function (BaseClass, Link, Input, ValueSelector) {
+	["sap/ui/core/Control", "sap/m/Link", "sap/m/Input", "sap/nsme/share/ovs/ValueSelectUtils"],
+	function (BaseClass, Link, Input, ValueSelectUtils) {
 		"use strict";
 		var theClass = BaseClass.extend("sap.nsme.share.widget.ValueSelect", {
 			metadata: {
@@ -44,7 +44,8 @@ sap.ui.define(
 		};
 
 		theClass.prototype.valueHelpRequest = function (value) {
-			ValueSelector.show("TargetGroup", null, this.onChoose.bind(this));
+			const name = this.getLinkTo();
+			ValueSelectUtils.show(name, this.onChoose.bind(this));
 		};
 
 		theClass.prototype.onChoose = function (value) {

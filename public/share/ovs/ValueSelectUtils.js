@@ -1,16 +1,23 @@
 sap.ui.define(
-	["sap/ui/core/Fragment", "sap/ui/model/json/JSONModel", "sap/m/ColumnListItem", "sap/m/Label", "sap/m/Token"],
-	function (Fragment, JSONModel, ColumnListItem, Label, Token) {
+	[
+		"sap/ui/core/Fragment",
+		"sap/ui/model/json/JSONModel",
+		"sap/m/ColumnListItem",
+		"sap/m/Label",
+		"sap/m/Token",
+		"sap/nsme/share/ovs/ValueSelectController"
+	],
+	function (Fragment, JSONModel, ColumnListItem, Label, Token, ValueSelectController) {
 		"use strict";
 		var theClass = {};
-		theClass.show = function (name, view, callback) {
-			const clazz = sap.ui.requireSync(`sap/nsme/share/choose/controller/${name}`);
-			var controller = new clazz();
+		theClass.show = function (name, callback) {
+			//const clazz = sap.ui.requireSync(`sap/nsme/share/choose/controller/${name}`);
+			var controller = new ValueSelectController();
 			//var oView = this.getView();
 			if (!this.pDialog) {
 				this.pDialog = Fragment.load({
-					id: `${name}CFL`,
-					name: `sap.nsme.share.choose.view.${name}`,
+					id: `OVS${name}`,
+					name: `sap.nsme.share.ovs.ValueSelect`,
 					controller: controller
 				}).then(function (oDialog) {
 					// connect dialog to the root view of this component (models, lifecycle)
@@ -21,10 +28,12 @@ sap.ui.define(
 				});
 			}
 			this.pDialog.then(function (oDialog) {
-				var oRowModel = new JSONModel({data:[
-					{ id: 1, name: "A" },
-					{ id: 2, name: "B" }
-				]});
+				var oRowModel = new JSONModel({
+					data: [
+						{ id: 1, name: "A" },
+						{ id: 2, name: "B" }
+					]
+				});
 				var oColModel = new JSONModel({
 					cols: [
 						{
@@ -62,8 +71,6 @@ sap.ui.define(
 					oDialog.update();
 				});
 				var oToken = new Token();
-				//oToken.setKey("id");
-				//oToken.setText("name");
 				oDialog.setTokens([oToken]);
 				oDialog.open();
 			});
