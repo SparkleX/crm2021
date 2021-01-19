@@ -1,0 +1,8 @@
+---
+applications:
+  - name: test
+    random-route: true
+    path: .
+    memory: 256M
+    routes:
+      - route: i031684.cfapps.eu10.hana.ondemand.com

@@ -1,5 +1,12 @@
 {
 	"name": "TargetGroup",
-	"fields": {},
-	"fieldOrder": []
+	"fields": {
+		"name": {
+			"type": "string",
+			"size": 10
+		}
+	},
+	"fieldOrder": [
+		"name"
+	]
 }

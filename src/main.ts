@@ -8,6 +8,7 @@ import * as controller from "./controller";
 import { Context } from "koa";
 import { oCodesController } from "./controller/codes/CodesController";
 import { oValueSelectController } from "./ovs/ValueSelectController";
+import { oDebugController } from "./dbg/DebugController";
 
 const app = new Koa();
 app.use(koaLogger());
@@ -28,12 +29,13 @@ oApiKoa.use(oCodesController.routes());
 oApiKoa.use(oValueSelectController.routes());
 
 app.use(koaMount("/api", oApiKoa));
+app.use(oDebugController.routes());
 
-app.use(koaMount("/index.html", function (ctx: Context) {
+app.use(
+	koaMount("/index.html", function (ctx: Context) {
 		ctx.redirect("/web/index.html");
 	})
 );
-
 
 const port = process.env.PORT || 3000;
 app.listen(port);
