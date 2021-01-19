@@ -3,7 +3,7 @@ import * as fs from "fs";
 import * as path from "path";
 import * as glob from "glob";
 import * as jsonfile from "jsonfile";
-import { convertType } from "./convertType";
+import { default as convertType } from "./convertType";
 const template = require("./domain.handlebars");
 
 const jsonTableFolder = "resources/table";

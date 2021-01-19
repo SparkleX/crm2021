@@ -2,7 +2,7 @@ sap.ui.define(
 	["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"],
 	function (UIComponent, JSONModel) {
 		"use strict";
-		return UIComponent.extend("sap.sme.crm.Campaign.Component", {
+		return UIComponent.extend("sap.nsme.crm.Campaign.Component", {
 			metadata: {
 				manifest: "json"
 			},

@@ -179,14 +179,14 @@
 				"config": {
 					"applications": {
 						"TGRP-App": {
-							"additionalInformation": "SAPUI5.Component=sap.sme.crm.TGRP",
+							"additionalInformation": "SAPUI5.Component=sap.nsme.crm.TGRP",
 							"applicationType": "URL",
 							"url": "/web/crm/TGRP",
 							"description": "Search, modify BP",
 							"title": "Target Group"
 						},
 						"Campaign-App": {
-							"additionalInformation": "SAPUI5.Component=sap.sme.crm.Campaign",
+							"additionalInformation": "SAPUI5.Component=sap.nsme.crm.Campaign",
 							"applicationType": "URL",
 							"url": "/web/crm/Campaign",
 							"description": "View Campines",

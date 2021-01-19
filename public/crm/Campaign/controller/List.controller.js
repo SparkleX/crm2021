@@ -9,7 +9,7 @@ sap.ui.define(
 	function (Controller, MessageToast, Fragment, JSONModel, ControllerUtils) {
 		"use strict";
 
-		var theClass = Controller.extend("sap.sme.crm.Campaign.controller.List", {});
+		var theClass = Controller.extend("sap.nsme.crm.Campaign.controller.List", {});
 
 		return theClass;
 	}

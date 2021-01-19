@@ -9,7 +9,7 @@ sap.ui.define(
 			}
 		});
 
-		sap.sme.crm.Campaign.controller.List;
+		sap.nsme.crm.Campaign.controller.List;
 
 		theClass.prototype.getTableName = function () {
 			const ns = this.getMetadata().getNamespace();

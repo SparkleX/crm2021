@@ -1,4 +1,4 @@
-<mvc:View controllerName="sap.sme.crm.Campaign.controller.List"
+<mvc:View controllerName="sap.nsme.crm.Campaign.controller.List"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:core="sap.ui.core"

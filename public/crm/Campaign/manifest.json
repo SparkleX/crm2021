@@ -24,7 +24,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.sme.crm.Campaign.view.App",
+			"viewName": "sap.nsme.crm.Campaign.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "app"
@@ -40,7 +40,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "sap.sme.crm.Campaign.i18n.i18n"
+					"bundleName": "sap.nsme.crm.Campaign.i18n.i18n"
 				}
 			}
 		},
@@ -48,7 +48,7 @@
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"viewPath": "sap.sme.crm.Campaign.view",
+				"viewPath": "sap.nsme.crm.Campaign.view",
 				"controlId": "app1",
 				"controlAggregation": "pages",
 				"async": true

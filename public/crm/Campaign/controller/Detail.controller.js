@@ -7,7 +7,7 @@ sap.ui.define(
 	],
 	function (Controller, MessageToast, Fragment, JSONModel) {
 		"use strict";
-		var theClass = Controller.extend("sap.sme.crm.Campaign.controller.Detail", {
+		var theClass = Controller.extend("sap.nsme.crm.Campaign.controller.Detail", {
 			dataTable: "OCRD"
 		});
 		theClass.prototype.onChoose = function (data) {

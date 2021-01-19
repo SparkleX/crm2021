@@ -3,7 +3,7 @@ sap.ui.define(
 	function (Controller, MessageToast, Fragment) {
 		"use strict";
 
-		var theClass = Controller.extend("sap.sme.crm.Campaign.controller.App", {});
+		var theClass = Controller.extend("sap.nsme.crm.Campaign.controller.App", {});
 		return theClass;
 	}
 );
