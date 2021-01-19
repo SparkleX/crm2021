@@ -11,9 +11,11 @@ sap.ui.define(
 			var ret = { key: token.getKey(), text: token.getText() };
 			this._callback(ret);
 			this._dialog.close();
+			this._dialog.destroy();
 		};
 		theClass.prototype.onCancel = function () {
 			this._dialog.close();
+			this._dialog.destroy();
 		};
 		return theClass;
 	}
