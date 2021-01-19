@@ -221,7 +221,13 @@ sap.ui.define(
 			}
 			oModel.refresh();
 		};
-
+		theClass.prototype.onDebugToJson = function (evt) {
+			const oView = this.getView();
+			const oModel = oView.getModel();
+			const json = oModel.getData();
+			console.debug(json);
+			console.debug(JSON.stringify(json));
+		};
 		return theClass;
 	}
 );

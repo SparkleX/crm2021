@@ -7,6 +7,7 @@ import { contextMw } from "./context/ContextMw";
 import * as controller from "./controller";
 import { Context } from "koa";
 import { oCodesController } from "./controller/codes/CodesController";
+import { oValueSelectController } from "./ovs/ValueSelectController";
 
 const app = new Koa();
 app.use(koaLogger());
@@ -24,6 +25,7 @@ for (const routerName in controller as any) {
 	oApiKoa.use(router.routes());
 }
 oApiKoa.use(oCodesController.routes());
+oApiKoa.use(oValueSelectController.routes());
 
 app.use(koaMount("/api", oApiKoa));
 

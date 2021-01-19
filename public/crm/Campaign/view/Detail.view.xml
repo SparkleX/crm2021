@@ -1,12 +1,4 @@
-<mvc:View id="idBpDetail" controllerName="sap.sme.crm.Campaign.controller.Detail"
-	xmlns:t="sap.ui.table"
-	xmlns:uxap="sap.uxap"
-	xmlns="sap.m"
-	xmlns:core="sap.ui.core"
-	xmlns:layout="sap.ui.layout"
-	xmlns:table="sap.ui.table"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:widget="sap.nsme.share.widget" displayBlock="true">
+<mvc:View id="idBpDetail" controllerName="sap.sme.crm.Campaign.controller.Detail" xmlns:t="sap.ui.table" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:widget="sap.nsme.share.widget" displayBlock="true">
 	<uxap:ObjectPageLayout id="objectPageLayout" toggleHeaderOnTitleClick="false" preserveHeaderStateOnScroll="true" headerContentPinnable="false" upperCaseAnchorBar="false">
 		<uxap:headerTitle>
 			<uxap:ObjectPageDynamicHeaderTitle>
@@ -44,9 +36,13 @@
 		</uxap:headerTitle>
 		<uxap:headerContent>
 			<layout:HorizontalLayout>
-				<Label text="Test 1" />
-				<Label text="Test 2" />
-				<Label text="Test 3" />
+				<Toolbar style="Clear">
+					<Label text="Test 1" />
+					<Label text="Test 2" />
+					<Label text="Test 3" />
+					<Button text="TEST" press=".onTest"></Button>
+					<Button text="To JSON" press=".onDebugToJson"></Button>
+				</Toolbar>
 			</layout:HorizontalLayout>
 		</uxap:headerContent>
 		<uxap:sections>
@@ -68,18 +64,18 @@
 										<Label text="End Date" />
 										<DatePicker value="{/endDate}" />
 										<Label text="Status" />
-										<Select showSecondaryValues= "true" width="100%" dataBind="Campaign.Status" selectedKey="{/Status}" items="{codes>/common.YesNo}">
-											<core:ListItem key="{codes>value}" text="{codes>desc}" additionalText= "{codes>value}"/>
+										<Select showSecondaryValues="true" width="100%" dataBind="Campaign.Status" selectedKey="{/Status}" items="{codes>/common.YesNo}">
+											<core:ListItem key="{codes>value}" text="{codes>desc}" additionalText="{codes>value}" />
 										</Select>
 										<Label text="Status2" />
-										<widget:Select  selectedKey="{/Status}" items="{codes>/common.YesNo}">
-										<!--<core:ListItem key="{codes>value}" text="{codes>value}" additionalText= "{codes>desc}"/>-->
+										<widget:Select selectedKey="{/Status}" items="{codes>/common.YesNo}">
+											<!--<core:ListItem key="{codes>value}" text="{codes>value}" additionalText= "{codes>desc}"/>-->
 										</widget:Select>
 										<Label text="Target Group" />
-										<Input showValueHelp="true" valueHelpRequest=".onValueHelpRequested"/>
+										<Input showValueHelp="true" valueHelpRequest=".onValueHelpRequested" />
 
 										<Label text="Target Group Status" />
-										<widget:ValueSelect />
+										<widget:ValueSelect linkTo="TargetGroup" />
 										<Label text="Target Group Members" />
 										<Input />
 										<Label text="Additional Information" />
