@@ -77,8 +77,9 @@
 										</widget:Select>
 										<Label text="Target Group" />
 										<Input showValueHelp="true" valueHelpRequest=".onValueHelpRequested"/>
+
 										<Label text="Target Group Status" />
-										<Input />
+										<widget:ValueSelect />
 										<Label text="Target Group Members" />
 										<Input />
 										<Label text="Additional Information" />
