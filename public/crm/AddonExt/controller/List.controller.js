@@ -4,28 +4,22 @@ sap.ui.define(
 		"use strict";
 		var theClass = ControllerExtension.extend("sap.nsme.crm.AddonExt.controller.List", {
 			metadata: {
-				methods: {
-					onClick: { public: true, final: false, overrideExecution: OverrideExecution.Before }
-				}
+				methods: {}
 			},
-
 			override: {
 				onInit: function (evt) {
-					alert("onInit");
+					alert("Addon:onInit");
 					/*const oController = evt.getSource().getController()
 					oController.onTest = function () {
 						alert("hello");
 					};*/
 				},
-				onClick:  function (evt) {
-					alert('a');
-				}			
-			} /*,
-			overrideMethod: {
-				onClick:  function (evt) {
-					alert('a');
+				onClick: function (evt) {
+					var oController = evt.getSource().getParent().getParent().getController();
+					oController.constructor.prototype.onClick();					
+					alert("Addon:onClick");
 				}
-			}*/
+			}
 		});
 		return theClass;
 	}

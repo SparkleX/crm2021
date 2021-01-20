@@ -12,9 +12,8 @@ sap.ui.define(
 
 		var theClass = Controller.extend("sap.nsme.crm.Addon.controller.List", {
 			metadata: {
-				stereotype: "controller",
 				methods: {
-					onClick: { public: true, final: false, overrideExecution: OverrideExecution.Before }
+					onClick: { public: true, final: false}
 				}
 			}
 		});
