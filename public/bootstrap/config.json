@@ -65,7 +65,19 @@
 										"info": "View Chart",
 										"targetURL": "#Chart-App"
 									}
-								}								
+								},
+								{
+									"id": "sap_ushell_generated_tile_id_4",
+									"title": "Addon",
+									"size": "1x1",
+									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"properties": {
+										"chipId": "sap_ushell_generated_chip_id",
+										"title": "Addon",
+										"info": "View Addon",
+										"targetURL": "#Addon-App"
+									}
+								}										
 							]
 						},
 						{
@@ -211,6 +223,13 @@
 							"description": "Chart",
 							"title": "Chart"
 						},
+						"Addon-App": {
+							"additionalInformation": "SAPUI5.Component=sap.nsme.crm.Addon",
+							"applicationType": "URL",
+							"url": "/web/crm/Addon",
+							"description": "Addon",
+							"title": "Addon"
+						},						
 						"OCRD-App": {
 							"additionalInformation": "SAPUI5.Component=c1.app.OCRD",
 							"applicationType": "URL",

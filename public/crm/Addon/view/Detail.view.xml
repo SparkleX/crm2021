@@ -1,0 +1,173 @@
+<mvc:View id="idBpDetail" controllerName="sap.nsme.crm.Addon.controller.Detail" xmlns:t="sap.ui.table" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:widget="sap.nsme.share.widget" displayBlock="true">
+	<uxap:ObjectPageLayout id="objectPageLayout" toggleHeaderOnTitleClick="false" preserveHeaderStateOnScroll="true" headerContentPinnable="false" upperCaseAnchorBar="false">
+		<uxap:headerTitle>
+			<uxap:ObjectPageDynamicHeaderTitle>
+				<uxap:expandedHeading>
+					<layout:HorizontalLayout>
+						<Title text="Addon" wrapping="false" />
+						<Title text="" width="20pt" />
+						<uxap:ObjectPageHeaderActionButton id="sysFirstButton" icon="sap-icon://collapse-group" type="Transparent" tooltip="First" press="onFirst" />
+						<uxap:ObjectPageHeaderActionButton id="sysPrevButton" icon="sap-icon://navigation-up-arrow" type="Transparent" tooltip="Prev" press="onPrev" />
+						<uxap:ObjectPageHeaderActionButton id="sysNextButton" icon="sap-icon://navigation-down-arrow" type="Transparent" tooltip="Next" press="onNext" />
+						<uxap:ObjectPageHeaderActionButton id="sysLastButton" icon="sap-icon://expand-group" type="Transparent" tooltip="Last" press="onLast" />
+					</layout:HorizontalLayout>
+				</uxap:expandedHeading>
+
+				<uxap:snappedHeading>
+					<Title text="New Addon" wrapping="true" />
+				</uxap:snappedHeading>
+
+				<uxap:expandedContent>
+					<Text text="{/_id}" />
+				</uxap:expandedContent>
+
+				<uxap:snappedContent>
+					<Text text="{/_id}" />
+				</uxap:snappedContent>
+
+				<uxap:actions></uxap:actions>
+				<uxap:navigationActions>
+					<uxap:ObjectPageHeaderActionButton id="sysNewButton" type="Transparent" text="New" hideText="false" hideIcon="true" press="onNew" />
+					<uxap:ObjectPageHeaderActionButton id="sysEditButton" text="Edit" type="Emphasized" hideText="false" press="onEdit" />
+					<uxap:ObjectPageHeaderActionButton id="sysDeleteButton" type="Transparent" text="Delete" hideText="false" hideIcon="true" press="onDelete" />
+				</uxap:navigationActions>
+			</uxap:ObjectPageDynamicHeaderTitle>
+
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<layout:HorizontalLayout>
+				<Toolbar style="Clear">
+					<Label text="Test 1" />
+					<Label text="Test 2" />
+					<Label text="Test 3" />
+					<Button text="TEST" press=".onTest"></Button>
+					<Button text="To JSON" press=".onDebugToJson"></Button>
+				</Toolbar>
+			</layout:HorizontalLayout>
+		</uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection id="idSectionA">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection id="idGeneralPage" title="General">
+						<uxap:blocks>
+							<layout:BlockLayout>
+								<layout:BlockLayoutRow>
+									<layout:BlockLayoutCell title="General">
+										<Label text="Addon ID" />
+										<Input value="{/_id}" />
+										<Label text="Addon Description" />
+										<Input value="{/name}" />
+										<Label text="Addon Type" />
+										<Input />
+										<Label text="Start Date" />
+										<DatePicker value="{/startDate}" />
+										<Label text="End Date" />
+										<DatePicker value="{/endDate}" />
+										<Label text="Status" />
+										<Select showSecondaryValues="true" width="100%" dataBind="Addon.Status" selectedKey="{/Status}" items="{codes>/common.YesNo}">
+											<core:ListItem key="{codes>value}" text="{codes>desc}" additionalText="{codes>value}" />
+										</Select>
+										<Label text="Status2" />
+										<widget:Select selectedKey="{/Status}" items="{codes>/common.YesNo}">
+											<!--<core:ListItem key="{codes>value}" text="{codes>value}" additionalText= "{codes>desc}"/>-->
+										</widget:Select>
+										<Label text="Target Group" />
+										<Input showValueHelp="true" valueHelpRequest=".onValueHelpRequested" />
+
+										<Label text="Target Group Status" />
+										<widget:ValueSelect linkTo="TargetGroup" value="{/TargetGroup}"/>
+										<Label text="Target Group Members" />
+										<Input />
+										<Label text="Additional Information" />
+										<Input />
+									</layout:BlockLayoutCell>
+									<layout:BlockLayoutCell title="Administrative Data">
+										<Label text="Created On" />
+										<DateTimePicker />
+										<Label text="Created By" />
+										<DateTimePicker />
+										<Label text="Executed On" />
+										<Input />
+										<Label text="Executed By" />
+										<Input />
+									</layout:BlockLayoutCell>
+								</layout:BlockLayoutRow>
+
+							</layout:BlockLayout>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection>
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Response Options">
+						<uxap:blocks>
+							<layout:BlockLayout>
+								<layout:BlockLayoutRow>
+									<layout:BlockLayoutCell title="Response Options"></layout:BlockLayoutCell>
+								</layout:BlockLayoutRow>
+							</layout:BlockLayout>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection>
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Execution Details">
+						<uxap:blocks>
+							<layout:BlockLayout>
+								<layout:BlockLayoutRow>
+									<layout:BlockLayoutCell title="Response Options">
+										<t:Table id="table1" rows="{/Lines}">
+											<t:extension>
+												<OverflowToolbar>
+													<Button icon="sap-icon://add" press="onRowAdd" />
+													<Button icon="sap-icon://delete" press="onRowDelete"></Button>
+												</OverflowToolbar>
+											</t:extension>
+											<t:columns>
+												<t:Column>
+													<Label text="Product Name" />
+													<t:template>
+														<Input value="{name}" wrapping="false" />
+													</t:template>
+												</t:Column>
+												<t:Column>
+													<Label text="Product Id" />
+													<t:template>
+														<Input value="{_id}" />
+													</t:template>
+												</t:Column>
+											</t:columns>
+										</t:Table>
+									</layout:BlockLayoutCell>
+								</layout:BlockLayoutRow>
+							</layout:BlockLayout>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection>
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Attachment">
+						<uxap:blocks>
+							<layout:BlockLayout>
+								<layout:BlockLayoutRow>
+									<layout:BlockLayoutCell title="Attachments"></layout:BlockLayoutCell>
+								</layout:BlockLayoutRow>
+							</layout:BlockLayout>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:footer>
+			<OverflowToolbar>
+				<ToolbarSpacer />
+				<Button type="Emphasized" text="Save" press="onSave" />
+				<Button type="Default" text="Cancel" press="onCancel" />
+			</OverflowToolbar>
+		</uxap:footer>
+	</uxap:ObjectPageLayout>
+
+</mvc:View>
