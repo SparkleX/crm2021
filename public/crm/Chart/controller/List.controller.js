@@ -4,12 +4,46 @@ sap.ui.define(
 		"sap/m/MessageToast",
 		"sap/ui/core/Fragment",
 		"sap/ui/model/json/JSONModel",
-		"sap/nsme/share/utils/ControllerUtils"
+		"sap/nsme/share/utils/ControllerUtils",
+		'sap/viz/ui5/format/ChartFormatter',
 	],
-	function (Controller, MessageToast, Fragment, JSONModel, ControllerUtils) {
+	function (Controller, MessageToast, Fragment, JSONModel, ControllerUtils, ChartFormatter) {
 		"use strict";
 
 		var theClass = Controller.extend("sap.nsme.crm.Chart.controller.List", {});
+
+		theClass.prototype.onInit = function (evt) {
+			var formatPattern = ChartFormatter.DefaultPattern;
+
+			var oVizFrame = this.oVizFrame = this.getView().byId("idVizFrame");
+			oVizFrame.setVizProperties({
+				plotArea: {
+					dataLabel: {
+						formatString: formatPattern.SHORTFLOAT_MFD2,
+						visible: true
+					}
+				},
+				valueAxis: {
+					label: {
+						formatString: formatPattern.SHORTFLOAT
+					},
+					title: {
+						visible: false
+					}
+				},
+				categoryAxis: {
+					title: {
+						visible: false
+					}
+				},
+				title: {
+					visible: false,
+					text: "Revenue by City and Store Name"
+				}
+			});
+			var dataModel = new JSONModel("/web/crm/Chart/data.json");
+			oVizFrame.setModel(dataModel);
+		};
 
 		return theClass;
 	}
