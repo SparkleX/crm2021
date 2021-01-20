@@ -11,11 +11,14 @@ sap.ui.define(
 		"use strict";
 
 		var theClass = Controller.extend("sap.nsme.crm.Chart.controller.List", {});
+		theClass.prototype.onExit = function (evt) {
+			var oPopOver = this.getView().byId("idPopOver");
+			oPopOver.destroy();
 
+		};
 		theClass.prototype.onInit = function (evt) {
 			var formatPattern = ChartFormatter.DefaultPattern;
-
-			var oVizFrame = this.oVizFrame = this.getView().byId("idVizFrame");
+			var oVizFrame = this.getView().byId("idVizFrame");
 			oVizFrame.setVizProperties({
 				plotArea: {
 					dataLabel: {
