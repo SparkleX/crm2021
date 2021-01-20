@@ -6,19 +6,13 @@
 	xmlns:mvc="sap.ui.core.mvc.View"
 	xmlns:f="sap.f"
 	xmlns:fb="sap.ui.comp.filterbar" 
-	xmlns:viz="sap.viz.ui5.controls"
-	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
-	xmlns:viz.data="sap.viz.ui5.data"		
 	displayBlock="true">
-
-
-
 	<f:DynamicPage headerExpanded="true" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false">
 		<!-- DynamicPage Title -->
 		<f:title>
 			<f:DynamicPageTitle>
 				<f:heading>
-					<Title text="Addons" />
+					<Title text="Addons"/>
 				</f:heading>
 			</f:DynamicPageTitle>
 		</f:title>
@@ -26,7 +20,7 @@
 
 		</f:header>
 		<f:content>
-	
+			<Button  press=".onClick"></Button>
 		</f:content>
 	</f:DynamicPage>
 </mvc:View>

@@ -75,6 +75,15 @@
 					"viewName": "Detail"
 				}
 			}
+		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.nsme.crm.Addon.controller.List": {
+						"controllerName": "sap.nsme.crm.AddonExt.controller.List"
+					}
+				}
+			}
 		}
 	}
 }
