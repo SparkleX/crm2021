@@ -53,7 +53,19 @@
 										"info": "Search, modify BP",
 										"targetURL": "#OCRD-App"
 									}
-								}
+								},
+								{
+									"id": "sap_ushell_generated_tile_id_3",
+									"title": "Chart",
+									"size": "1x1",
+									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"properties": {
+										"chipId": "sap_ushell_generated_chip_id",
+										"title": "Chart",
+										"info": "View Chart",
+										"targetURL": "#Chart-App"
+									}
+								}								
 							]
 						},
 						{
@@ -191,6 +203,13 @@
 							"url": "/web/crm/Campaign",
 							"description": "View Campines",
 							"title": "Campines"
+						},
+						"Chart-App": {
+							"additionalInformation": "SAPUI5.Component=sap.nsme.crm.Chart",
+							"applicationType": "URL",
+							"url": "/web/crm/Chart",
+							"description": "Chart",
+							"title": "Chart"
 						},
 						"OCRD-App": {
 							"additionalInformation": "SAPUI5.Component=c1.app.OCRD",
