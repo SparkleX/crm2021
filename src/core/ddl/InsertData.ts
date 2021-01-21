@@ -42,20 +42,5 @@ export class DefaultData {
 		}
 	}
 }
-async function main() {
-	const oDefaultData = new DefaultData();
-	const config: PgSqlConnectionConfig = {
-		user: "postgres",
-		host: "localhost",
-		database: "test",
-		password: "1234",
-		port: 5432
-	};
-	const driver = new PgSqlDriver();
-	const conn = await driver.connect(config);
-	await oDefaultData.execute(conn);
-
-	await conn.close();
-}
-
-main();
+const oDefaultData = new DefaultData();
+export { oDefaultData }

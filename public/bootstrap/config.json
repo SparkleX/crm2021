@@ -20,70 +20,16 @@
 							"tiles": [
 								{
 									"id": "sap_ushell_generated_tile_id_0",
-									"title": "Target Group",
+									"title": "Account",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.StaticTile",
 									"properties": {
 										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Target Group",
-										"info": "Search, modify BP",
-										"targetURL": "#TGRP-App"
+										"title": "Account",
+										"info": "Manage Account",
+										"targetURL": "#Account-App"
 									}
-								},
-								{
-									"id": "sap_ushell_generated_tile_id_1",
-									"title": "Campines",
-									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
-									"properties": {
-										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Campines",
-										"info": "View Campines",
-										"targetURL": "#Campaign-App"
-									}
-								},
-								{
-									"id": "sap_ushell_generated_tile_id_2",
-									"title": "Businss Partners",
-									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
-									"properties": {
-										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Businss Partners",
-										"info": "Search, modify BP",
-										"targetURL": "#OCRD-App"
-									}
-								},
-								{
-									"id": "sap_ushell_generated_tile_id_3",
-									"title": "Chart",
-									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
-									"properties": {
-										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Chart",
-										"info": "View Chart",
-										"targetURL": "#Chart-App"
-									}
-								},
-								{
-									"id": "sap_ushell_generated_tile_id_4",
-									"title": "Addon",
-									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
-									"properties": {
-										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Addon",
-										"info": "View Addon",
-										"targetURL": "#Addon-App"
-									}
-								}										
-							]
-						},
-						{
-							"id": "group_2",
-							"title": "CRM",
-							"tiles": [
+								},								
 								{
 									"id": "sap_ushell_generated_tile_id_0",
 									"title": "Target Group",
@@ -109,89 +55,35 @@
 									}
 								},
 								{
-									"id": "sap_ushell_generated_tile_id_2",
-									"title": "Businss Partners",
-									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
-									"properties": {
-										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Businss Partners",
-										"info": "Search, modify BP",
-										"targetURL": "#OCRD-App"
-									}
-								},
-								{
 									"id": "sap_ushell_generated_tile_id_3",
-									"title": "Sales Order",
+									"title": "Chart",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.StaticTile",
 									"properties": {
 										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Sales Order",
-										"info": "View, modify orders",
-										"targetURL": "#ORDR-App"
+										"title": "Chart",
+										"info": "View Chart",
+										"targetURL": "#Chart-App"
 									}
-								},
+								}								
+							]
+						},
+						{
+							"id": "group_2",
+							"title": "Addons",
+							"tiles": [
 								{
 									"id": "sap_ushell_generated_tile_id_4",
-									"title": "Deliveries",
+									"title": "Addon",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.StaticTile",
 									"properties": {
 										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Deliveries",
-										"info": "View Deliveries",
-										"targetURL": "#DLNY-App"
+										"title": "Addon",
+										"info": "View Addon",
+										"targetURL": "#Addon-App"
 									}
-								},
-								{
-									"id": "sap_ushell_generated_tile_id_5",
-									"title": "Invoices",
-									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
-									"properties": {
-										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Invoices",
-										"info": "View Invoices",
-										"targetURL": "#INVO-App"
-									}
-								},
-								{
-									"id": "sap_ushell_generated_tile_id_6",
-									"title": "Items Master Data",
-									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
-									"properties": {
-										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Items Master Data",
-										"info": "Search, modify Items",
-										"targetURL": "#OITM-App"
-									}
-								},
-								{
-									"id": "sap_ushell_generated_tile_id_7",
-									"title": "General Settings",
-									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
-									"properties": {
-										"chipId": "sap_ushell_generated_chip_id",
-										"title": "General Settings",
-										"info": "Display Format...",
-										"targetURL": "#OADM-App"
-									}
-								},
-								{
-									"id": "sap_ushell_generated_tile_id_8",
-									"title": "Company Settings",
-									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
-									"properties": {
-										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Company Settings",
-										"info": "Company Name, Address",
-										"targetURL": "#CINF-App"
-									}
-								}
+								}		
 							]
 						}
 					]
@@ -202,11 +94,18 @@
 			"adapter": {
 				"config": {
 					"applications": {
-						"TGRP-App": {
-							"additionalInformation": "SAPUI5.Component=sap.nsme.crm.TGRP",
+						"Account-App": {
+							"additionalInformation": "SAPUI5.Component=sap.nsme.crm.Account",
 							"applicationType": "URL",
-							"url": "/web/crm/TGRP",
-							"description": "Search, modify BP",
+							"url": "/web/crm/Account",
+							"description": "View Account",
+							"title": "Account"
+						},						
+						"TargetGroup-App": {
+							"additionalInformation": "SAPUI5.Component=sap.nsme.crm.TargetGroup",
+							"applicationType": "URL",
+							"url": "/web/crm/TargetGroup",
+							"description": "View TargetGroup",
 							"title": "Target Group"
 						},
 						"Campaign-App": {
@@ -229,55 +128,6 @@
 							"url": "/web/crm/Addon",
 							"description": "Addon",
 							"title": "Addon"
-						},						
-						"OCRD-App": {
-							"additionalInformation": "SAPUI5.Component=c1.app.OCRD",
-							"applicationType": "URL",
-							"url": "/web/app/OCRD",
-							"description": "Search, modify BP",
-							"title": "Businss Partners"
-						},
-						"ORDR-App": {
-							"additionalInformation": "SAPUI5.Component=c1.app.ORDR",
-							"applicationType": "URL",
-							"url": "/app/ORDR",
-							"description": "View, modify orders",
-							"title": "Sales Order"
-						},
-						"DLNY-App": {
-							"additionalInformation": "SAPUI5.Component=c1.app.ORDR",
-							"applicationType": "URL",
-							"url": "/app/ORDR",
-							"description": "View Deliveries",
-							"title": "Deliveries"
-						},
-						"INVO-App": {
-							"additionalInformation": "SAPUI5.Component=c1.app.ORDR",
-							"applicationType": "URL",
-							"url": "/app/ORDR",
-							"description": "View Invoices",
-							"title": "Invoices"
-						},
-						"OITM-App": {
-							"additionalInformation": "SAPUI5.Component=c1.app.OITM",
-							"applicationType": "URL",
-							"url": "/app/OITM",
-							"description": "Search, modify Items",
-							"title": "Items Master Data"
-						},
-						"OADM-App": {
-							"additionalInformation": "SAPUI5.Component=c1.app.OADM",
-							"applicationType": "URL",
-							"url": "/app/OADM",
-							"description": "Display Format...",
-							"title": "General Settings"
-						},
-						"CINF-App": {
-							"additionalInformation": "SAPUI5.Component=c1.app.CINF",
-							"applicationType": "URL",
-							"url": "/app/CINF",
-							"description": "Company Name, Address",
-							"title": "Company Settings"
 						}
 					}
 				}

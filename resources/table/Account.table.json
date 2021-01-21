@@ -1,0 +1,32 @@
+{
+	"name": "Account",
+	"fields": {
+		"code": {
+			"type": "string",
+			"size": 10
+		},
+		"name": {
+			"type": "string",
+			"size": 10
+		},
+		"country": {
+			"type": "string",
+			"size": 10
+		},
+		"street": {
+			"type": "string",
+			"size": 10
+		},
+		"city": {
+			"type": "string",
+			"size": 10
+		}
+	},
+	"fieldOrder": [
+		"code",
+		"name",
+		"country",
+		"street",
+		"city"
+	]
+}

@@ -6,6 +6,7 @@
 		"type": {
 			"type": "string",
 			"enum": [
+				"guid",
 				"string",
 				"text",
 				"number",
