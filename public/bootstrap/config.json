@@ -4,6 +4,7 @@
 		"fiori2": {
 			"componentData": {
 				"config": {
+					"enableActionModeMenuButton": true,
 					"search": "hidden"
 				}
 			}
@@ -38,8 +39,8 @@
 									"properties": {
 										"chipId": "sap_ushell_generated_chip_id",
 										"title": "Target Group",
-										"info": "Search, modify BP",
-										"targetURL": "#TGRP-App"
+										"info": "Search, modify Target Group",
+										"targetURL": "#TargetGroup-App"
 									}
 								},
 								{

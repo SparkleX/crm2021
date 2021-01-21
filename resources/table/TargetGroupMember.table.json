@@ -1,0 +1,9 @@
+{
+	"name": "TargetGroupMember",
+	"fields": {
+		"accountId": {
+			"type": "guid"
+		}
+	},
+	"fieldOrder": ["accountId"]
+}

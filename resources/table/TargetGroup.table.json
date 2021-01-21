@@ -4,9 +4,18 @@
 		"name": {
 			"type": "string",
 			"size": 10
+		},
+		"status": {
+			"type": "string",
+			"size": 1
+		},
+		"note": {
+			"type": "string",
+			"size": 10
 		}
+
 	},
 	"fieldOrder": [
-		"name"
+		"name", "status","note"
 	]
 }

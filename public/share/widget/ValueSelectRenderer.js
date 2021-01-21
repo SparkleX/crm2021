@@ -8,6 +8,7 @@ sap.ui.define(
 			oRm.write("<div");
 			oRm.write(">");
 			oRm.renderControl(oControl.getAggregation("_link"));
+			oRm.write("<BR>");
 			oRm.renderControl(oControl.getAggregation("_input"));
 			oRm.write("</div>");
 		};

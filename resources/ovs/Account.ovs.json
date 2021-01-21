@@ -1,0 +1,12 @@
+{
+	"cols": [
+		{
+			"label": "Account Code",
+			"template": "code"
+		},
+		{
+			"label": "Account Name",
+			"template": "name"
+		}
+	]
+}

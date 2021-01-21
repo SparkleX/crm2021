@@ -27,19 +27,22 @@ export class SqlRepo<TDomain> extends BaseRepo<TDomain> {
 	private insertSql(data: TDomain): SqlParam {
 		const rt: SqlParam = {};
 		rt.params = [];
-		
+
 		let columns = "";
 		let params = "";
 		let i = 1;
 		for (const column in data) {
 			const value = data[column];
+			if (Array.isArray(value)) {
+				continue;
+			}
 			rt.params.push(value);
 			params += `$${i},`;
 			columns += `"${column}",`;
 			i++;
 		}
-		params = params.substr(0, params.length-1);
-		columns = columns.substr(0, columns.length-1);
+		params = params.substr(0, params.length - 1);
+		columns = columns.substr(0, columns.length - 1);
 
 		rt.sql = `insert into "${this.name}"(${columns}) values( ${params} )`;
 		return rt;
@@ -53,7 +56,7 @@ export class SqlRepo<TDomain> extends BaseRepo<TDomain> {
 	private updateSql(data: TDomain): SqlParam {
 		const rt: SqlParam = {};
 		rt.params = [];
-		
+
 		let columns = "";
 		let i = 1;
 		for (const column in data) {
@@ -62,7 +65,7 @@ export class SqlRepo<TDomain> extends BaseRepo<TDomain> {
 			columns += `"${column}" = $${i},`;
 			i++;
 		}
-		columns = columns.substr(0, columns.length-1);
+		columns = columns.substr(0, columns.length - 1);
 
 		rt.params.push(data["id"]);
 		rt.sql = `update "${this.name}" set ${columns} where "id"=$${i}`;

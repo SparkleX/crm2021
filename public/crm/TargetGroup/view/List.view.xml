@@ -8,8 +8,6 @@
 	xmlns:fb="sap.ui.comp.filterbar" 
 	displayBlock="true">
 
-
-
 	<f:DynamicPage headerExpanded="true" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false">
 		<!-- DynamicPage Title -->
 		<f:title>
@@ -29,30 +27,8 @@
 								<Input />
 							</fb:control>
 						</fb:FilterItem>
-						<fb:FilterItem name="B" label="Category">
-							<fb:control>
-								<Input />							
-							</fb:control>
-						</fb:FilterItem>
-						<fb:FilterItem name="C" label="SupplierName">
-							<fb:control>
-								<Input />
-							</fb:control>
-						</fb:FilterItem> 
 					</fb:filterItems>
 				</fb:FilterBar>
-				<Toolbar style = "Clear">
-					<Select enabled="{/Enabled}" editable="{/Editable}" forceSelection="false" selectedKey="{/SelectedProduct2}" items="{
-							path: '/ProductCollection2',
-							sorter: { path: 'Name' }
-						}">
-						<core:Item key="{ProductId}" text="{Name}" />
-					</Select>
-					<Label text="Group By"/>
-					<Select />
-					<ToolbarSpacer/>
-
-				</Toolbar>
 				<!--<fb:FilterBar id="idFilterBar" reset="onReset" useToolbar="false" showGoOnFB="true">
 				</fb:FilterBar>-->
 			</f:DynamicPageHeader>
@@ -62,7 +38,7 @@
 				<t:extension>
 					<OverflowToolbar>
 						<Button text="New" type="Emphasized"  press="onClickNew" />
-						<Button text="{i18n>edit}"></Button>
+						<!--<Button text="{i18n>edit}"></Button>
 						<Button text="Export"></Button>
 						<Button text="Copy"></Button>	
 						<MenuButton text="Add Response">
@@ -84,16 +60,10 @@
 						<Button icon="sap-icon://action-settings" type="Transparent" press="onTestClick" />
 						<SearchField width="300px"/>
 						<Button icon="sap-icon://filter"></Button>
-						<Button icon="sap-icon://business-objects-experience"></Button>						
+						<Button icon="sap-icon://business-objects-experience"></Button>	-->					
 					</OverflowToolbar>
 				</t:extension>				
 				<t:columns>
-					<t:Column >
-						<Label text="ID" />
-						<t:template>
-							<Text text="{id}" wrapping="false" />
-						</t:template>
-					</t:Column>
 					<t:Column >
 						<Label text="Name" />
 						<t:template>

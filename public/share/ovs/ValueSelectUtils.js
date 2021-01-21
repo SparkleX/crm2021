@@ -19,7 +19,7 @@ sap.ui.define(
 			var oDialog = new ValueHelpDialog({
 				id: "OVS",
 				filterMode: true,
-				title: "Product",
+				title: name,
 				ok: controller.onOk.bind(controller),
 				cancel: controller.onCancel.bind(controller),
 				//afterClose: ".onValueHelpAfterClose",
@@ -33,22 +33,7 @@ sap.ui.define(
 			console.debug(oDialog);
 
 			var oRowModel = new JSONModel(`/api/ovs/data/${name}`);
-			var oColModel = new JSONModel({
-				cols: [
-					{
-						label: "ProductId",
-						template: "id"
-					},
-					{
-						label: "Product Name",
-						template: "name"
-					},
-					{
-						label: "Category",
-						template: "id"
-					}
-				]
-			});
+			var oColModel = new JSONModel(`/api/ovs/metadata/${name}`);
 			var oTable = oDialog.getTable();
 			oTable.setModel(oRowModel);
 			oTable.setModel(oColModel, "columns");
@@ -69,7 +54,6 @@ sap.ui.define(
 			var oToken = new Token();
 			oDialog.setTokens([oToken]);
 			oDialog.open();
-
 		};
 		return theClass;
 	}

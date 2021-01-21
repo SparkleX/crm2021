@@ -7,7 +7,6 @@ import * as jsonfile from "jsonfile";
 import { Field, Table } from "../../gen/schema/Table";
 
 class CreateTable {
-
 	readMetadata() {
 		const tables = {};
 		const files = glob.sync(`resources/table/*.json`);
@@ -19,7 +18,7 @@ class CreateTable {
 		}
 		return tables;
 	}
-	getFieldType(field: Field) {
+	getFieldType(field: Field, table: string, column: string) {
 		switch (field.type) {
 			case "string":
 			case "text":
@@ -33,6 +32,8 @@ class CreateTable {
 				return "timestamp without time zone";
 			case "guid":
 				return "uuid";
+			default:
+				throw `unknow type ${field.type} (${table}.${column})`;
 		}
 	}
 
@@ -44,7 +45,7 @@ class CreateTable {
 
 			for (const fieldName of table.fieldOrder) {
 				const metaField = table.fields[fieldName];
-				const fieldType = this.getFieldType(metaField);
+				const fieldType = this.getFieldType(metaField, name, fieldName);
 				columns += `${fieldName} ${fieldType} ,`;
 			}
 			const sql = `create table "${name}" ( id uuid, ${columns} PRIMARY KEY (id))`;
@@ -63,7 +64,6 @@ class CreateTable {
 		}
 	}
 }
-
 
 const oCreateTable = new CreateTable();
 export { oCreateTable };

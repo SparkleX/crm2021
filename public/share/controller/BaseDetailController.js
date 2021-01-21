@@ -81,7 +81,7 @@ sap.ui.define(
 				case EditMode:
 					oObjectPage.setShowFooter(true);
 					this.setEditable(true);
-					oDeleteButton.setVisible(false);
+					if(oDeleteButton) oDeleteButton.setVisible(false);
 					oEditButton.setVisible(false);
 					oNewButton.setVisible(false);
 					oNextButton.setVisible(false);
@@ -92,7 +92,7 @@ sap.ui.define(
 				case ViewMode:
 					oObjectPage.setShowFooter(false);
 					this.setEditable(false);
-					oDeleteButton.setVisible(true);
+					if(oDeleteButton) oDeleteButton.setVisible(true);
 					oEditButton.setVisible(true);
 					oNewButton.setVisible(true);
 					oNextButton.setVisible(true);

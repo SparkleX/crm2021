@@ -61,7 +61,7 @@
 										<Label text="Name" />
 										<Input value="{/name}" />
 									</layout:BlockLayoutCell>
-									<layout:BlockLayoutCell title="Administrative Data">
+									<layout:BlockLayoutCell title="Main Address">
 										<Label text="Country" />
 										<Input value="{/country}"/>
 										<Label text="City" />
