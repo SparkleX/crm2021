@@ -23,16 +23,21 @@
 									"id": "sap_ushell_generated_tile_id_0",
 									"title": "Account",
 									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"tileType": "sap.ushell.ui.tile.DynamicTile",
 									"properties": {
 										"chipId": "sap_ushell_generated_chip_id",
 										"title": "Account",
 										"info": "Manage Account",
-										"targetURL": "#Account-App"
+										"numberValue": 100,
+										"numberState":"Positive",
+										"stateArrow": "Up",
+										"targetURL": "#Account-App",
+										"numberFactor": "k",
+										"icon": "sap-icon://account"
 									}
 								},								
 								{
-									"id": "sap_ushell_generated_tile_id_0",
+									"id": "sap_ushell_generated_tile_id_1",
 									"title": "Target Group",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.StaticTile",
@@ -40,31 +45,45 @@
 										"chipId": "sap_ushell_generated_chip_id",
 										"title": "Target Group",
 										"info": "Search, modify Target Group",
-										"targetURL": "#TargetGroup-App"
+										"targetURL": "#TargetGroup-App",
+										"icon": "sap-icon://account"
+
 									}
 								},
 								{
-									"id": "sap_ushell_generated_tile_id_1",
+									"id": "sap_ushell_generated_tile_id_2",
 									"title": "Campines",
 									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"tileType": "sap.ushell.ui.tile.DynamicTile",
 									"properties": {
 										"chipId": "sap_ushell_generated_chip_id",
 										"title": "Campines",
 										"info": "View Campines",
-										"targetURL": "#Campaign-App"
+										"targetURL": "#Campaign-App",
+										"content":[
+											{
+												"Type":"sap.m.Label",
+												"text":"123"
+											}
+										]
 									}
 								},
 								{
 									"id": "sap_ushell_generated_tile_id_3",
 									"title": "Chart",
 									"size": "1x1",
-									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"tileType": "sap.nsme.flp.ChartTile",
 									"properties": {
 										"chipId": "sap_ushell_generated_chip_id",
 										"title": "Chart",
 										"info": "View Chart",
-										"targetURL": "#Chart-App"
+										"targetURL": "#Chart-App",
+										"content":[
+											{
+												"Type":"sap.ui.commons.Button",
+												"text":"123"
+											}
+										]
 									}
 								}								
 							]
