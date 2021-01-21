@@ -46,9 +46,10 @@ class CreateTable {
 			for (const fieldName of table.fieldOrder) {
 				const metaField = table.fields[fieldName];
 				const fieldType = this.getFieldType(metaField, name, fieldName);
-				columns += `${fieldName} ${fieldType} ,`;
+				columns += `"${fieldName}" ${fieldType} ,`;
 			}
-			const sql = `create table "${name}" ( id uuid, ${columns} PRIMARY KEY (id))`;
+			sqls.push(`drop table if exists "${name}"`);
+			const sql = `create table "${name}" (id uuid, parent uuid, ${columns} PRIMARY KEY (id))`;
 			sqls.push(sql);
 		}
 		return sqls;

@@ -13,6 +13,11 @@ export class SqlRepo<TDomain> extends BaseRepo<TDomain> {
 		const rt = (await collection.executeQuery(`select * from "${this.name}" where "id"=$1`, [id])) as any;
 		return rt[0];
 	}
+	public async findByParent(parent: string): Promise<TDomain> {
+		const collection = this.getConnection();
+		const rt = (await collection.executeQuery(`select * from "${this.name}" where "parent"=$1`, [parent])) as any;
+		return rt;
+	}
 	public async findAll(): Promise<TDomain[]> {
 		const collection = this.getConnection();
 		const data = (await collection.executeQuery(`select * from "${this.name}" order by "id"`)) as any;
@@ -56,11 +61,13 @@ export class SqlRepo<TDomain> extends BaseRepo<TDomain> {
 	private updateSql(data: TDomain): SqlParam {
 		const rt: SqlParam = {};
 		rt.params = [];
-
 		let columns = "";
 		let i = 1;
 		for (const column in data) {
 			const value = data[column];
+			if (Array.isArray(value)) {
+				continue;
+			}
 			rt.params.push(value);
 			columns += `"${column}" = $${i},`;
 			i++;
