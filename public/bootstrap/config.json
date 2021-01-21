@@ -72,19 +72,33 @@
 									"id": "sap_ushell_generated_tile_id_3",
 									"title": "Chart",
 									"size": "1x1",
-									"tileType": "sap.nsme.flp.ChartTile",
+									"tileType": "sap.m.GenericTile",
 									"properties": {
 										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Chart",
+										"header": "Chart",
 										"info": "View Chart",
 										"targetURL": "#Chart-App",
-										"content":[
+										"tileContent":[
 											{
-												"Type":"sap.ui.commons.Button",
-												"text":"123"
+												"Type":"sap.m.TileContent",
+												"content" : [{
+													"Type":"sap.suite.ui.microchart.HarveyBallMicroChart",
+													"size":"M",
+													"total":200,
+													"totalScale": "Mrd",
+													"items": [
+														{
+															"Type":"sap.suite.ui.microchart.HarveyBallMicroChartItem",
+															"fraction":80,
+															"color": "Good",
+															"fractionScale": "Mrd"
+														}
+													]
+												}]
 											}
 										]
 									}
+							
 								}								
 							]
 						},
