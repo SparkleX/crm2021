@@ -43,7 +43,7 @@ sap.ui.define(
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			const bindingPath = oItem.getRowAction().getRow().getBindingContext().getPath();
 			const object = this.getView().getModel().getObject(bindingPath);
-			const id = object._id;
+			const id = object.id;
 			oRouter.navTo("detail", {
 				id: id
 			});

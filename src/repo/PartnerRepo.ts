@@ -1,9 +1,8 @@
 import { BaseRepo, sql } from "../core";
-import { MongoRepo } from "../core/object/mongo/MongoRepo";
+import { SqlRepo } from "../core/object/sql/SqlRepo";
 import { PartnerModel } from "../model/PartnerModel";
 
-export class PartnerRepo extends MongoRepo<PartnerModel, PartnerModel>{
-
+export class PartnerRepo extends SqlRepo<PartnerModel> {
 	@sql('select * from CRD11 where "CardCode"=?')
 	findByCardCode(arg0: [string]): Promise<PartnerModel[]> {
 		/* istanbul ignore next */

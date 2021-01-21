@@ -89,15 +89,15 @@
 				</t:extension>				
 				<t:columns>
 					<t:Column >
-						<Label text="Product Name" />
+						<Label text="ID" />
 						<t:template>
-							<Text text="{name}" wrapping="false" />
+							<Text text="{id}" wrapping="false" />
 						</t:template>
 					</t:Column>
 					<t:Column >
-						<Label text="Product Id" />
+						<Label text="Name" />
 						<t:template>
-							<Text text="{_id}"/>
+							<Text text="{name}"/>
 						</t:template>
 					</t:Column>
 				</t:columns>

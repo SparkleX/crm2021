@@ -1,7 +1,6 @@
 import { BaseRepo } from "..";
 
 export abstract class BaseService<TDomain, TRepo extends BaseRepo<TDomain>> {
-
 	protected repo: TRepo;
 	public table: string;
 
@@ -13,7 +12,7 @@ export abstract class BaseService<TDomain, TRepo extends BaseRepo<TDomain>> {
 		const rt = await this.repo.findById(id);
 		return rt;
 	}
-	public async findAll() : Promise<TDomain[]> {
+	public async findAll(): Promise<TDomain[]> {
 		const rt = await this.repo.findAll();
 		return rt;
 	}

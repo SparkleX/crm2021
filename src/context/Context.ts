@@ -1,10 +1,11 @@
+import { Connection } from "db-conn";
 import { MongoClient } from "mongodb";
 import { getContext } from "./ContextMw";
 
 export class Context {
-    client: MongoClient;
-    constructor(client: MongoClient) {
-        this.client = client;
+    conn: Connection;
+    constructor(conn: Connection) {
+        this.conn = conn;
     }
 	public static get Current(): Context {
 		const rt = getContext();

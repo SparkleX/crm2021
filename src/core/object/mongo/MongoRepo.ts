@@ -43,6 +43,6 @@ export class MongoRepo<TDomain, TKey = TDomain> extends BaseRepo<TDomain, TKey> 
 		return this.getMongoClient().db("test");
 	}
 	protected getMongoClient(): MongoClient {
-		return Context.Current.client;
+		return null;//Context.Current.conn;
 	}
 }

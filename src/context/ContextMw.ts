@@ -4,9 +4,12 @@ import { MongoDriver } from "../core/mongo/MongoDriver";
 import * as cls from "cls-hooked";
 import { Context } from "./Context";
 import { MongoConnection } from "../core/mongo/MongoConnection";
+import { PgSqlDriver, PgSqlConnectionConfig } from "db-conn-pgsql";
 
 //const oDriver = new MongoDriver();
 //const oPool = new GenericPool(oDriver, "mongodb://localhost:27017", {min: 2, max:5});
+const driver = new PgSqlDriver();
+let oPool = null;
 const oClsSession = cls.createNamespace("clsSession");
 
 export function getContext () {
@@ -16,15 +19,26 @@ export function getContext () {
 
 export async function contextMw(ctx: Context, next: Next): Promise<any> {
 	await oClsSession.runAndReturn(async () => {
-		//const conn = await oPool.getConnection() as MongoConnection;
-		//const context = new Context(conn.mongo());
-		//oClsSession.set("ClsContext", context);
+		const conn = await oPool.getConnection();
+		const context = new Context(conn);
+		oClsSession.set("ClsContext", context);
 		try {
-
 			await next();
 		} catch (e) {
 			console.error(e);
 		}
-		//await conn.close();
+		await conn.close();
 	});
+}
+
+export async function initPool(): Promise<void> {
+	const config: PgSqlConnectionConfig = {
+		user: process.env.DB_USER,
+		host: process.env.DB_HOST,
+		database: process.env.DB_NAME,
+		password: process.env.DB_PASS,
+		port: parseInt(process.env.DB_PORT)
+	};
+	oPool = new GenericPool(driver, config,{min: 2, max:5});
+
 }

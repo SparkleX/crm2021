@@ -1,8 +1,8 @@
 import { BaseRepo, sql } from "../core";
-import { MongoRepo } from "../core/object/mongo/MongoRepo";
+import { SqlRepo } from "../core/object/sql/SqlRepo";
 import { CampaignModel } from "../model/CampaignModel";
 
-export class CampaignRepo extends MongoRepo<CampaignModel, CampaignModel> {}
+export class CampaignRepo extends SqlRepo<CampaignModel> {}
 
 const oCampaignRepo = new CampaignRepo();
 
