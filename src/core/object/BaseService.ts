@@ -1,6 +1,8 @@
 import { BaseRepo } from "..";
+import { BaseModel } from "../model/BaseModel";
+import { UUIDHelper } from "../uuid/uuid";
 
-export abstract class BaseService<TDomain, TRepo extends BaseRepo<TDomain>> {
+export abstract class BaseService<TDomain extends BaseModel, TRepo extends BaseRepo<TDomain>> {
 	protected repo: TRepo;
 	public table: string;
 
@@ -18,10 +20,11 @@ export abstract class BaseService<TDomain, TRepo extends BaseRepo<TDomain>> {
 	}
 	protected async onIsValid(data: TDomain): Promise<void> {}
 
-	public async create(data: TDomain): Promise<TDomain> {
+	public async create(data: TDomain): Promise<string> {
 		await this.onIsValid(data);
-		const oKey = await this.repo.insert(data);
-		return oKey;
+		data.id = UUIDHelper.sortable();
+		const rt = await this.repo.insert(data);
+		return data.id;
 	}
 
 	public async update(id: string, data: TDomain): Promise<TDomain> {
@@ -30,7 +33,7 @@ export abstract class BaseService<TDomain, TRepo extends BaseRepo<TDomain>> {
 		return data;
 	}
 
-	public async delete(key: TDomain): Promise<void> {
-		await this.repo.delete(key);
+	public async delete(id: string): Promise<void> {
+		await this.repo.delete(id);
 	}
 }

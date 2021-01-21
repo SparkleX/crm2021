@@ -1,6 +1,6 @@
 import { BaseRepo, sql } from "../core";
 import { SqlRepo } from "../core/object/sql/SqlRepo";
-import { CampaignModel } from "../model/CampaignModel";
+import { CampaignModel } from "../gen/model/CampaignModel";
 
 export class CampaignRepo extends SqlRepo<CampaignModel> {}
 

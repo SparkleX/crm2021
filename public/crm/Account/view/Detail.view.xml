@@ -1,4 +1,12 @@
-<mvc:View id="idBpDetail" controllerName="sap.nsme.crm.Account.controller.Detail" xmlns:t="sap.ui.table" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:widget="sap.nsme.share.widget" displayBlock="true">
+<mvc:View id="idBpDetail" controllerName="sap.nsme.crm.Account.controller.Detail"
+	xmlns:t="sap.ui.table"
+	xmlns:uxap="sap.uxap"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout"
+	xmlns:table="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:widget="sap.nsme.share.widget" displayBlock="true">
 	<uxap:ObjectPageLayout id="objectPageLayout" toggleHeaderOnTitleClick="false" preserveHeaderStateOnScroll="true" headerContentPinnable="false" upperCaseAnchorBar="false">
 		<uxap:headerTitle>
 			<uxap:ObjectPageDynamicHeaderTitle>
@@ -18,13 +26,11 @@
 				</uxap:snappedHeading>
 
 				<uxap:expandedContent>
-					<Text text="{/_id}" />
+					<Toolbar style="Clear">
+						<Text text="{/code}" />
+						<Text text="{/name}" />
+					</Toolbar>
 				</uxap:expandedContent>
-
-				<uxap:snappedContent>
-					<Text text="{/_id}" />
-				</uxap:snappedContent>
-
 				<uxap:actions></uxap:actions>
 				<uxap:navigationActions>
 					<uxap:ObjectPageHeaderActionButton id="sysNewButton" type="Transparent" text="New" hideText="false" hideIcon="true" press="onNew" />
@@ -37,9 +43,6 @@
 		<uxap:headerContent>
 			<layout:HorizontalLayout>
 				<Toolbar style="Clear">
-					<Label text="Test 1" />
-					<Label text="Test 2" />
-					<Label text="Test 3" />
 					<Button text="TEST" press=".onTest"></Button>
 					<Button text="To JSON" press=".onDebugToJson"></Button>
 				</Toolbar>
@@ -53,113 +56,26 @@
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
 									<layout:BlockLayoutCell title="General">
-										<Label text="Account ID" />
-										<Input value="{/_id}" />
-										<Label text="Account Description" />
+										<Label text="Code" />
+										<Input value="{/code}" />
+										<Label text="Name" />
 										<Input value="{/name}" />
-										<Label text="Account Type" />
-										<Input />
-										<Label text="Start Date" />
-										<DatePicker value="{/startDate}" />
-										<Label text="End Date" />
-										<DatePicker value="{/endDate}" />
-										<Label text="Status" />
-										<Select showSecondaryValues="true" width="100%" dataBind="Account.Status" selectedKey="{/Status}" items="{codes>/common.YesNo}">
-											<core:ListItem key="{codes>value}" text="{codes>desc}" additionalText="{codes>value}" />
-										</Select>
-										<Label text="Status2" />
-										<widget:Select selectedKey="{/Status}" items="{codes>/common.YesNo}">
-											<!--<core:ListItem key="{codes>value}" text="{codes>value}" additionalText= "{codes>desc}"/>-->
-										</widget:Select>
-										<Label text="Target Group" />
-										<Input showValueHelp="true" valueHelpRequest=".onValueHelpRequested" />
-
-										<Label text="Target Group Status" />
-										<widget:ValueSelect linkTo="TargetGroup" value="{/TargetGroup}"/>
-										<Label text="Target Group Members" />
-										<Input />
-										<Label text="Additional Information" />
-										<Input />
 									</layout:BlockLayoutCell>
 									<layout:BlockLayoutCell title="Administrative Data">
-										<Label text="Created On" />
-										<DateTimePicker />
-										<Label text="Created By" />
-										<DateTimePicker />
-										<Label text="Executed On" />
-										<Input />
-										<Label text="Executed By" />
-										<Input />
+										<Label text="Country" />
+										<Input value="{/country}"/>
+										<Label text="City" />
+										<Input value="{/city}"/>
+										<Label text="Street" />
+										<Input value="{/street}" />
 									</layout:BlockLayoutCell>
 								</layout:BlockLayoutRow>
+							</layout:BlockLayout>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
 
-							</layout:BlockLayout>
-						</uxap:blocks>
-					</uxap:ObjectPageSubSection>
-				</uxap:subSections>
-			</uxap:ObjectPageSection>
-			<uxap:ObjectPageSection>
-				<uxap:subSections>
-					<uxap:ObjectPageSubSection title="Response Options">
-						<uxap:blocks>
-							<layout:BlockLayout>
-								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title="Response Options"></layout:BlockLayoutCell>
-								</layout:BlockLayoutRow>
-							</layout:BlockLayout>
-						</uxap:blocks>
-					</uxap:ObjectPageSubSection>
-				</uxap:subSections>
-			</uxap:ObjectPageSection>
-			<uxap:ObjectPageSection>
-				<uxap:subSections>
-					<uxap:ObjectPageSubSection title="Execution Details">
-						<uxap:blocks>
-							<layout:BlockLayout>
-								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title="Response Options">
-										<t:Table id="table1" rows="{/Lines}">
-											<t:extension>
-												<OverflowToolbar>
-													<Button icon="sap-icon://add" press="onRowAdd" />
-													<Button icon="sap-icon://delete" press="onRowDelete"></Button>
-												</OverflowToolbar>
-											</t:extension>
-											<t:columns>
-												<t:Column>
-													<Label text="Product Name" />
-													<t:template>
-														<Input value="{name}" wrapping="false" />
-													</t:template>
-												</t:Column>
-												<t:Column>
-													<Label text="Product Id" />
-													<t:template>
-														<Input value="{_id}" />
-													</t:template>
-												</t:Column>
-											</t:columns>
-										</t:Table>
-									</layout:BlockLayoutCell>
-								</layout:BlockLayoutRow>
-							</layout:BlockLayout>
-						</uxap:blocks>
-					</uxap:ObjectPageSubSection>
-				</uxap:subSections>
-			</uxap:ObjectPageSection>
-			<uxap:ObjectPageSection>
-				<uxap:subSections>
-					<uxap:ObjectPageSubSection title="Attachment">
-						<uxap:blocks>
-							<layout:BlockLayout>
-								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title="Attachments"></layout:BlockLayoutCell>
-								</layout:BlockLayoutRow>
-							</layout:BlockLayout>
-						</uxap:blocks>
-					</uxap:ObjectPageSubSection>
-				</uxap:subSections>
-			</uxap:ObjectPageSection>
 		</uxap:sections>
 		<uxap:footer>
 			<OverflowToolbar>

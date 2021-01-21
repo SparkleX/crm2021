@@ -1,14 +1,17 @@
 [
 	{
 		"id": "11eb-5bbe-042acdc0-9be9-ff4cf8ec5831",
+		"code": "MSFT",
 		"name": "Microsoft"
 	},
 	{
 		"id": "11eb-5bbe-042b42f0-9be9-ff4cf8ec5831",
+		"code": "HP",
 		"name": "HP"
 	},
 	{
 		"id": "11eb-5bbe-042b42f1-9be9-ff4cf8ec5831",
+		"code": "IBM",
 		"name": "IBM"
 	}
 ]

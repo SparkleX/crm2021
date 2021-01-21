@@ -24,74 +24,32 @@
 			<f:DynamicPageHeader pinnable="true">
 				<fb:FilterBar id="idFilterBar" reset="onReset" useToolbar="false" showGoOnFB="true">
 				 	<fb:filterItems>
-						<fb:FilterItem name="A" label="Name">
+						<fb:FilterItem name="A" label="Code">
 							<fb:control>
 								<Input />
 							</fb:control>
 						</fb:FilterItem>
-						<fb:FilterItem name="B" label="Category">
+						<fb:FilterItem name="B" label="Name">
 							<fb:control>
 								<Input />							
 							</fb:control>
 						</fb:FilterItem>
-						<fb:FilterItem name="C" label="SupplierName">
-							<fb:control>
-								<Input />
-							</fb:control>
-						</fb:FilterItem> 
 					</fb:filterItems>
 				</fb:FilterBar>
-				<Toolbar style = "Clear">
-					<Select enabled="{/Enabled}" editable="{/Editable}" forceSelection="false" selectedKey="{/SelectedProduct2}" items="{
-							path: '/ProductCollection2',
-							sorter: { path: 'Name' }
-						}">
-						<core:Item key="{ProductId}" text="{Name}" />
-					</Select>
-					<Label text="Group By"/>
-					<Select />
-					<ToolbarSpacer/>
-
-				</Toolbar>
-				<!--<fb:FilterBar id="idFilterBar" reset="onReset" useToolbar="false" showGoOnFB="true">
-				</fb:FilterBar>-->
-			</f:DynamicPageHeader>
+				</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
 			<t:Table id="table1" rows="{/}" rowActionCount="1">
 				<t:extension>
 					<OverflowToolbar>
 						<Button text="New" type="Emphasized"  press="onClickNew" />
-						<Button text="{i18n>edit}"></Button>
-						<Button text="Export"></Button>
-						<Button text="Copy"></Button>	
-						<MenuButton text="Add Response">
-							<menu>
-								<Menu>
-									<MenuItem text="Edit" icon="sap-icon://edit" press="onPress">
-										<customData>
-											<core:CustomData key="target" value="p1" />
-										</customData>
-									</MenuItem>
-									<MenuItem text="Save" icon="sap-icon://save" press="onPress" />
-									<MenuItem text="Open" icon="sap-icon://open-folder" press="onPress" />
-								</Menu>
-							</menu>
-						</MenuButton>
-						<MenuButton text="Change Status"></MenuButton>						
-						<ToolbarSpacer/>
-						<Button icon="sap-icon://delete" type="Transparent" press="onDelete" />
-						<Button icon="sap-icon://action-settings" type="Transparent" press="onTestClick" />
-						<SearchField width="300px"/>
-						<Button icon="sap-icon://filter"></Button>
-						<Button icon="sap-icon://business-objects-experience"></Button>						
 					</OverflowToolbar>
 				</t:extension>				
 				<t:columns>
 					<t:Column >
-						<Label text="ID" />
+						<Label text="Code" />
 						<t:template>
-							<Text text="{id}" wrapping="false" />
+							<Text text="{code}"/>
 						</t:template>
 					</t:Column>
 					<t:Column >

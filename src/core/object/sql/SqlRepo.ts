@@ -11,11 +11,11 @@ export class SqlRepo<TDomain> extends BaseRepo<TDomain> {
 	public async findById(id: string): Promise<TDomain> {
 		const collection = this.getConnection();
 		const rt = (await collection.executeQuery(`select * from "${this.name}" where "id"=$1`, [id])) as any;
-		return rt;
+		return rt[0];
 	}
 	public async findAll(): Promise<TDomain[]> {
 		const collection = this.getConnection();
-		const data = (await collection.executeQuery(`select * from "${this.name}"`)) as any;
+		const data = (await collection.executeQuery(`select * from "${this.name}" order by "id"`)) as any;
 		return data;
 	}
 	public async insert(data: TDomain): Promise<TDomain> {
@@ -35,13 +35,13 @@ export class SqlRepo<TDomain> extends BaseRepo<TDomain> {
 			const value = data[column];
 			rt.params.push(value);
 			params += `$${i},`;
-			columns += column;
+			columns += `"${column}",`;
 			i++;
 		}
 		params = params.substr(0, params.length-1);
 		columns = columns.substr(0, columns.length-1);
 
-		rt.sql = `insert into ${this.name}(${columns}) values( ${params} )`;
+		rt.sql = `insert into "${this.name}"(${columns}) values( ${params} )`;
 		return rt;
 	}
 	public async update(id: string, data: TDomain): Promise<TDomain> {
@@ -59,16 +59,16 @@ export class SqlRepo<TDomain> extends BaseRepo<TDomain> {
 		for (const column in data) {
 			const value = data[column];
 			rt.params.push(value);
-			columns += `"column" = $${i},`;
+			columns += `"${column}" = $${i},`;
 			i++;
 		}
 		columns = columns.substr(0, columns.length-1);
 
 		rt.params.push(data["id"]);
-		rt.sql = `update ${this.name} set (${columns}) where "id"=$${i}`;
+		rt.sql = `update "${this.name}" set ${columns} where "id"=$${i}`;
 		return rt;
 	}
-	public async delete(id: any): Promise<void> {
+	public async delete(id: string): Promise<void> {
 		const collection = this.getConnection();
 		const rt = await collection.execute(`delete from "${this.name}" where "id"=$1`, [id]);
 		console.debug(rt);
