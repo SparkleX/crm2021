@@ -12,9 +12,11 @@ class CreateDatabase {
 			database: process.env.DB_NAME,
 			password: process.env.DB_PASS,
 			port: parseInt(process.env.DB_PORT),
-			ssl: {
-				rejectUnauthorized: false
-			}
+			ssl: process.env.DB_SSL
+				? {
+						rejectUnauthorized: false
+				  }
+				: undefined
 		} as any;
 		const driver = new PgSqlDriver();
 		const conn = await driver.connect(config);

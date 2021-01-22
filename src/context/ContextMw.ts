@@ -38,9 +38,9 @@ export async function initPool(): Promise<void> {
 		database: process.env.DB_NAME,
 		password: process.env.DB_PASS,
 		port: parseInt(process.env.DB_PORT),
-		ssl: {
+		ssl: process.env.DB_SSL?{
 			rejectUnauthorized: false
-		}
+		}: undefined
 	} as any;
 	oPool = new GenericPool(driver, config,{min: 2, max:5});
 
