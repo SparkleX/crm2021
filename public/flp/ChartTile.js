@@ -1,32 +1,30 @@
 sap.ui.define(
-	["sap/ushell/library", "sap/ushell/ui/tile/TileBase", "sap/m/Input", "sap/ushell/ui/tile/StaticTileRenderer"],
-	function (library, BaseClass, Input) {
+	["sap/m/GenericTile"],
+	function (BaseClass, Input) {
 		"use strict";
 
 		var theClass = BaseClass.extend("sap.nsme.flp.ChartTile", {
 			metadata: {
-				aggregations: {
-					content1: { type: "sap.m.Input", multiple: false, visibility: "hidden" }
+				properties: {
+					targetURL: { type: "string", group: "Behavior" }
 				}
 			}
 		});
 
 		theClass.prototype.init = function () {
-
 			BaseClass.prototype.init.call(this);
 		};
 
 		theClass.prototype.applySettings = function (mSettings, oScope) {
 			BaseClass.prototype.applySettings.call(this, mSettings, oScope);
+			//this.attachPress(this.onPress)
 		};
 		theClass.prototype.onBeforeRendering = function () {
 			BaseClass.prototype.onBeforeRendering.call(this);
-			this.setAggregation(
-				"content1",
-				new Input()
-			);
 		};
-
+		/*theClass.prototype.onPress = function () {
+			//alert(this.getTargetURL());
+		};*/
 		return theClass;
 	}
 );
