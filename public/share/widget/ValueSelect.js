@@ -1,6 +1,6 @@
 sap.ui.define(
-	["sap/ui/core/Control", "sap/m/Link", "sap/m/Input", "sap/nsme/share/ovs/ValueSelectUtils"],
-	function (BaseClass, Link, Input, ValueSelectUtils) {
+	["sap/ui/core/Control", "sap/m/Link", "sap/m/Input", "sap/nsme/share/ovs/ValueSelectUtils", "sap/nsme/share/quick/QuickViewUtils"],
+	function (BaseClass, Link, Input, ValueSelectUtils, QuickViewUtils) {
 		"use strict";
 		var theClass = BaseClass.extend("sap.nsme.share.widget.ValueSelect", {
 			metadata: {
@@ -59,7 +59,16 @@ sap.ui.define(
 		};
 		theClass.prototype.onLinkPress = function (evt) {
 			var oInput = this.getInputControl();
-			alert(oInput.getSelectedKey());
+			//alert(oInput.getSelectedKey());
+			const oLink = this.getLinkControl();
+
+			const params = {
+				id: oInput.getSelectedKey(),
+				object: this.getLinkTo(),
+				parent: oLink
+			}
+			QuickViewUtils.show(params);
+
 		};
 		theClass.prototype.setValue = function (value) {
 			this.setProperty("value", value, true);
