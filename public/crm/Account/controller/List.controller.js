@@ -3,10 +3,9 @@ sap.ui.define(
 		"sap/nsme/share/controller/BaseListController",
 		"sap/m/MessageToast",
 		"sap/ui/core/Fragment",
-		"sap/ui/model/json/JSONModel",
-		"sap/nsme/share/utils/ControllerUtils"
+		"sap/ui/model/json/JSONModel"
 	],
-	function (Controller, MessageToast, Fragment, JSONModel, ControllerUtils) {
+	function (Controller, MessageToast, Fragment, JSONModel) {
 		"use strict";
 
 		var theClass = Controller.extend("sap.nsme.crm.Account.controller.List", {});

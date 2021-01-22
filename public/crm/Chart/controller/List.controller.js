@@ -4,10 +4,9 @@ sap.ui.define(
 		"sap/m/MessageToast",
 		"sap/ui/core/Fragment",
 		"sap/ui/model/json/JSONModel",
-		"sap/nsme/share/utils/ControllerUtils",
 		'sap/viz/ui5/format/ChartFormatter',
 	],
-	function (Controller, MessageToast, Fragment, JSONModel, ControllerUtils, ChartFormatter) {
+	function (Controller, MessageToast, Fragment, JSONModel, ChartFormatter) {
 		"use strict";
 
 		var theClass = Controller.extend("sap.nsme.crm.Chart.controller.List", {});

@@ -6,9 +6,9 @@ sap.ui.define(
 		"sap/ui/model/json/JSONModel",
 		"sap/ui/core/routing/History",
 		"sap/nsme/share/utils/ViewUtils",
-		"sap/nsme/share/utils/TableUtils"
+		"sap/nsme/share/utils/CommonUtils"
 	],
-	function (Controller, MessageToast, Fragment, JSONModel, History, ViewUtils, TableUtils) {
+	function (Controller, MessageToast, Fragment, JSONModel, History, ViewUtils, CommonUtils) {
 		"use strict";
 
 		const ViewMode = "ViewMode";
@@ -81,7 +81,7 @@ sap.ui.define(
 				case EditMode:
 					oObjectPage.setShowFooter(true);
 					this.setEditable(true);
-					if(oDeleteButton) oDeleteButton.setVisible(false);
+					if (oDeleteButton) oDeleteButton.setVisible(false);
 					oEditButton.setVisible(false);
 					oNewButton.setVisible(false);
 					oNextButton.setVisible(false);
@@ -92,7 +92,7 @@ sap.ui.define(
 				case ViewMode:
 					oObjectPage.setShowFooter(false);
 					this.setEditable(false);
-					if(oDeleteButton) oDeleteButton.setVisible(true);
+					if (oDeleteButton) oDeleteButton.setVisible(true);
 					oEditButton.setVisible(true);
 					oNewButton.setVisible(true);
 					oNextButton.setVisible(true);
@@ -134,7 +134,25 @@ sap.ui.define(
 			const method = this.formMode == AddMode ? "post" : "put";
 			const url = this.formMode == AddMode ? `/api/${name}` : `/api/${name}/${this.dataId}`;
 			const that = this;
-			jQuery.ajax({
+			CommonUtils.asyncCall(async () => {
+				await jQuery.ajax({
+					//url: url + "asdfasdfasfafa",
+					url: "aaa",
+					method: method,
+					contentType: "application/json",
+					data: json
+				});
+				MessageToast.show("Successful");
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
+				if (that.formMode == EditMode) {
+					that.setFormMode(ViewMode);
+				} else {
+					oRouter.navTo("detail", {
+						id: data
+					});
+				}
+			});
+			/*jQuery.ajax({
 				url: url,
 				method: method,
 				contentType: "application/json",
@@ -150,7 +168,7 @@ sap.ui.define(
 						});
 					}
 				}
-			});
+			});*/
 			//this.setFormMode(ViewMode);
 		};
 
