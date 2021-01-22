@@ -136,8 +136,7 @@ sap.ui.define(
 			const that = this;
 			CommonUtils.asyncCall(async () => {
 				await jQuery.ajax({
-					//url: url + "asdfasdfasfafa",
-					url: "aaa",
+					url: url,
 					method: method,
 					contentType: "application/json",
 					data: json
@@ -152,24 +151,6 @@ sap.ui.define(
 					});
 				}
 			});
-			/*jQuery.ajax({
-				url: url,
-				method: method,
-				contentType: "application/json",
-				data: json,
-				success: function (data) {
-					MessageToast.show("Successful");
-					var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
-					if (that.formMode == EditMode) {
-						that.setFormMode(ViewMode);
-					} else {
-						oRouter.navTo("detail", {
-							id: data
-						});
-					}
-				}
-			});*/
-			//this.setFormMode(ViewMode);
 		};
 
 		theClass.prototype.onEdit = function () {
