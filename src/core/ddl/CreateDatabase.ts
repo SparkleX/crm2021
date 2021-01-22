@@ -11,8 +11,11 @@ class CreateDatabase {
 			host: process.env.DB_HOST,
 			database: process.env.DB_NAME,
 			password: process.env.DB_PASS,
-			port: parseInt(process.env.DB_PORT)
-		};
+			port: parseInt(process.env.DB_PORT),
+			ssl: {
+				rejectUnauthorized: false
+			}
+		} as any;
 		const driver = new PgSqlDriver();
 		const conn = await driver.connect(config);
 		await oCreateTable.execute(conn);

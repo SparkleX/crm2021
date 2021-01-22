@@ -4,19 +4,20 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node dist/main",
+		"start": "npm run ddl && node dist/main",
 		"schema": "ts-node scripts/schema",
 		"prebuild": "npm run clean && npm run schema && ts-index && ts-node scripts/prebuild",
 		"build": "tsc",
 		"clean": "rimraf .tsBuildInfoFile dist src/gen",
 		"dev": "nodemon",
-		"ddl": "ts-node src/core/ddl/CreateDatabase"
+		"ddl": "node dist/core/ddl/CreateDatabase"
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"cls-hooked": "^4.2.2",
 		"db-conn": "^1.3.0",
+		"db-conn-pgsql": "^1.0.0",
 		"db-conn-pool": "^1.0.0",
 		"decimal.js": "^10.2.1",
 		"dotenv": "^8.2.0",
