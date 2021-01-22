@@ -1,16 +1,26 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-	<Popover title="Account" class="sapUiContentPadding" placement="Auto">
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form">
+	<Popover title="Account" class="sapUiContentPadding" placement="Auto" contentMinWidth="300px">
 		<footer>
 			<Toolbar>
 				<ToolbarSpacer />
-				<!--<Link text="Go" target="_blank" href="#Account-App&amp;/detail/{/id}" />-->
-				<Button icon="sap-icon://action" press=".onGo"/>
 			</Toolbar>
-		</footer>
-		<Label text="Basic Information" width="100%" />
-		<Text  text="{/code}" width="100%" />
-		<Text  text="{/name}" width="100%" />
-		<Label text="Main Address" width="100%" />
-		<Text  text="{/street}" width="100%" />
+		</footer>	
+		<endButton>
+			<Button icon="sap-icon://action" press=".onGo" />
+		</endButton>
+		<l:VerticalLayout>	
+			<Title text="Basic Information" titleStyle="H5"/>
+			<Label text=""/>
+			<Label text="Code"/>
+			<Text id="idCode" text="{/code}"/>
+			<Label text="Name"/>
+			<Text text="{/name}" />
+			<Label text=""/>
+			<Title text="Main Address" titleStyle="H5"/>
+			<Text text="{/street}"/>
+		</l:VerticalLayout>
 	</Popover>
 </core:FragmentDefinition>
