@@ -19,7 +19,7 @@ sap.ui.define(
 		theClass.prototype.init = function () {
 			this.setAggregation(
 				"_input",
-				new Input({ showValueHelp: true, valueHelpRequest: this.valueHelpRequest.bind(this) })
+				new Input({ showValueHelp: true, valueHelpRequest: this.valueHelpRequest.bind(this), visible: false })
 			);
 			this.setAggregation("_link", new Link({ text: "[NULL]", press: this.onLinkPress.bind(this) }));
 			BaseClass.prototype.init.call(this);
@@ -40,8 +40,8 @@ sap.ui.define(
 		theClass.prototype.setEditable = function (value) {
 			const oInput = this.getInputControl();
 			const oLink = this.getLinkControl();
-			//oInput.setVisible(value);
-			//oLink.setVisible(!value);
+			oInput.setVisible(value);
+			oLink.setVisible(!value);
 		};
 
 		theClass.prototype.valueHelpRequest = function (value) {
@@ -72,6 +72,11 @@ sap.ui.define(
 		};
 		theClass.prototype.setValue = function (value) {
 			this.setProperty("value", value, true);
+			var oInput = this.getInputControl();
+			const oLink = this.getLinkControl();						
+			oInput.setSelectedKey(value);
+			oInput.setValue(value);
+			oLink.setText(value);
 		};
 		theClass.prototype.getValue = function () {
 			var oInput = this.getInputControl();

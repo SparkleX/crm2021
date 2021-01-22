@@ -77,6 +77,12 @@
 														<widget:ValueSelect value="{accountId}"  linkTo="Account"/>
 													</t:template>
 												</t:Column>
+												<t:Column>
+													<Label text="Account2" />
+													<t:template>
+														<widget:ValueSelect value="{accountId}"  linkTo="Account"/>
+													</t:template>
+												</t:Column>												
 											</t:columns>
 										</t:Table>
 									</layout:BlockLayoutCell>
