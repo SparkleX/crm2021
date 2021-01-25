@@ -31,6 +31,9 @@ export abstract class BaseService<TDomain extends BaseModel, TRepo extends BaseR
 		return data.id;
 	}
 	protected async insertArray(array: BaseModel[], parent: string, repo: SqlRepo<BaseModel>): Promise<void> {
+		if(!array) {
+			return ;
+		}
 		for (const a of array) {
 			a.id = UUIDHelper.sortable();
 			a.parent = parent;
@@ -38,6 +41,9 @@ export abstract class BaseService<TDomain extends BaseModel, TRepo extends BaseR
 		}
 	}
 	protected async updateArray(array: BaseModel[], parent: string, repo: SqlRepo<BaseModel>): Promise<void> {
+		if(!array) {
+			return ;
+		}
 		for (const a of array) {
 			a.parent = parent;
 			if (a.id) {

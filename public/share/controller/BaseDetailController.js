@@ -159,27 +159,27 @@ sap.ui.define(
 			});
 		};
 		theClass.prototype.onSave = function () {
-			var model = this.getView().getModel();
-			var data = model.getData();
-			var json = JSON.stringify(data);
-			const name = this.getTableName();
-			const method = this.formMode == AddMode ? "post" : "put";
-			const url = this.formMode == AddMode ? `/api/${name}` : `/api/${name}/${this.dataId}`;
-			const that = this;
-			CommonUtils.asyncCall(async () => {
-				await jQuery.ajax({
+			CommonUtils.asyncCall(this, async function () {
+				var model = this.getView().getModel();
+				var data = model.getData();
+				var json = JSON.stringify(data);
+				const name = this.getTableName();
+				const method = this.formMode == AddMode ? "post" : "put";
+				const url = this.formMode == AddMode ? `/api/${name}` : `/api/${name}/${this.dataId}`;
+				const ajaxResult = await jQuery.ajax({
 					url: url,
 					method: method,
 					contentType: "application/json",
 					data: json
 				});
+				const id = this.formMode == AddMode ? ajaxResult : ajaxResult.id;
 				MessageToast.show("Successful");
-				var oRouter = sap.ui.core.UIComponent.getRouterFor(that);
-				if (that.formMode == EditMode) {
-					that.setFormMode(ViewMode);
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+				if (this.formMode == EditMode) {
+					this.setFormMode(ViewMode);
 				} else {
 					oRouter.navTo("detail", {
-						id: data
+						id: id
 					});
 				}
 			});

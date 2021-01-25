@@ -5,6 +5,7 @@ import * as cls from "cls-hooked";
 import { Context } from "./Context";
 import { MongoConnection } from "../core/mongo/MongoConnection";
 import { PgSqlDriver, PgSqlConnectionConfig } from "db-conn-pgsql";
+import * as Koa from "koa";
 
 //const oDriver = new MongoDriver();
 //const oPool = new GenericPool(oDriver, "mongodb://localhost:27017", {min: 2, max:5});
@@ -17,7 +18,7 @@ export function getContext () {
 	return rt;
 }
 
-export async function contextMw(ctx: Context, next: Next): Promise<any> {
+export async function contextMw(ctx: Koa.Context, next: Next): Promise<any> {
 	await oClsSession.runAndReturn(async () => {
 		const conn = await oPool.getConnection();
 		const context = new Context(conn);
@@ -26,6 +27,9 @@ export async function contextMw(ctx: Context, next: Next): Promise<any> {
 			await next();
 		} catch (e) {
 			console.error(e);
+			ctx.body = {message: e.message, stack: e.stack} ;
+			ctx.status = 400;
+			
 		}
 		await conn.close();
 	});
