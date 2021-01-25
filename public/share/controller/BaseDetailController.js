@@ -115,10 +115,42 @@ sap.ui.define(
 			//this.getView().invalidate();
 		};
 
-		theClass.prototype.onNext = function () {};
-		theClass.prototype.onPrev = function () {};
-		theClass.prototype.onFirst = function () {};
-		theClass.prototype.onLast = function () {};
+		theClass.prototype.onNext = function () {
+			const oView = this.getView();
+			let oModel = oView.getModel();
+			const id = oModel.getData().id;
+			const name = this.getTableName();
+			oModel = new JSONModel(`/api/${name}/${id}/next`);
+			this.getView().setModel(oModel);
+			oModel.refresh(true);
+		};
+		theClass.prototype.onPrev = function () {
+			const oView = this.getView();
+			let oModel = oView.getModel();
+			const id = oModel.getData().id;
+			const name = this.getTableName();
+			oModel = new JSONModel(`/api/${name}/${id}/prev`);
+			this.getView().setModel(oModel);
+			oModel.refresh(true);
+		};
+		theClass.prototype.onFirst = function () {
+			const oView = this.getView();
+			let oModel = oView.getModel();
+			const id = oModel.getData().id;
+			const name = this.getTableName();
+			oModel = new JSONModel(`/api/${name}/first`);
+			this.getView().setModel(oModel);
+			oModel.refresh(true);
+		};
+		theClass.prototype.onLast = function () {
+			const oView = this.getView();
+			let oModel = oView.getModel();
+			const id = oModel.getData().id;
+			const name = this.getTableName();
+			oModel = new JSONModel(`/api/${name}/last`);
+			this.getView().setModel(oModel);
+			oModel.refresh(true);
+		};
 
 		theClass.prototype.onNew = function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
