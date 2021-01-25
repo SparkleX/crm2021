@@ -1,6 +1,6 @@
 sap.ui.define(
-	["sap/ui/core/mvc/Controller", "sap/m/MessageToast", "sap/ui/core/Fragment", "sap/ui/model/json/JSONModel"],
-	function (Controller, MessageToast, Fragment, JSONModel) {
+	["sap/ui/core/mvc/Controller", "sap/m/MessageToast", "sap/ui/core/Fragment", "sap/ui/model/json/JSONModel", "sap/ui/core/UIComponent"],
+	function (Controller, MessageToast, Fragment, JSONModel, UIComponent) {
 		"use strict";
 
 		var theClass = Controller.extend("sap.nsme.share.controller.BaseListController", {
@@ -16,11 +16,19 @@ sap.ui.define(
 		};
 
 		theClass.prototype.onInit = function () {
+			var oRouter = UIComponent.getRouterFor(this);
+			oRouter.getRoute("list").attachPatternMatched(this._onObjectMatched, this);
+		};
+		theClass.prototype._onObjectMatched = function (oEvent) {
+			this.refresh();
+		};	
+		theClass.prototype.refresh = function (oEvent) {
 			const name = this.getTableName();
 			var oModel = new JSONModel(`/api/${name}`);
 			this.getView().setModel(oModel);
 			oModel.refresh(true);
 		};
+
 		theClass.prototype.onClickNew = function (oEvent) {
 			//var oItem = oEvent.getSource();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);

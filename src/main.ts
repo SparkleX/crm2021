@@ -1,5 +1,5 @@
 import koaStatic from "koa-static";
-import Koa from "koa";
+import Koa, { Next } from "koa";
 import koaLogger from "koa-logger";
 import koaMount from "koa-mount";
 import bodyParser from "koa-bodyparser";
@@ -42,6 +42,16 @@ class Application {
 		app.use(
 			koaMount("/index.html", function (ctx: Context) {
 				ctx.redirect("/web/index.html");
+			})
+		);
+
+		app.use(
+			koaMount("/", async function (ctx: Context, next: Next) {
+				if(ctx.url==="/") {
+					ctx.redirect("/web/index.html");
+					return;
+				}
+				await next();
 			})
 		);
 
