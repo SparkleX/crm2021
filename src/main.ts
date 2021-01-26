@@ -4,8 +4,11 @@ import koaLogger from "koa-logger";
 import koaMount from "koa-mount";
 import bodyParser from "koa-bodyparser";
 import { contextMw, initPool } from "./context/ContextMw";
-import * as controller from "./controller";
+import * as controller from "./controller/object";
+import * as mashupController from "./controller/mashup";
+
 import { Context } from "koa";
+
 import { oCodesController } from "./controller/codes/CodesController";
 import { oValueSelectController } from "./ovs/ValueSelectController";
 import { oDebugController } from "./dbg/DebugController";
@@ -17,6 +20,15 @@ class Application {
 		await initPool();
 		this.startWeb();
 	}
+	private scanController(index, koa:Koa) {
+		for (const routerName in index as any) {
+			if (!routerName.startsWith("o") || !routerName.endsWith("Controller")) {
+				continue;
+			}
+			const router = index[routerName];
+			koa.use(router.routes());
+		}
+	}
 	startWeb(): void {
 		const app = new Koa();
 		app.use(koaLogger());
@@ -25,6 +37,7 @@ class Application {
 		app.use(koaMount("/web", koaStatic("public")));
 
 		const oApiKoa = new Koa();
+
 		app.use(koaMount("/api", contextMw));
 		for (const routerName in controller as any) {
 			if (!routerName.startsWith("o") || !routerName.endsWith("Controller")) {
@@ -35,9 +48,15 @@ class Application {
 		}
 		oApiKoa.use(oCodesController.routes());
 		oApiKoa.use(oValueSelectController.routes());
-
 		app.use(koaMount("/api", oApiKoa));
 		app.use(oDebugController.routes());
+
+		const oMashupKoa = new Koa();
+		this.scanController(mashupController ,oMashupKoa);
+		app.use(koaMount("/msp", contextMw));
+		app.use(koaMount("/msp", oMashupKoa));
+
+		//app.use(koaMount("/api", oApiKoa));
 
 		app.use(
 			koaMount("/index.html", function (ctx: Context) {

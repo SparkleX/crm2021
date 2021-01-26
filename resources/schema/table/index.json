@@ -15,16 +15,19 @@
 				"$ref": "Field.json"
 			}
 		},
+		"transientFields": {
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "Field.json"
+			}
+		},
 		"fieldOrder": {
 			"type": "array",
 			"items": {
 				"type": "string"
 			}
 		},
-		"transient": {
-			"type": "boolean"
-		},
-		"primaryKey" : {
+		"primaryKey": {
 			"type": "array",
 			"items": {
 				"type": "string"

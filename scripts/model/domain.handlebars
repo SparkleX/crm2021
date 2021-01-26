@@ -1,16 +1,15 @@
 import Decimal from "decimal.js";
 import { BaseModel } from "../../core/model/BaseModel";
 
-export interface {{name}}Model extends BaseModel{
-{{#each fields}}
-{{@key}}?: {{#convertType type}}{{/convertType}}{{#unless @last}};{{/unless}}
-{{/each}}
+
+export interface {{name}}ModelTransient {
+
 }
 
-{{#if templates}}
-export {
-{{#each templates}}	
-    {{@root.name}}Model as {{this}}Model{{#unless @last}},{{/unless}}
+export interface {{name}}Model extends BaseModel{
+{{#each fields}}
+	{{@key}}?: {{#convertType type}}{{/convertType}}{{#unless @last}};{{/unless}}
 {{/each}}
+	t: {{name}}ModelTransient;
 }
-{{/if}}
+

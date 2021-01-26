@@ -1,10 +1,10 @@
-import { BaseService } from "../core/object/BaseService";
-import { TargetGroupMemberModel } from "../gen/model/TargetGroupMemberModel";
-import { TargetGroupModel } from "../gen/model/TargetGroupModel";
-import { oTargetGroupMemberRepo } from "../repo/TargetGroupMemberRepo";
-import { TargetGroupRepo, oTargetGroupRepo } from "../repo/TargetGroupRepo";
+import { BaseService } from "../../core/object/BaseService";
+import { TargetGroupMemberModel } from "../../gen/model/TargetGroupMemberModel";
+import { TargetGroupModel } from "../../gen/model/TargetGroupModel";
+import { oTargetGroupMemberRepo } from "../../repo/TargetGroupMemberRepo";
+import { TargetGroupRepo, oTargetGroupRepo } from "../../repo/TargetGroupRepo";
 
-class TargetGroupService extends BaseService<TargetGroupModel, TargetGroupRepo> {
+export class TargetGroupService extends BaseService<TargetGroupModel, TargetGroupRepo> {
 	public async findById(id: string): Promise<TargetGroupModel> {
 		const rt = await super.findById(id);
 		rt["TargetGroupMember"] = await oTargetGroupMemberRepo.findByParent(id);

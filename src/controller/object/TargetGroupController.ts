@@ -1,5 +1,5 @@
-import { BaseController } from "../core";
-import { oTargetGroupService } from "../service/TargetGroupService";
+import { BaseController } from "../../core";
+import { oTargetGroupService } from "../../service/object/TargetGroupService";
 
 
 

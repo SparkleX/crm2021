@@ -1,5 +1,5 @@
-import { BaseController } from "../core";
-import { oCampaignService } from "../service/CampaignService";
+import { BaseController } from "../../core";
+import { oCampaignService } from "../../service/object/CampaignService";
 
 
 

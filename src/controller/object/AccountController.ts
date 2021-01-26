@@ -1,5 +1,5 @@
-import { BaseController } from "../core";
-import { oAccountService } from "../service/AccountService";
+import { BaseController } from "../../core";
+import { oAccountService } from "../../service/object/AccountService";
 
 
 
