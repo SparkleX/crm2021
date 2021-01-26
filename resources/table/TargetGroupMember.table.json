@@ -2,7 +2,8 @@
 	"name": "TargetGroupMember",
 	"fields": {
 		"accountId": {
-			"type": "guid"
+			"type": "guid",
+			"linkTo": "Account"
 		}
 	},
 	"fieldOrder": ["accountId"]

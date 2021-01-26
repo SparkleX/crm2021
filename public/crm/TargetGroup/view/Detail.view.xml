@@ -63,7 +63,7 @@
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
 									<layout:BlockLayoutCell title="">
-										<t:Table id="table1" rows="{/TargetGroupMember}">
+										<t:Table id="table1" rows="{/Member}">
 											<t:extension>
 												<OverflowToolbar>
 													<Button icon="sap-icon://add" press="onRowAdd" />

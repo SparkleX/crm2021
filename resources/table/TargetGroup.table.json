@@ -1,5 +1,8 @@
 {
 	"name": "TargetGroup",
+	"arrayTables": {
+		"Member": "TargetGroupMember"
+	},
 	"fields": {
 		"name": {
 			"type": "string",
@@ -13,9 +16,10 @@
 			"type": "string",
 			"size": 10
 		}
-
 	},
 	"fieldOrder": [
-		"name", "status","note"
+		"name",
+		"status",
+		"note"
 	]
 }

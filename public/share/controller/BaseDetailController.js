@@ -109,7 +109,7 @@ sap.ui.define(
 		};
 		theClass.prototype.onLoadData = function (id) {
 			const name = this.getTableName();
-			var oModel = new JSONModel(`/api/${name}/${id}`);
+			var oModel = new JSONModel(`/msp/${name}/${id}`);
 			this.getView().setModel(oModel);
 			oModel.refresh(true);
 			//this.getView().invalidate();

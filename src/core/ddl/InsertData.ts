@@ -25,15 +25,15 @@ export class DefaultData {
 			const metaTable: Table = jsonfile.readFileSync(`resources/table/${tableName}.table.json`);
 			const fields = metaTable.fieldOrder.join('","');
 			const paramArray = [];
-			for(let i = 0;i<= metaTable.fieldOrder.length;i++) {
+			for(let i = 0;i< metaTable.fieldOrder.length+2;i++) {
 				paramArray.push(`$${i+1}`);
 			}
-			const sql = `insert into "${tableName}" ( "id","${fields}") values (${paramArray.join()})`;
+			const sql = `insert into "${tableName}" ( "id","parent","${fields}") values (${paramArray.join()})`;
 
 			const data = this.data[tableName];
 			for (const i in data) {
 				const row = data[i];
-				const params = [row["id"]];
+				const params = [row["id"], row["parent"]];
 				for (const field of metaTable.fieldOrder) {
 					params.push(row[field]);
 				}

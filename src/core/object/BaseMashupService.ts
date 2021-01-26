@@ -1,4 +1,5 @@
 import { BaseRepo, BaseService } from "..";
+import { oDescService } from "../../service/core/DescService";
 import { BaseModel } from "../model/BaseModel";
 
 export abstract class BaseMashupService<
@@ -11,11 +12,9 @@ export abstract class BaseMashupService<
 	constructor(service: TService) {
 		this.service = service;
 	}
-	public async load(id : string): Promise<TDomain> {
+	public async load(id: string): Promise<TDomain> {
 		const rt = await this.service.findById(id);
+		await oDescService.buildObject(rt, this.service.table);
 		return rt;
 	}
-	public async next(id: string): Promise<void> {}
-
-	public async prev(id: string): Promise<void> {}
 }

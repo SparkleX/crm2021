@@ -45,13 +45,6 @@
 		"linkTo": {
 			"type": "string"
 		},
-		"linkToFilter": {
-			"type": "string"
-		},
-		"linkToCodeList": {
-			"type": "boolean",
-			"$comment": "enable link to code list"
-		},
 		"boolValue": {
 			"type": "array",
 			"items": {

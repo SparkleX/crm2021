@@ -6,6 +6,12 @@
 		"name": {
 			"type": "string"
 		},
+		"arrayTables": {
+			"type": "object",
+			"additionalProperties": {
+				"type": "string"
+			}
+		},
 		"fatherNode": {
 			"type": "string"
 		},

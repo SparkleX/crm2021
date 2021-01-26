@@ -49,7 +49,7 @@ class CreateTable {
 				columns += `"${fieldName}" ${fieldType} ,`;
 			}
 			sqls.push(`drop table if exists "${name}"`);
-			const sql = `create table "${name}" (id uuid, parent uuid, ${columns} PRIMARY KEY (id))`;
+			const sql = `create table "${name}" ("id" uuid, "parent" uuid, ${columns} PRIMARY KEY (id))`;
 			sqls.push(sql);
 		}
 		return sqls;
