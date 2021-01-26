@@ -14,7 +14,8 @@ sap.ui.define(
 					editable: { type: "boolean", group: "Behavior", defaultValue: true },
 					linkTo: { type: "string", group: "Behavior", defaultValue: null },
 					value: { type: "string", group: "Data", defaultValue: null, bindable: "bindable" },
-					desc: { type: "string", group: "Data", defaultValue: null, bindable: "bindable" }
+					desc: { type: "string", group: "Data", defaultValue: null, bindable: "bindable" },
+					multiselect: { type: "boolean", group: "Data", defaultValue: false, bindable: "bindable" }
 				},
 				aggregations: {
 					_link: { type: "sap.m.Link", multiple: false, visibility: "hidden" },
@@ -47,20 +48,26 @@ sap.ui.define(
 		theClass.prototype.setEditable = function (value) {
 			const oInput = this.getInputControl();
 			const oLink = this.getLinkControl();
-			oInput.setVisible(true/*value*/);
-			oLink.setVisible(true/*!value*/);
+			oInput.setVisible(true /*value*/);
+			oLink.setVisible(true /*!value*/);
 		};
 
 		theClass.prototype.valueHelpRequest = function (value) {
 			const name = this.getLinkTo();
-			ValueSelectUtils.show(name, this.onChoose.bind(this));
+			const param = {
+				object: name,
+				multiselect: this.getMultiselect(),
+				choose: this.onChoose.bind(this)
+			};
+			ValueSelectUtils.show(param);
 		};
 
-		theClass.prototype.onChoose = function (value) {
-			var oInput = this.getInputControl();
-			const oLink = this.getLinkControl();
-			this.setValue(value.key);
-			this.setDesc(value.text);
+		theClass.prototype.onChoose = function (token) {
+			const value = token[0];
+			//var oInput = this.getInputControl();
+			//const oLink = this.getLinkControl();
+			this.setValue(value.getKey());
+			this.setDesc(value.getText());
 			//oInput.setSelectedKey(value.key);
 			//oInput.setValue(value.text);
 			//oLink.setText(value.text);

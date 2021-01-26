@@ -80,7 +80,7 @@
 												<t:Column>
 													<Label text="Account2" />
 													<t:template>
-														<widget:ValueSelect value="{accountId}"  linkTo="Account"/>
+														<widget:ValueSelect value="{accountId}" multiselect="true" desc="{d/accountId}" linkTo="Account"/>
 													</t:template>
 												</t:Column>												
 											</t:columns>
