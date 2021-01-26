@@ -74,7 +74,7 @@
 												<t:Column>
 													<Label text="Account" />
 													<t:template>
-														<widget:ValueSelect value="{accountId}"  linkTo="Account"/>
+														<widget:ValueSelect value="{accountId}" desc="{d/accountId}" linkTo="Account"/>
 													</t:template>
 												</t:Column>
 												<t:Column>

@@ -38,7 +38,7 @@ export class SqlRepo<TDomain> extends BaseRepo<TDomain> {
 		let i = 1;
 		for (const column in data) {
 			const value = data[column];
-			if (Array.isArray(value)) {
+			if (typeof value === 'object' && value !== null) {
 				continue;
 			}
 			rt.params.push(value);
@@ -65,7 +65,7 @@ export class SqlRepo<TDomain> extends BaseRepo<TDomain> {
 		let i = 1;
 		for (const column in data) {
 			const value = data[column];
-			if (Array.isArray(value)) {
+			if (typeof value === 'object' && value !== null) {
 				continue;
 			}
 			rt.params.push(value);
