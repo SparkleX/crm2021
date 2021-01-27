@@ -6,10 +6,7 @@
 	xmlns:mvc="sap.ui.core.mvc.View"
 	xmlns:f="sap.f"
 	xmlns:fb="sap.ui.comp.filterbar" 
-	displayBlock="true">
-
-
-
+	displayBlock="true">	
 	<f:DynamicPage headerExpanded="true" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false">
 		<!-- DynamicPage Title -->
 		<f:title>
@@ -31,7 +28,7 @@
 						</fb:FilterItem>
 						<fb:FilterItem name="B" label="Name">
 							<fb:control>
-								<Input />							
+								<Input />	
 							</fb:control>
 						</fb:FilterItem>
 					</fb:filterItems>

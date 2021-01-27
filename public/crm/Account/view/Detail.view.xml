@@ -6,7 +6,8 @@
 	xmlns:layout="sap.ui.layout"
 	xmlns:table="sap.ui.table"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:widget="sap.nsme.share.widget" displayBlock="true">
+	xmlns:widget="sap.nsme.share.widget" 
+	displayBlock="true">
 	<uxap:ObjectPageLayout id="objectPageLayout" toggleHeaderOnTitleClick="false" preserveHeaderStateOnScroll="true" headerContentPinnable="false" upperCaseAnchorBar="false">
 		<uxap:headerTitle>
 			<uxap:ObjectPageDynamicHeaderTitle>
@@ -52,23 +53,20 @@
 			<uxap:ObjectPageSection id="idSectionA">
 				<uxap:subSections>
 					<uxap:ObjectPageSubSection id="idGeneralPage" title="General">
-						<uxap:blocks>
-							<layout:BlockLayout>
+						<uxap:blocks >
+							<layout:BlockLayout id="blocks">
 								<layout:BlockLayoutRow>
 									<layout:BlockLayoutCell title="General">
-										<Label text="Code" />
-										<Input value="{/code}" />
-										<Label text="Name" />
-										<Input value="{/name}" />
+										<Label id="aaa" text="123" width="30%"></Label>
+										<Input id="bbb" value="{/code}" width="70%"></Input>
+										<widget:LabelInput id="code" text="Code" value="{/code}"/>
+										<widget:LabelInput id="name" text="Name" value="{/name}"/>
 									</layout:BlockLayoutCell>
 									<layout:BlockLayoutCell title="Main Address">
-										<Label text="Country" />
-										<Input value="{/country}"/>
-										<Label text="City" />
-										<Input value="{/city}"/>
-										<Label text="Street" />
-										<Input value="{/street}" />
-									</layout:BlockLayoutCell>
+										<widget:LabelInput id="country" text="Country" value="{/country}"/>
+										<widget:LabelInput id="city" text="City" value="{/city}"/>
+										<widget:LabelInput id="street" text="Street" value="{/street}"/>
+									</layout:BlockLayoutCell>								
 								</layout:BlockLayoutRow>
 							</layout:BlockLayout>
 						</uxap:blocks>
