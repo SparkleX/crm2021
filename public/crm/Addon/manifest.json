@@ -80,10 +80,7 @@
 			"extensions": {
 				"sap.ui.controllerExtensions": {
 					"sap.nsme.crm.Addon.controller.List": {
-						"controllerName": "sap.nsme.crm.AddonExt.controller.List"
-					},
-					"sap.nsme.crm.AddonExt.controller.List": {
-						"controllerName": "sap.nsme.crm.AddonExt.controller.List1"
+						"controllerName": "sap.nsme.addon.hub.controller.List"
 					}
 				}
 			}
