@@ -1,0 +1,14 @@
+sap.ui.define([
+	"sap/m/SelectRenderer",
+	"sap/ui/core/Renderer",
+	"sap/m/LabelRenderer",
+], function (SelectRenderer, Renderer, LabelRenderer) {
+	"use strict";
+	var theClass = {};
+	theClass.render = function (oRm, oControl) {
+		const oLabel = oControl.getAggregation("_label");
+		LabelRenderer.render(oRm, oLabel);
+		SelectRenderer.render(oRm, oControl);
+	};	
+	return theClass;
+});

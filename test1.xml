@@ -1,0 +1,24 @@
+<div>
+	<span id="__label3" data-sap-ui="__label3" aria-label="TEST" class="sapMLabel sapUiSelectable" style="width: 33%; text-align: left;">
+		<span id="__label3-text" class="sapMLabelTextWrapper">
+			<bdi id="__label3-bdi">TEST</bdi>
+		</span>
+		<span class="sapMLabelColonAndRequired"></span>
+	</span>
+	<div id="application-Account-App-component---detail--test2" data-sap-ui="application-Account-App-component---detail--test2" class="sapMSlt sapMSltDefault sapMSltMinWidth sapMSltHoverable sapMSltWithArrow" style="width: auto; max-width: 100%;">
+		<select id="application-Account-App-component---detail--test2-hiddenSelect" role="listbox" aria-roledescription="Select" aria-readonly="false" aria-expanded="false" aria-haspopup="listbox" name="" value="abc" class="sapUiPseudoInvisibleText sapMSltHiddenSelect">
+			<option hidden="true" disabled="true" selected="true"></option>
+			<option value="First Half">First Half</option>
+			<option value="Second Half">Second Half</option>
+		</select>
+		<span id="application-Account-App-component---detail--test2-label" aria-hidden="true" class="sapMSltLabel">
+			<span id="sap-ui-invisible-application-Account-App-component---detail--test2-labelIcon" data-sap-ui="sap-ui-invisible-application-Account-App-component---detail--test2-labelIcon" aria-hidden="true" class="sapUiHiddenPlaceholder"></span>
+			<span id="application-Account-App-component---detail--test2-labelText" class="sapMSelectListItemText">First Half</span>
+		</span>
+		<span id="application-Account-App-component---detail--test2-arrow" aria-hidden="true" class="sapMSltArrow"></span>
+		<ul role="listbox" class="sapMSelectList" style="width: 100%;">
+			<li tabindex="0" role="option" aria-selected="true" aria-setsize="2" aria-posinset="1" class="sapMSelectListItemBase sapMSelectListItem sapMSelectListItemBaseHoverable sapMSelectListItemBaseSelected">First Half</li>
+			<li tabindex="0" role="option" aria-selected="false" aria-setsize="2" aria-posinset="2" class="sapMSelectListItemBase sapMSelectListItem sapMSelectListItemBaseHoverable">Second Half</li>
+		</ul>
+	</div>
+</div>

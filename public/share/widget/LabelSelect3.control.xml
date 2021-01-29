@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core">
+	<m:FlexBox id="box" height="100%" renderType="Bare">
+			<m:Label id="label" text="{$this>/text}" width="33%">
+			</m:Label>		
+		<m:Select id="select" width="67%">
+		</m:Select>
+	</m:FlexBox>
+</core:FragmentDefinition>

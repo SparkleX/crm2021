@@ -61,6 +61,15 @@
 										<Input id="bbb" value="{/code}" width="70%"></Input>
 										<widget:LabelInput id="code" text="Code" value="{/code}"/>
 										<widget:LabelInput id="name" text="Name" value="{/name}"/>
+										<widget:LabelSelect id="test" text="TEST">
+											<core:Item text="First Half" key="abc"></core:Item>
+											<core:Item text="Second Half" key="xyz"></core:Item>
+										</widget:LabelSelect>
+										<widget:LabelSelect3 id="test3" text="TEST">
+											<core:Item text="First Half" key="abc"></core:Item>
+											<core:Item text="Second Half" key="xyz"></core:Item>
+								
+										</widget:LabelSelect3>										
 									</layout:BlockLayoutCell>
 									<layout:BlockLayoutCell title="Main Address">
 										<widget:LabelInput id="country" text="Country" value="{/country}"/>
