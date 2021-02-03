@@ -4,9 +4,10 @@ sap.ui.define(
 		"sap/m/Link",
 		"sap/m/Input",
 		"sap/nsme/share/ovs/ValueSelectUtils",
-		"sap/nsme/share/quick/QuickViewUtils"
+		"sap/nsme/share/quick/QuickViewUtils",
+		"sap/ui/core/Icon"
 	],
-	function (BaseClass, Link, Input, ValueSelectUtils, QuickViewUtils) {
+	function (BaseClass, Link, Input, ValueSelectUtils, QuickViewUtils, Icon) {
 		"use strict";
 		var theClass = BaseClass.extend("sap.nsme.share.widget.ValueSelect", {
 			metadata: {
@@ -18,7 +19,8 @@ sap.ui.define(
 					multiselect: { type: "boolean", group: "Data", defaultValue: false, bindable: "bindable" }
 				},
 				aggregations: {
-					_link: { type: "sap.m.Link", multiple: false, visibility: "hidden" },
+					_icon: { type: "sap.ui.core.Icon", multiple: false, visibility: "hidden" },
+					_link: { type: "sap.m.Link", multiple: false, visibility: "hidden" },					
 					_input: { type: "sap.m.Input", multiple: false, visibility: "hidden" }
 				}
 			}
@@ -30,6 +32,15 @@ sap.ui.define(
 				new Input({ showValueHelp: true, valueHelpRequest: this.valueHelpRequest.bind(this), visible: false })
 			);
 			this.setAggregation("_link", new Link({ text: "[NULL]", press: this.onLinkPress.bind(this) }));
+			this.setAggregation("_icon", new Icon(
+				{ 
+					width: "20px",
+					//src: "sap-icon://navigation-right-arrow", 
+					src: "sap-icon://SAP-icons-TNT/data-output-arrow", 
+					size:"1rem",
+					color:"Critical"
+				}));
+
 			BaseClass.prototype.init.call(this);
 		};
 
@@ -44,12 +55,17 @@ sap.ui.define(
 			const rt = this.getAggregation("_input");
 			return rt;
 		};
-
+		theClass.prototype.getIconControl = function () {
+			const rt = this.getAggregation("_icon");
+			return rt;
+		};
 		theClass.prototype.setEditable = function (value) {
 			const oInput = this.getInputControl();
 			const oLink = this.getLinkControl();
+			const oIcon = this.getIconControl();
 			oInput.setVisible(true /*value*/);
 			oLink.setVisible(true /*!value*/);
+			oIcon.setVisible(true /*!value*/);
 		};
 
 		theClass.prototype.valueHelpRequest = function (value) {
