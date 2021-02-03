@@ -38,7 +38,7 @@
 				<t:extension>
 					<OverflowToolbar>
 						<Button text="New" type="Emphasized"  press="onClickNew" />
-						<!--<Button text="{i18n>edit}"></Button>
+						<Button text="{i18n>edit}"></Button>
 						<Button text="Export"></Button>
 						<Button text="Copy"></Button>	
 						<MenuButton text="Add Response">
@@ -57,10 +57,11 @@
 						<MenuButton text="Change Status"></MenuButton>						
 						<ToolbarSpacer/>
 						<Button icon="sap-icon://delete" type="Transparent" press="onDelete" />
-						<Button icon="sap-icon://action-settings" type="Transparent" press="onTestClick" />
 						<SearchField width="300px"/>
 						<Button icon="sap-icon://filter"></Button>
-						<Button icon="sap-icon://business-objects-experience"></Button>	-->					
+						<Button icon="sap-icon://business-objects-experience"></Button>				
+						<Button icon="sap-icon://action-settings" type="Transparent" press="onSettings" />
+
 					</OverflowToolbar>
 				</t:extension>				
 				<t:columns>

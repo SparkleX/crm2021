@@ -48,7 +48,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/m/Label", "sap/m/Input"], function (B
 	};
 	theClass.prototype.setText = function (val) {
 		this.setProperty("text", val);
-		this.oLabel.setText(val);
+		//this.oLabel.setText(val);
 	};
 	theClass.prototype.setEditable = function (val) {
 		//this.setProperty("editable", val);

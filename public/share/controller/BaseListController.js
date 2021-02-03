@@ -1,6 +1,13 @@
 sap.ui.define(
-	["sap/ui/core/mvc/Controller", "sap/m/MessageToast", "sap/ui/core/Fragment", "sap/ui/model/json/JSONModel", "sap/ui/core/UIComponent"],
-	function (Controller, MessageToast, Fragment, JSONModel, UIComponent) {
+	[
+		"sap/ui/core/mvc/Controller",
+		"sap/m/MessageToast",
+		"sap/ui/core/Fragment",
+		"sap/ui/model/json/JSONModel",
+		"sap/ui/core/UIComponent",
+		"sap/base/util/deepExtend"
+	],
+	function (Controller, MessageToast, Fragment, JSONModel, UIComponent, deepExtend) {
 		"use strict";
 
 		var theClass = Controller.extend("sap.nsme.share.controller.BaseListController", {
@@ -21,7 +28,7 @@ sap.ui.define(
 		};
 		theClass.prototype._onObjectMatched = function (oEvent) {
 			this.refresh();
-		};	
+		};
 		theClass.prototype.refresh = function (oEvent) {
 			const name = this.getTableName();
 			var oModel = new JSONModel(`/api/${name}`);
@@ -57,7 +64,46 @@ sap.ui.define(
 			});
 			//oRouter.navTo("detail");
 		};
+		theClass.prototype.onOK = async function (evt) {
+			//alert(1);
+			const a = this.oPersonalizationDialog.getModel().getData();
+			console.debug(a);
+		};
+		theClass.prototype.onCancel = async function (evt) {
+			evt.getSource().close();
+		};
+		theClass.prototype.onSettings = async function (evt) {
+			var oView = this.getView();
+			var oJSONModel = new JSONModel("/web/share/dialog/Personalization.json");
+			var oPersonalizationDialog = await Fragment.load({
+				id: oView.getId(),
+				name: "sap.nsme.share.dialog.Personalization",
+				controller: this
+			});
 
+			oView.addDependent(oPersonalizationDialog);
+			oPersonalizationDialog.setModel(oJSONModel);
+			//this.oJSONModel.setProperty("/ShowResetEnabled", this._isChangedColumnsItems());
+			//this.oDataBeforeOpen = deepExtend({}, this.oJSONModel.getData());
+			oPersonalizationDialog.open();
+			this.oPersonalizationDialog = oPersonalizationDialog;
+			/*if (!this._pPersonalizationDialog){
+				this._pPersonalizationDialog = Fragment.load({
+					id: oView.getId(),
+					name: "sap.nsme.share.dialog.Personalization",
+					controller: this
+				}).then(function(oPersonalizationDialog){
+					oView.addDependent(oPersonalizationDialog);
+					oPersonalizationDialog.setModel(this.oJSONModel);
+					return oPersonalizationDialog;
+				}.bind(this));
+			}
+			this._pPersonalizationDialog.then(function(oPersonalizationDialog){
+				//this.oJSONModel.setProperty("/ShowResetEnabled", this._isChangedColumnsItems());
+				//this.oDataBeforeOpen = deepExtend({}, this.oJSONModel.getData());
+				oPersonalizationDialog.open();
+			}.bind(this));*/
+		};
 		return theClass;
 	}
 );

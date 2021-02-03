@@ -1,0 +1,24 @@
+{
+	"Items": [
+		{
+			"columnKey": "productId",
+			"text": "Product ID"
+		},
+		{
+			"columnKey": "name",
+			"text": "Name"
+		}
+	],
+	"ColumnsItems": [
+		{
+			"columnKey": "name",
+			"visible": true,
+			"index": 0
+		},
+		{
+			"columnKey": "productId",
+			"visible": false
+		}
+	],
+	"ShowResetEnabled": false
+}
