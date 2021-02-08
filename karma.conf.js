@@ -1,6 +1,6 @@
 module.exports = function (config) {
 	config.set({
-		basePath: "",
+		basePath: "public",
 		frameworks: ["ui5", "qunit", "sinon"],
 		ui5: {
 			url: "https://sapui5.hana.ondemand.com",
@@ -11,16 +11,26 @@ module.exports = function (config) {
 				compatVersion: "edge",
 				async: true,
 				resourceRoots: {
-					"sap.nsme": "base/public/"
+					"sap.nsme": "base/"
 				}
 			},
 			tests: ["sap/nsme/crm/Account/test/unit/AllTests"],
 			paths: {
-				webapp: "public"
+				webapp: "./"
 			}
 		},
 		logLevel: config.LOG_DEBUG,
-
-		browsers: ["Chrome"]
+		reporters: ['progress', 'coverage'],
+		preprocessors: {
+			'**/*.js': ['coverage']
+		},
+		coverageReporter: {
+			type : 'html',
+			dir : 'coverage/'
+		},
+		browsers: ["Chrome"],
+		autoWatch: false,
+		singleRun: true
 	});
+	require("karma-ui5/helper").configureIframeCoverage(config);
 };
