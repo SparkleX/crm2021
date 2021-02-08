@@ -7,7 +7,6 @@
 
 sap.ui.getCore().attachInit(function () {
 	"use strict";
-
 	sap.ui.require([
 		"sap/ui/qunit/qunit-coverage",
 		"sap/nsme/crm/Account/test/unit/AllTests"

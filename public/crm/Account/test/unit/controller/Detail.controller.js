@@ -21,7 +21,6 @@ sap.ui.define([
 		// Assert
 		assert.strictEqual(this.oDeviceModel.getData().system.phone, bIsPhone, "IsPhone property is correct");
 	}*/
-
 	QUnit.test("Should initialize a device model for desktop", function (assert) {
         //isPhoneTestCase.call(this, assert, false);
         var oController = new DetailController();
