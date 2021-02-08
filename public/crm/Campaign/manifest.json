@@ -60,7 +60,7 @@
 					"target": "list"
 				},
 				{
-					"pattern": "detail/{id}",
+					"pattern": "detail/{id}:?query:",
 					"name": "detail",
 					"target": "detail"
 				}

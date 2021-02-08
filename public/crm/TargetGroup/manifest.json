@@ -44,6 +44,16 @@
 				}
 			}
 		},
+		"componentUsages": {
+			"campaignComponent": {
+				"name": "sap.nsme.crm.Campaign",
+				"settings": {},
+				"componentData": {
+					"parentComponentName": "sap.nsme.crm.TargetGroup"
+				},
+				"lazy": true
+			}
+		},
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
@@ -63,6 +73,14 @@
 					"pattern": "detail/{id}",
 					"name": "detail",
 					"target": "detail"
+				},
+				{
+					"name": "campaign",
+					"pattern": "campaign",
+					"target": {
+						"name": "campaign",
+						"prefix": "p"
+					}
 				}
 			],
 			"targets": {
@@ -73,6 +91,10 @@
 				"detail": {
 					"viewId": "detail",
 					"viewName": "Detail"
+				},
+				"campaign": {
+					"type": "Component",
+					"usage": "campaignComponent"
 				}
 			}
 		}

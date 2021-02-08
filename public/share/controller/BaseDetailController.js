@@ -45,10 +45,12 @@ sap.ui.define(
 			var component = this.getOwnerComponent();
 			var oRouter = component.getRouter();
 			oRouter.getRoute("detail").attachMatched(function (oEvent) {
-				this.dataId = oEvent.getParameter("arguments").id;
+				var args = oEvent.getParameter("arguments");
+				this.dataId = args.id;
+				var oQuery =args["?query"];
 				if (this.dataId === "#") {
 					this.setFormMode(AddMode);
-					this.onInitData();
+					this.onInitData(oQuery);
 				} else {
 					this.setFormMode(ViewMode);
 					this.onLoadData(this.dataId);
@@ -102,7 +104,7 @@ sap.ui.define(
 					break;
 			}
 		};
-		theClass.prototype.onInitData = function () {
+		theClass.prototype.onInitData = function (query) {
 			var oModel = new JSONModel();
 			this.getView().setModel(oModel);
 			// to be override
