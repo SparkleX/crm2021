@@ -5,9 +5,10 @@ sap.ui.define(
 		"sap/m/Input",
 		"sap/nsme/share/ovs/ValueSelectUtils",
 		"sap/nsme/share/quick/QuickViewUtils",
-		"sap/ui/core/Icon"
+		"sap/ui/core/Icon",
+		"sap/nsme/share/widget/DescUtils"
 	],
-	function (BaseClass, Link, Input, ValueSelectUtils, QuickViewUtils, Icon) {
+	function (BaseClass, Link, Input, ValueSelectUtils, QuickViewUtils, Icon, DescUtils) {
 		"use strict";
 		var theClass = BaseClass.extend("sap.nsme.share.widget.ValueSelect", {
 			metadata: {
@@ -15,12 +16,12 @@ sap.ui.define(
 					editable: { type: "boolean", group: "Behavior", defaultValue: true },
 					linkTo: { type: "string", group: "Behavior", defaultValue: null },
 					value: { type: "string", group: "Data", defaultValue: null, bindable: "bindable" },
-					desc: { type: "string", group: "Data", defaultValue: null, bindable: "bindable" },
+					//desc: { type: "string", group: "Data", defaultValue: null, bindable: "bindable" },
 					multiselect: { type: "boolean", group: "Data", defaultValue: false, bindable: "bindable" }
 				},
 				aggregations: {
 					_icon: { type: "sap.ui.core.Icon", multiple: false, visibility: "hidden" },
-					_link: { type: "sap.m.Link", multiple: false, visibility: "hidden" },					
+					_link: { type: "sap.m.Link", multiple: false, visibility: "hidden" },
 					_input: { type: "sap.m.Input", multiple: false, visibility: "hidden" }
 				}
 			}
@@ -32,14 +33,16 @@ sap.ui.define(
 				new Input({ showValueHelp: true, valueHelpRequest: this.valueHelpRequest.bind(this), visible: false })
 			);
 			this.setAggregation("_link", new Link({ text: "[NULL]", press: this.onLinkPress.bind(this) }));
-			this.setAggregation("_icon", new Icon(
-				{ 
+			this.setAggregation(
+				"_icon",
+				new Icon({
 					width: "20px",
-					//src: "sap-icon://navigation-right-arrow", 
-					src: "sap-icon://SAP-icons-TNT/data-output-arrow", 
-					size:"1rem",
-					color:"Critical"
-				}));
+					//src: "sap-icon://navigation-right-arrow",
+					src: "sap-icon://SAP-icons-TNT/data-output-arrow",
+					size: "1rem",
+					color: "Critical"
+				})
+			);
 
 			BaseClass.prototype.init.call(this);
 		};
@@ -68,7 +71,7 @@ sap.ui.define(
 			//oIcon.setVisible(true /*!value*/);
 			oInput.setVisible(value);
 			oLink.setVisible(!value);
-			oIcon.setVisible(!value);			
+			oIcon.setVisible(!value);
 		};
 
 		theClass.prototype.valueHelpRequest = function (value) {
@@ -86,7 +89,7 @@ sap.ui.define(
 			//var oInput = this.getInputControl();
 			//const oLink = this.getLinkControl();
 			this.setValue(value.getKey());
-			this.setDesc(value.getText());
+			//this.setDesc(value.getText());
 			//oInput.setSelectedKey(value.key);
 			//oInput.setValue(value.text);
 			//oLink.setText(value.text);
@@ -107,9 +110,20 @@ sap.ui.define(
 			this.setProperty("value", value, true);
 			var oInput = this.getInputControl();
 			const oLink = this.getLinkControl();
+			oInput.setValue("...");
+			oLink.setText("...");
+			var table = this.getLinkTo();
+			DescUtils.getDescById(table, value, this.onDesc.bind(this));
 			//oInput.setSelectedKey(value);
 			//oInput.setValue(value);
 			//oLink.setText(value);
+		};
+
+		theClass.prototype.onDesc = function (value) {
+			var oInput = this.getInputControl();
+			const oLink = this.getLinkControl();
+			oInput.setValue(value);
+			oLink.setText(value);
 		};
 		theClass.prototype.getValue = function () {
 			//var oInput = this.getInputControl();
@@ -117,13 +131,13 @@ sap.ui.define(
 			const rt = this.getProperty("value");
 			return rt;
 		};
-		theClass.prototype.setDesc = function (value) {
+		/*theClass.prototype.setDesc = function (value) {
 			this.setProperty("desc", value, true);
 			var oInput = this.getInputControl();
 			const oLink = this.getLinkControl();
 			oInput.setValue(value);
 			oLink.setText(value);
-		};
+		};*/
 		theClass.prototype.getDesc = function () {
 			const rt = this.getProperty("desc");
 			return rt;

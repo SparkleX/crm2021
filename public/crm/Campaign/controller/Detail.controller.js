@@ -17,6 +17,7 @@ sap.ui.define(
 			var tgtGroup = query.targetGroup;
 			var oModel = this.getView().getModel();
 			oModel.getData().tgtGroup = tgtGroup;
+			oModel.refresh(true);
 
 		};
 		return theClass;

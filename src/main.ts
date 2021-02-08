@@ -10,6 +10,7 @@ import * as mashupController from "./controller/mashup";
 import { Context } from "koa";
 
 import { oCodesController } from "./controller/codes/CodesController";
+import { oDescController } from "./controller/desc/DescController";
 import { oValueSelectController } from "./ovs/ValueSelectController";
 import { oDebugController } from "./dbg/DebugController";
 import { oSetup } from "./Setup";
@@ -47,14 +48,15 @@ class Application {
 			oApiKoa.use(router.routes());
 		}
 		oApiKoa.use(oCodesController.routes());
+		oApiKoa.use(oDescController.routes());
 		oApiKoa.use(oValueSelectController.routes());
 		app.use(koaMount("/api", oApiKoa));
 		app.use(oDebugController.routes());
 
-		const oMashupKoa = new Koa();
-		this.scanController(mashupController ,oMashupKoa);
-		app.use(koaMount("/msp", contextMw));
-		app.use(koaMount("/msp", oMashupKoa));
+		//const oMashupKoa = new Koa();
+		//this.scanController(mashupController ,oMashupKoa);
+		//app.use(koaMount("/msp", contextMw));
+		//app.use(koaMount("/msp", oMashupKoa));
 
 		//app.use(koaMount("/api", oApiKoa));
 
