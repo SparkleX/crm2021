@@ -19,6 +19,7 @@
 				<uxap:navigationActions>
 					<uxap:ObjectPageHeaderActionButton id="sysNewButton" type="Transparent" text="New" hideText="false" hideIcon="true" press="onNew" />
 					<uxap:ObjectPageHeaderActionButton id="sysEditButton" text="Edit" type="Emphasized" hideText="false" press="onEdit" />
+					<uxap:ObjectPageHeaderActionButton id="createCampaign" text="Create Campaign" type="Transparent" hideText="false" press="onCreateCampaign" />
 				</uxap:navigationActions>
 			</uxap:ObjectPageDynamicHeaderTitle>
 
@@ -67,7 +68,7 @@
 											<t:extension>
 												<OverflowToolbar>
 													<Button icon="sap-icon://add" press="onRowAdd" />
-													<Button icon="sap-icon://delete" press="onRowDelete"></Button>
+													<Button icon="sap-icon://delete" press="onRowDelete"/>
 												</OverflowToolbar>
 											</t:extension>
 											<t:columns>
