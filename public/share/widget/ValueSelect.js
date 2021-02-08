@@ -63,9 +63,12 @@ sap.ui.define(
 			const oInput = this.getInputControl();
 			const oLink = this.getLinkControl();
 			const oIcon = this.getIconControl();
-			oInput.setVisible(true /*value*/);
-			oLink.setVisible(true /*!value*/);
-			oIcon.setVisible(true /*!value*/);
+			//oInput.setVisible(true /*value*/);
+			//oLink.setVisible(true /*!value*/);
+			//oIcon.setVisible(true /*!value*/);
+			oInput.setVisible(value);
+			oLink.setVisible(!value);
+			oIcon.setVisible(!value);			
 		};
 
 		theClass.prototype.valueHelpRequest = function (value) {
