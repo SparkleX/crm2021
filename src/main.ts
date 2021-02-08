@@ -5,7 +5,6 @@ import koaMount from "koa-mount";
 import bodyParser from "koa-bodyparser";
 import { contextMw, initPool } from "./context/ContextMw";
 import * as controller from "./controller/object";
-import * as mashupController from "./controller/mashup";
 
 import { Context } from "koa";
 
@@ -52,13 +51,6 @@ class Application {
 		oApiKoa.use(oValueSelectController.routes());
 		app.use(koaMount("/api", oApiKoa));
 		app.use(oDebugController.routes());
-
-		//const oMashupKoa = new Koa();
-		//this.scanController(mashupController ,oMashupKoa);
-		//app.use(koaMount("/msp", contextMw));
-		//app.use(koaMount("/msp", oMashupKoa));
-
-		//app.use(koaMount("/api", oApiKoa));
 
 		app.use(
 			koaMount("/index.html", function (ctx: Context) {
