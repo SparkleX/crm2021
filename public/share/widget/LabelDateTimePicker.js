@@ -8,6 +8,10 @@ sap.ui.define(
 					text: {
 						type: "string",
 						group: "Behavior"
+					},
+					value: {
+						type: "string",
+						group: "Data"
 					}
 				},
 				aggregations: {
@@ -46,6 +50,7 @@ sap.ui.define(
 		theClass.prototype.setEditable = function (val) {
 			const oControl = this.getControl();
 			oControl.setEditable(val);
+			oControl.rerender();
 		};
 		return theClass;
 	}

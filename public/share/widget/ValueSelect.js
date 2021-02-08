@@ -40,7 +40,7 @@ sap.ui.define(
 				visible: false
 			});
 			this.setAggregation("_input", oInput);
-			var oLink = new Link({ text: "[NULL]", width: mSettings.width, press: this.onLinkPress.bind(this) });
+			var oLink = new Link({ text: "[NULL]", width: "50%", press: this.onLinkPress.bind(this) });
 			this.setAggregation("_link", oLink);
 			var oIcon = new Icon({
 				width: "20px",
@@ -67,13 +67,12 @@ sap.ui.define(
 			const oInput = this.getInputControl();
 			const oLink = this.getLinkControl();
 			const oIcon = this.getIconControl();
-			//oInput.setVisible(true /*value*/);
-			//oLink.setVisible(true /*!value*/);
-			//oIcon.setVisible(true /*!value*/);
 			oInput.setVisible(value);
 			oLink.setVisible(!value);
 			oIcon.setVisible(!value);
-			//this.rerender();
+			oInput.rerender();
+			oLink.rerender();
+			oIcon.rerender();
 		};
 
 		theClass.prototype.valueHelpRequest = function (value) {

@@ -38,7 +38,7 @@ sap.ui.define(
 			BaseClass.prototype.setEditable.call(this, val);
 			//const oInput = this.getAggregation("_select");
 			//oInput.setEditable(val);
-			this.getParent().rerender();
+			//this.getParent().rerender();
 		};
 		return theClass;
 	}

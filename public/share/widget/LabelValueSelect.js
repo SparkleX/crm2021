@@ -56,7 +56,7 @@ sap.ui.define(
 		theClass.prototype.setEditable = function (val) {
 			const oControl = this.getControl();
 			oControl.setEditable(val);
-			//this.rerender();
+			this.rerender();
 		};
 		return theClass;
 	}

@@ -4,7 +4,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/m/Label", "sap/m/Input"], function (B
 		metadata: {
 			properties: {
 				text: { type: "string", group: "Behavior" },
-				value: { type: "string", group: "Behavior" },
+				value: { type: "string", group: "Data" },
 				editable: { type: "boolean", group: "Behavior" }
 			},
 			aggregations: {

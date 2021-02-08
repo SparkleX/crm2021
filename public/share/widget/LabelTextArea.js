@@ -8,6 +8,12 @@ sap.ui.define(
 					text: {
 						type: "string",
 						group: "Behavior"
+					},
+					value: { type: "string", group: "Data" },
+					rows: {
+						type: "int",
+						group: "Appearance",
+						defaultValue: 8
 					}
 				},
 				aggregations: {
@@ -22,6 +28,7 @@ sap.ui.define(
 		};
 
 		theClass.prototype.applySettings = function (mSettings, oScope) {
+			BaseClass.prototype.applySettings.call(this, mSettings, oScope);
 			const oLabel = new Label({
 				id: `${this.getId()}-label`,
 				text: mSettings.text,
@@ -30,10 +37,12 @@ sap.ui.define(
 			this.setAggregation("_label", oLabel);
 			const oControl = new TextArea({
 				id: `${this.getId()}-control`,
-				width: "67%"
+				width: "67%",
+				rows: this.getRows(),
+				value: JSON.parse(JSON.stringify(mSettings.value))
 			});
 			this.setAggregation("_control", oControl);
-			BaseClass.prototype.applySettings.call(this, mSettings, oScope);
+			
 		};
 		theClass.prototype.getControl = function (mSettings, oScope) {
 			const rt = this.getAggregation("_control");
@@ -46,6 +55,7 @@ sap.ui.define(
 		theClass.prototype.setEditable = function (val) {
 			const oControl = this.getControl();
 			oControl.setEditable(val);
+			oControl.rerender();
 		};
 		return theClass;
 	}

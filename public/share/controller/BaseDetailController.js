@@ -219,13 +219,11 @@ sap.ui.define(
 			const items = ViewUtils.scan(this.getView());
 			console.debug(items.length);
 			ViewUtils.setEditable(items, readonly);
-			//this.getView().rerender();
 		};
 		theClass.prototype.onRowAdd = function (readonly) {
 			const items = ViewUtils.scan(this.getView());
 			console.debug(items.length);
 			ViewUtils.setEditable(items, readonly);
-			//this.getView().rerender();
 		};
 		theClass.prototype.onRowAdd = function (evt) {
 			const oButton = evt.getSource();

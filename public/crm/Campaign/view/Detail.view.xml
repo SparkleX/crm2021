@@ -49,9 +49,9 @@
 			</layout:HorizontalLayout>
 		</uxap:headerContent>
 		<uxap:sections>
-			<uxap:ObjectPageSection id="idSectionA">
+			<uxap:ObjectPageSection id="idSectionA"  >
 				<uxap:subSections>
-					<uxap:ObjectPageSubSection id="idGeneralPage" title="General">
+					<uxap:ObjectPageSubSection id="idGeneralPage" title="General" >
 						<uxap:blocks>
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
@@ -63,7 +63,7 @@
 										<widget:LabelSelect text="Status" selectedKey="{/status}" items="{codes>/crm.CampaignStatus}"/>
 										<widget:LabelValueSelect text="Target Group" linkTo="TargetGroup" value="{/tgtGroup}"/>
 										<widget:LabelInput text="Target Group Members"/>
-										<widget:LabelTextArea text="Additional Information" width="100%" rows="8" value="{/note}"/>
+										<widget:LabelTextArea text="Additional Information" value="{/note}"/>
 									</layout:BlockLayoutCell>
 									<layout:BlockLayoutCell title="Administrative Data">
 										<widget:LabelDateTimePicker text="Created On"/>
@@ -79,11 +79,11 @@
 			</uxap:ObjectPageSection>
 			<uxap:ObjectPageSection>
 				<uxap:subSections>
-					<uxap:ObjectPageSubSection title="Response Options">
+					<uxap:ObjectPageSubSection id="idGeneralPage1" title="Response Options" >
 						<uxap:blocks>
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title="Response Options"></layout:BlockLayoutCell>
+									<layout:BlockLayoutCell title=""></layout:BlockLayoutCell>
 								</layout:BlockLayoutRow>
 							</layout:BlockLayout>
 						</uxap:blocks>
@@ -92,12 +92,12 @@
 			</uxap:ObjectPageSection>
 			<uxap:ObjectPageSection>
 				<uxap:subSections>
-					<uxap:ObjectPageSubSection title="Execution Details">
+					<uxap:ObjectPageSubSection id="idGeneralPage2"  title="Execution Details">
 						<uxap:blocks>
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title="Response Options">
-										<t:Table id="table1" rows="{/Lines}">
+									<layout:BlockLayoutCell title="" class="test">
+										<t:Table id="table1" rows="{/Lines}" class="test">
 											<t:extension>
 												<OverflowToolbar>
 													<Button icon="sap-icon://add" press="onRowAdd"/>
