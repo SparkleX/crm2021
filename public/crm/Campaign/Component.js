@@ -1,16 +1,13 @@
 sap.ui.define(
-	["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"],
-	function (UIComponent, JSONModel) {
+	["sap/nsme/share/component/BaseComponent", "sap/ui/model/json/JSONModel"],
+	function (BaseClass, JSONModel) {
 		"use strict";
-		return UIComponent.extend("sap.nsme.crm.Campaign.Component", {
+		var theClass = BaseClass.extend("sap.nsme.crm.Campaign.Component", {
 			metadata: {
 				manifest: "json"
-			},
-			init: function () {
-				UIComponent.prototype.init.apply(this, arguments);
-				this.getRouter().initialize();
 			}
 		});
+		return theClass;
 	},
 	/*export*/ true
 );

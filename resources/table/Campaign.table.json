@@ -4,9 +4,17 @@
 		"name": {
 			"type": "string",
 			"size": 10
+		},
+		"status": {
+			"type": "string",
+			"size": 1
+		},
+		"tgtGroup": {
+			"type": "guid",
+			"linkTo": "TargetGroup"
 		}
 	},
 	"fieldOrder": [
-		"name"
+		"name","status","tgtGroup"
 	]
 }

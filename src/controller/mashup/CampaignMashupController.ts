@@ -5,6 +5,6 @@ import { oCampaignMashupService } from "../../service/mashup/CampaignMashup";
 
 
 const oCampaignController = BaseMashupController.extend(oCampaignMashupService);
-oCampaignController.prefix("/Campaingn");
+oCampaignController.prefix("/Campaign");
 
 export { oCampaignController };

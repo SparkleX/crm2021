@@ -1,0 +1,12 @@
+{
+	"cols": [
+		{
+			"label": "Name",
+			"template": "name"
+		},
+		{
+			"label": "Note",
+			"template": "note"
+		}
+	]
+}

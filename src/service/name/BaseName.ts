@@ -7,7 +7,7 @@ export type NameMap = { [key: string]: string };
 export class BaseName {
 	protected getNameColumn(metaTable: Table): string {
 		const fieldOrders = metaTable.fieldOrder;
-		const column = fieldOrders[fieldOrders.length > 1 ? 1 : 0];
+		const column = fieldOrders[0];
 		return column;
 	}
 
