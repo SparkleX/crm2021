@@ -1,5 +1,5 @@
 sap.ui.define(
-	["sap/ui/core/Control", "sap/m/Select", "sap/m/Label", "sap/m/Input"],
+	["sap/ui/core/Control", "./Select", "sap/m/Label", "sap/m/Input"],
 	function (BaseClass, Select, Label, Input) {
 		"use strict";
 		var theClass = BaseClass.extend("sap.nsme.share.widget.LabelSelect", {
@@ -8,6 +8,12 @@ sap.ui.define(
 					text: {
 						type: "string",
 						group: "Behavior"
+					},
+					selectedKey: {
+						type: "string",
+						group: "Data",
+						defaultValue: "",
+						bindable: true
 					}
 				},
 				defaultAggregation: "items",
@@ -40,8 +46,10 @@ sap.ui.define(
 			});
 			this.setAggregation("_label", oLabel);
 			const oSelect = new Select({
+				items: mSettings.items,
 				id: `${this.getId()}-select`,
-				width: "67%"
+				width: "67%",
+				selectedKey: JSON.parse(JSON.stringify(mSettings.selectedKey))
 			});
 			this.setAggregation("_select", oSelect);
 			BaseClass.prototype.applySettings.call(this, mSettings, oScope);
@@ -53,10 +61,11 @@ sap.ui.define(
 		theClass.prototype.getLabel = function (mSettings, oScope) {
 			const rt = this.getAggregation("_label");
 			return rt;
-		};		
+		};
 		theClass.prototype.setEditable = function (val) {
 			const oInput = this.getAggregation("_select");
 			oInput.setEditable(val);
+			oInput.rerender();
 		};
 		return theClass;
 	}

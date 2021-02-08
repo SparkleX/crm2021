@@ -28,27 +28,28 @@ sap.ui.define(
 		});
 
 		theClass.prototype.init = function () {
-			this.setAggregation(
-				"_input",
-				new Input({ showValueHelp: true, valueHelpRequest: this.valueHelpRequest.bind(this), visible: false })
-			);
-			this.setAggregation("_link", new Link({ text: "[NULL]", press: this.onLinkPress.bind(this) }));
-			this.setAggregation(
-				"_icon",
-				new Icon({
-					width: "20px",
-					//src: "sap-icon://navigation-right-arrow",
-					src: "sap-icon://SAP-icons-TNT/data-output-arrow",
-					size: "1rem",
-					color: "Critical"
-				})
-			);
-
 			BaseClass.prototype.init.call(this);
 		};
 
 		theClass.prototype.applySettings = function (mSettings, oScope) {
 			BaseClass.prototype.applySettings.call(this, mSettings, oScope);
+			var oInput = new Input({
+				width: mSettings.width,
+				showValueHelp: true,
+				valueHelpRequest: this.valueHelpRequest.bind(this),
+				visible: false
+			});
+			this.setAggregation("_input", oInput);
+			var oLink = new Link({ text: "[NULL]", width: mSettings.width, press: this.onLinkPress.bind(this) });
+			this.setAggregation("_link", oLink);
+			var oIcon = new Icon({
+				width: "20px",
+				//src: "sap-icon://navigation-right-arrow",
+				src: "sap-icon://SAP-icons-TNT/data-output-arrow",
+				size: "1rem",
+				color: "Critical"
+			});
+			this.setAggregation("_icon", oIcon);
 		};
 		theClass.prototype.getLinkControl = function () {
 			const rt = this.getAggregation("_link");
@@ -72,6 +73,7 @@ sap.ui.define(
 			oInput.setVisible(value);
 			oLink.setVisible(!value);
 			oIcon.setVisible(!value);
+			//this.rerender();
 		};
 
 		theClass.prototype.valueHelpRequest = function (value) {

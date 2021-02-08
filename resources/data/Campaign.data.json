@@ -1,10 +1,14 @@
 [
 	{
 		"id": "11eb-5bbe-022cdae0-a8ce-3131a0451010",
-		"name": "a"
+		"name": "a",
+		"type": "P",
+		"status": "P"
 	},
 	{
 		"id": "11eb-5bbe-022d2900-a8ce-3131a0451010",
-		"name": "b"
+		"name": "b",
+		"type": "M",
+		"status": "A"		
 	}
 ]

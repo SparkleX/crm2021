@@ -5,8 +5,8 @@ sap.ui.define(
 		var theClass = {};
 
 		theClass.render = function (oRm, oControl) {
-			oRm.write("<div>");
-			oRm.renderControl(oControl.getAggregation("_icon"));
+			//oRm.write("<div>");
+			//oRm.renderControl(oControl.getAggregation("_icon"));
 			oRm.renderControl(oControl.getAggregation("_link"));
 			oRm.renderControl(oControl.getAggregation("_input"));
 			oRm.write("</div>");

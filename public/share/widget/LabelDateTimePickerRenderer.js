@@ -5,7 +5,7 @@ sap.ui.define(
 		var theClass = {};
 		theClass.render = function (oRm, oControl) {
 			oRm.renderControl(oControl.getAggregation("_label"));
-			oRm.renderControl(oControl.getAggregation("_select"));
+			oRm.renderControl(oControl.getAggregation("_control"));
 		};
 		return theClass;
 	},

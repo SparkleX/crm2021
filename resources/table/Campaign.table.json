@@ -5,6 +5,16 @@
 			"type": "string",
 			"size": 10
 		},
+		"type": {
+			"type": "string",
+			"size": 1
+		},
+		"startDate": {
+			"type": "date"
+		},		
+		"endDate": {
+			"type": "date"
+		},
 		"status": {
 			"type": "string",
 			"size": 1
@@ -12,9 +22,13 @@
 		"tgtGroup": {
 			"type": "guid",
 			"linkTo": "TargetGroup"
+		},
+		"note": {
+			"type": "string",
+			"size": 255
 		}
 	},
 	"fieldOrder": [
-		"name","status","tgtGroup"
+		"name","status","tgtGroup","type","startDate","endDate","note"
 	]
 }
