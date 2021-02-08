@@ -11,7 +11,7 @@ sap.ui.define(
 			dataTable: "OCRD"
 		});
 		theClass.prototype.onChoose = function (data) {
-			alert(data);
+			console.debug("1");
 		};
 		return theClass;
 	}
