@@ -34,7 +34,9 @@ sap.ui.define(
 			this.setAggregation("_label", oLabel);
 			const oControl = new DateTimePicker({
 				id: `${this.getId()}-control`,
-				width: "67%"
+				width: "67%",
+				value: JSON.parse(JSON.stringify(mSettings.value)),
+				valueFormat:"yyyy-MM-ddTHH:mm:ssZ"
 			});
 			this.setAggregation("_control", oControl);
 			BaseClass.prototype.applySettings.call(this, mSettings, oScope);

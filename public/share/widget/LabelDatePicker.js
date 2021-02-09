@@ -35,7 +35,8 @@ sap.ui.define(
 			const oControl = new DatePicker({
 				id: `${this.getId()}-control`,
 				width: "67%",
-				value: JSON.parse(JSON.stringify(mSettings.value))
+				value: JSON.parse(JSON.stringify(mSettings.value)),
+				valueFormat: "yyyy-MM-ddTHH:mm:ssZ"
 			});
 			this.setAggregation("_control", oControl);
 			BaseClass.prototype.applySettings.call(this, mSettings, oScope);

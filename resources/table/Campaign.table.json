@@ -23,12 +23,18 @@
 			"type": "guid",
 			"linkTo": "TargetGroup"
 		},
+		"createTs": {
+			"type": "date"
+		},
+		"executeTs": {
+			"type": "date"
+		},
 		"note": {
 			"type": "string",
 			"size": 255
 		}
 	},
 	"fieldOrder": [
-		"name","status","tgtGroup","type","startDate","endDate","note"
+		"name","status","tgtGroup","type","startDate","endDate","createTs", "executeTs", "note"
 	]
 }

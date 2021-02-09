@@ -1,11 +1,13 @@
-
-
 .sapUiBlockLayoutSizeM:not(.sapUiBlockLayoutKeepFontSize) .sapUiBlockCellContent {
 	padding-left: 8px;
 	padding-right: 8px;
 }
 
 .sapUiBlockLayoutSizeL:not(.sapUiBlockLayoutKeepFontSize) .sapUiBlockCellContent {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+.sapUiBlockLayoutSizeXL:not(.sapUiBlockLayoutKeepFontSize) .sapUiBlockCellContent {
 	padding-left: 8px;
 	padding-right: 8px;
 }

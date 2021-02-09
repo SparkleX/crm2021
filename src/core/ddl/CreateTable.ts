@@ -29,7 +29,7 @@ class CreateTable {
 				return "numeric(19,6)";
 			case "date":
 			case "time":
-				return "timestamp without time zone";
+				return "timestamp with time zone";
 			case "guid":
 				return "uuid";
 			default:

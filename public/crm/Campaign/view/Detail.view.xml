@@ -66,9 +66,9 @@
 										<widget:LabelTextArea text="Additional Information" value="{/note}"/>
 									</layout:BlockLayoutCell>
 									<layout:BlockLayoutCell title="Administrative Data">
-										<widget:LabelDateTimePicker text="Created On"/>
-										<widget:LabelDateTimePicker text="Created By"/>
-										<widget:LabelInput text="Executed On"/>
+										<widget:LabelDateTimePicker text="Created On" value="{/createTs}"/>
+										<widget:LabelInput text="Created By" />
+										<widget:LabelDateTimePicker text="Executed On" value="{/executeTs}"/>
 										<widget:LabelInput text="Executed By"/>
 									</layout:BlockLayoutCell>
 								</layout:BlockLayoutRow>
