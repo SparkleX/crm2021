@@ -1,0 +1,26 @@
+{
+	"name": "ResponseOption",
+	"fields": {
+		"name": {
+			"type": "string",
+			"size": 10
+		},
+		"classify": {
+			"type": "string",
+			"size": 1
+		},
+		"status": {
+			"type": "string",
+			"size": 1
+		},
+		"genLeads": {
+			"type": "string",
+			"size": 1
+		}
+	},
+	"fieldOrder": [
+		"name",
+		"classify",
+		"genLeads"
+	]
+}

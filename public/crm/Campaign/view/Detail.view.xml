@@ -83,21 +83,8 @@
 						<uxap:blocks>
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title=""></layout:BlockLayoutCell>
-								</layout:BlockLayoutRow>
-							</layout:BlockLayout>
-						</uxap:blocks>
-					</uxap:ObjectPageSubSection>
-				</uxap:subSections>
-			</uxap:ObjectPageSection>
-			<uxap:ObjectPageSection>
-				<uxap:subSections>
-					<uxap:ObjectPageSubSection id="idGeneralPage2"  title="Execution Details">
-						<uxap:blocks>
-							<layout:BlockLayout>
-								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title="" class="test">
-										<t:Table id="table1" rows="{/Lines}" class="test">
+									<layout:BlockLayoutCell title="">
+										<t:Table id="responseOptions" rows="{/responseOptions}">
 											<t:extension>
 												<OverflowToolbar>
 													<Button icon="sap-icon://add" press="onRowAdd"/>
@@ -106,13 +93,228 @@
 											</t:extension>
 											<t:columns>
 												<t:Column>
-													<Label text="Product Name"/>
+													<Label text="Response Option"/>
 													<t:template>
 														<Input value="{name}" wrapping="false"/>
 													</t:template>
 												</t:Column>
 												<t:Column>
-													<Label text="Product Id"/>
+													<Label text="Status"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>
+												<t:Column>
+													<Label text="Classification"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>
+												<t:Column>
+													<Label text="Generated Leads"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>
+												<t:Column>
+													<Label text="Default"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>																																				
+											</t:columns>
+										</t:Table>										
+									</layout:BlockLayoutCell>
+								</layout:BlockLayoutRow>
+							</layout:BlockLayout>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection>
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="E-Mail Templates" >
+						<uxap:blocks>
+							<layout:BlockLayout>
+								<layout:BlockLayoutRow>
+									<layout:BlockLayoutCell title="">
+										<t:Table id="emailTemplates" rows="{/emailTemplates}">
+										<t:extension>
+											<OverflowToolbar>
+												<Button icon="sap-icon://add" press="onRowAdd"/>
+												<Button icon="sap-icon://delete" press="onRowDelete"></Button>
+											</OverflowToolbar>
+										</t:extension>
+										<t:columns>
+											<t:Column>
+												<Label text="Language"/>
+												<t:template>
+													<Input value="{name}" wrapping="false"/>
+												</t:template>
+											</t:Column>
+											<t:Column>
+												<Label text="E-Mail Subject"/>
+												<t:template>
+													<Input value="{_id}"/>
+												</t:template>
+											</t:Column>
+											<t:Column>
+												<Label text="E-Mail Template"/>
+												<t:template>
+													<Input value="{_id}"/>
+												</t:template>
+											</t:Column>
+											<t:Column>
+												<Label text="Default"/>
+												<t:template>
+													<Input value="{_id}"/>
+												</t:template>
+											</t:Column>																																			
+										</t:columns>
+									</t:Table>		
+									</layout:BlockLayoutCell>
+								</layout:BlockLayoutRow>
+							</layout:BlockLayout>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>			
+			<uxap:ObjectPageSection>
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection id="idGeneralPage2"  title="Execution Details">
+						<uxap:blocks>
+							<layout:BlockLayout>
+								<layout:BlockLayoutRow>
+									<layout:BlockLayoutCell>
+										<widget:LabelInput text="Members Contacted" value="{/temp}"/>
+										<widget:LabelInput text="Members Not Contacted" value="{/temp}"/>
+									</layout:BlockLayoutCell>
+									<layout:BlockLayoutCell>
+										<widget:LabelInput text="Executed By" value="{/temp}"/>
+										<widget:LabelInput text="Executed On" value="{/temp}"/>
+									</layout:BlockLayoutCell>
+								</layout:BlockLayoutRow>								
+								<layout:BlockLayoutRow>
+									<layout:BlockLayoutCell title="" class="test">
+										<t:Table id="table1" rows="{/executionDetails}">
+											<t:extension>
+												<OverflowToolbar>
+													<Button icon="sap-icon://add" press="onRowAdd"/>
+													<Button icon="sap-icon://delete" press="onRowDelete"></Button>
+												</OverflowToolbar>
+											</t:extension>
+											<t:columns>
+												<t:Column>
+													<Label text="Account Name"/>
+													<t:template>
+														<Input value="{name}" wrapping="false"/>
+													</t:template>
+												</t:Column>
+												<t:Column>
+													<Label text="Contact Name"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>
+												<t:Column>
+													<Label text="Marketing Interaction"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>	
+												<t:Column>
+													<Label text="Response Code"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>																								
+											</t:columns>
+										</t:Table>
+									</layout:BlockLayoutCell>
+								</layout:BlockLayoutRow>
+							</layout:BlockLayout>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection>
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Response Details">
+						<uxap:blocks>
+							<layout:BlockLayout>
+								<layout:BlockLayoutRow>
+									<layout:BlockLayoutCell>
+										<widget:LabelInput text="Number of Activities" value="{/temp}"/>
+										<widget:LabelInput text="Number of Leads" value="{/temp}"/>
+										<widget:LabelInput text="Number of Opportunities" value="{/temp}"/>
+										<widget:LabelInput text="Number of Sales Quotes" value="{/temp}"/>
+										<widget:LabelInput text="Sales Order Volume" value="{/temp}"/>
+									</layout:BlockLayoutCell>
+									<layout:BlockLayoutCell>
+										<widget:LabelInput text="Number of Non-Responders" value="{/temp}"/>
+										<widget:LabelInput text="Response Rate" value="{/temp}"/>
+									</layout:BlockLayoutCell>
+								</layout:BlockLayoutRow>								
+								<layout:BlockLayoutRow>
+									<layout:BlockLayoutCell title="Response">
+										<t:Table id="response" rows="{/responseDetails}">
+											<t:extension>
+												<OverflowToolbar>
+													<Button icon="sap-icon://add" press="onRowAdd"/>
+													<Button icon="sap-icon://delete" press="onRowDelete"></Button>
+												</OverflowToolbar>
+											</t:extension>
+											<t:columns>
+												<t:Column>
+													<Label text="Response Type"/>
+													<t:template>
+														<Input value="{name}" wrapping="false"/>
+													</t:template>
+												</t:Column>
+												<t:Column>
+													<Label text="Response ID"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>
+												<t:Column>
+													<Label text="Response Description"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>	
+												<t:Column>
+													<Label text="Response Option"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>		
+												<t:Column>
+													<Label text="Classification"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>	
+												<t:Column>
+													<Label text="Created On"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>
+												<t:Column>
+													<Label text="Activity Date/Time"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>		
+												<t:Column>
+													<Label text="Account Name"/>
+													<t:template>
+														<Input value="{_id}"/>
+													</t:template>
+												</t:Column>		
+												<t:Column>
+													<Label text="Contact Name"/>
 													<t:template>
 														<Input value="{_id}"/>
 													</t:template>
@@ -125,14 +327,67 @@
 						</uxap:blocks>
 					</uxap:ObjectPageSubSection>
 				</uxap:subSections>
-			</uxap:ObjectPageSection>
+			</uxap:ObjectPageSection>			
 			<uxap:ObjectPageSection>
 				<uxap:subSections>
 					<uxap:ObjectPageSubSection title="Attachment">
 						<uxap:blocks>
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
-									<layout:BlockLayoutCell title="Attachments"></layout:BlockLayoutCell>
+									<layout:BlockLayoutCell title="Attachments">
+										<t:Table id="attachment" rows="{/attachment}">
+										<t:extension>
+											<OverflowToolbar>
+												<Button icon="sap-icon://add" press="onRowAdd"/>
+												<Button icon="sap-icon://delete" press="onRowDelete"></Button>
+											</OverflowToolbar>
+										</t:extension>
+										<t:columns>
+											<t:Column hAlign="Center">
+												<core:Icon src="sap-icon://document" tooltip="File Type" width="100%"/>
+												<t:template>
+													<Input value="{name}" wrapping="false"/>
+												</t:template>
+											</t:Column>
+											<t:Column hAlign="Center">
+												<core:Icon src="sap-icon://locked" tooltip="Lock Status" width="100%"/>	
+												<t:template>
+													<Input value="{_id}"/>
+												</t:template>
+											</t:Column>
+											<t:Column>
+												<Label text="Document Title" tooltip="Document Title"/>
+												<t:template>
+													<Input value="{_id}"/>
+												</t:template>
+											</t:Column>	
+											<t:Column>
+												<Label text="Response Option"/>
+												<t:template>
+													<Input value="{_id}"/>
+												</t:template>
+											</t:Column>		
+											<t:Column>
+												<Label text="Created On"/>
+												<t:template>
+													<Input value="{_id}"/>
+												</t:template>
+											</t:Column>	
+											<t:Column>
+												<Label text="Created By"/>
+												<t:template>
+													<Input value="{_id}"/>
+												</t:template>
+											</t:Column>
+											<t:Column>
+												<Label text="File Size"/>
+												<t:template>
+													<Input value="{_id}"/>
+												</t:template>
+											</t:Column>		
+										</t:columns>
+									</t:Table>
+									</layout:BlockLayoutCell>
 								</layout:BlockLayoutRow>
 							</layout:BlockLayout>
 						</uxap:blocks>

@@ -51,6 +51,20 @@
 									}
 								},
 								{
+									"id": "sap_ushell_generated_tile_id_1",
+									"title": "Response Options",
+									"size": "1x1",
+									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"properties": {
+										"chipId": "sap_ushell_generated_chip_id",
+										"title": "Response Options",
+										"info": "Search, modify Response Options",
+										"targetURL": "#ResponseOption-App",
+										"icon": "sap-icon://multi-select"
+
+									}
+								},								
+								{
 									"id": "sap_ushell_generated_tile_id_2",
 									"title": "Campines",
 									"size": "1x1",
@@ -142,6 +156,16 @@
 							"description": "View TargetGroup",
 							"title": "Target Group"
 						},
+						"ResponseOption-App": {
+							"additionalInformation": "SAPUI5.Component=sap.nsme.crm.ResponseOption",
+							"applicationType": "URL",
+							"url": "/web/crm/ResponseOption",
+							"description": "View ResponseOption",
+							"title": "Response Options"
+						},
+
+
+						
 						"Campaign-App": {
 							"additionalInformation": "SAPUI5.Component=sap.nsme.crm.Campaign",
 							"applicationType": "URL",
