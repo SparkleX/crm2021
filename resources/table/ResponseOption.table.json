@@ -21,6 +21,7 @@
 	"fieldOrder": [
 		"name",
 		"classify",
+		"status",
 		"genLeads"
 	]
 }

@@ -1,0 +1,67 @@
+<mvc:View controllerName="sap.nsme.crm.ResponseOption.controller.List"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:t="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc.View"
+	xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar" 
+	displayBlock="true">	
+	<f:DynamicPage headerExpanded="true" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false">
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="ResponseOptions" />
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+		<!-- DynamicPage Header -->
+		<f:header>
+			<f:DynamicPageHeader pinnable="true">
+				<fb:FilterBar id="idFilterBar" reset="onReset" useToolbar="false" showGoOnFB="true">
+				 	<fb:filterItems>
+						<fb:FilterItem name="A" label="Code">
+							<fb:control>
+								<Input />
+							</fb:control>
+						</fb:FilterItem>
+						<fb:FilterItem name="B" label="Name">
+							<fb:control>
+								<Input />	
+							</fb:control>
+						</fb:FilterItem>
+					</fb:filterItems>
+				</fb:FilterBar>
+				</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<t:Table id="table1" rows="{/}" rowActionCount="1">
+				<t:extension>
+					<OverflowToolbar>
+						<Button text="New" type="Emphasized"  press="onClickNew" />
+					</OverflowToolbar>
+				</t:extension>				
+				<t:columns>
+					<t:Column >
+						<Label text="Code" />
+						<t:template>
+							<Text text="{code}"/>
+						</t:template>
+					</t:Column>
+					<t:Column >
+						<Label text="Name" />
+						<t:template>
+							<Text text="{name}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+				<t:rowActionTemplate>
+					<t:RowAction>
+						<t:RowActionItem press="onToDetail"	type="Navigation" icon="sap-icon://feeder-arrow"></t:RowActionItem>
+					</t:RowAction>					
+				</t:rowActionTemplate>
+			</t:Table>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>
