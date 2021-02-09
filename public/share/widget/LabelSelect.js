@@ -9,6 +9,7 @@ sap.ui.define(
 						type: "string",
 						group: "Behavior"
 					},
+					dataBind: { type: "string", group: "Behavior" },
 					selectedKey: {
 						type: "string",
 						group: "Data",
@@ -45,11 +46,16 @@ sap.ui.define(
 				width: "33%"
 			});
 			this.setAggregation("_label", oLabel);
+			var oSelectKeyBind = null;
+			if(mSettings.selectedKey) {
+				oSelectKeyBind = JSON.parse(JSON.stringify(mSettings.selectedKey));
+			}
 			const oSelect = new Select({
 				items: mSettings.items,
 				id: `${this.getId()}-select`,
 				width: "67%",
-				selectedKey: JSON.parse(JSON.stringify(mSettings.selectedKey))
+				selectedKey: oSelectKeyBind,
+				dataBind: mSettings.dataBind
 			});
 			this.setAggregation("_select", oSelect);
 			BaseClass.prototype.applySettings.call(this, mSettings, oScope);

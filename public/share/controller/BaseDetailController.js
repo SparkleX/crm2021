@@ -6,9 +6,10 @@ sap.ui.define(
 		"sap/ui/model/json/JSONModel",
 		"sap/ui/core/routing/History",
 		"sap/nsme/share/utils/ViewUtils",
-		"sap/nsme/share/utils/CommonUtils"
+		"sap/nsme/share/utils/CommonUtils",
+		"sap/nsme/share/utils/MetadataUtils"
 	],
-	function (Controller, MessageToast, Fragment, JSONModel, History, ViewUtils, CommonUtils) {
+	function (Controller, MessageToast, Fragment, JSONModel, History, ViewUtils, CommonUtils, MetadataUtils) {
 		"use strict";
 
 		const ViewMode = "ViewMode";
@@ -58,14 +59,10 @@ sap.ui.define(
 			}, this);
 
 			const that = this;
-			jQuery.ajax({
-				url: "/api/codes",
-				success: function (data) {
-					const oCodesModel = new JSONModel(data);
-					that.getView().setModel(oCodesModel, "codes");
-					//oCodesModel.refresh(true)
-				}
-			});
+			var codes = MetadataUtils.getCodeListSync();
+			const oCodesModel = new JSONModel(codes);
+			this.getView().setModel(oCodesModel, "codes");
+
 		};
 		theClass.prototype.setFormMode = function (value) {
 			this.formMode = value;

@@ -7,10 +7,28 @@ sap.ui.define(["sap/nsme/share/utils/AjaxUtils"], function (AjaxUtils) {
 			return theClass.cache;
 		}
 		theClass.cache = await AjaxUtils.get({url:"/api/metadata"});
+		theClass.cache.codeList = this.normalizeCodeList(theClass.cache.codeList);
 		return theClass.cache;
 	};
-	theClass.getCodeListSync = function (codelist) {
+	theClass.getCodeListSync = function () {
 		return theClass.cache.codeList;
-	}	
+	};
+	theClass.normalizeCodeList = function (codeList) {
+		for(var name in codeList) {
+			var codes = codeList[name];
+			codes.list=[];
+			for(var key of codes.order) {
+				codes.list.push({
+					value: key,
+					desc: codes.code[key]
+				});
+			}
+		}
+		return codeList;
+		
+	};
+	theClass.getMetadataSync = function() {
+		return theClass.cache;
+	}
 	return theClass;
 });

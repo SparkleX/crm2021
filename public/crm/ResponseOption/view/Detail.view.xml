@@ -13,7 +13,7 @@
 			<uxap:ObjectPageDynamicHeaderTitle>
 				<uxap:expandedHeading>
 					<layout:HorizontalLayout>
-						<Title text="ResponseOption" wrapping="false" />
+						<Title text="Response Option" wrapping="false" />
 						<Title text="" width="20pt" />
 						<uxap:ObjectPageHeaderActionButton id="sysFirstButton" icon="sap-icon://collapse-group" type="Transparent" tooltip="First" press="onFirst" />
 						<uxap:ObjectPageHeaderActionButton id="sysPrevButton" icon="sap-icon://navigation-up-arrow" type="Transparent" tooltip="Prev" press="onPrev" />
@@ -57,24 +57,16 @@
 							<layout:BlockLayout id="blocks">
 								<layout:BlockLayoutRow>
 									<layout:BlockLayoutCell title="General">
-										<Label id="aaa" text="123" width="30%"></Label>
-										<Input id="bbb" value="{/code}" width="70%"></Input>
-										<widget:LabelInput id="code" text="Code" value="{/code}"/>
 										<widget:LabelInput id="name" text="Name" value="{/name}"/>
-										<widget:LabelSelect id="test" text="TEST">
-											<core:Item text="First Half" key="abc"></core:Item>
-											<core:Item text="Second Half" key="xyz"></core:Item>
-										</widget:LabelSelect>
-										<widget:LabelSelect3 id="test3" text="TEST">
-											<core:Item text="First Half" key="abc"></core:Item>
-											<core:Item text="Second Half" key="xyz"></core:Item>
-								
-										</widget:LabelSelect3>										
+										<widget:LabelSelect id="classify" text="Classification" selectedKey="{/classify}" dataBind="ResponseOption.classify"/>
+										<widget:LabelSelect id="status" text="Status" selectedKey="{/status}" dataBind="ResponseOption.status"/>
+										<widget:LabelSelect id="genLeads" text="Generate Leads" selectedKey="{/genLeads}" dataBind="ResponseOption.genLeads"/>
 									</layout:BlockLayoutCell>
-									<layout:BlockLayoutCell title="Main Address">
-										<widget:LabelInput id="country" text="Country" value="{/country}"/>
-										<widget:LabelInput id="city" text="City" value="{/city}"/>
-										<widget:LabelInput id="street" text="Street" value="{/street}"/>
+									<layout:BlockLayoutCell title="Administrative Data">
+										<widget:LabelInput text="Create Date" value="{/temp}"/>
+										<widget:LabelInput text="Create By" value="{/temp}"/>
+										<widget:LabelInput text="Update Date" value="{/temp}"/>
+										<widget:LabelInput text="Update By" value="{/temp}"/>
 									</layout:BlockLayoutCell>								
 								</layout:BlockLayoutRow>
 							</layout:BlockLayout>
