@@ -21,17 +21,8 @@
 		"defaultValue": {
 			"type": "string"
 		},
-		"validValues": {
-			"type": "object",
-			"additionalProperties": {
-				"type": "string"
-			}
-		},
-		"validValueOrder": {
-			"type": "array",
-			"items": {
-				"type": "string"
-			}
+		"codeList": {
+			"type": "string"
 		},
 		"transient": {
 			"type": "boolean"

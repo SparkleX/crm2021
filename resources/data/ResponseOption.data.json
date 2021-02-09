@@ -1,0 +1,16 @@
+[
+	{
+		"id": "0a7c26b6-6a9f-11eb-917b-bb94a42910a2",
+		"name": "Like",
+		"classify": "P",
+		"status": "A",
+		"genLeads": "N"
+	},
+	{
+		"id": "0a7c27f6-6a9f-11eb-917c-e745a08d93b9",
+		"name": "Not Like",
+		"classify": "N",
+		"status": "A",
+		"genLeads": "N"
+	}
+]

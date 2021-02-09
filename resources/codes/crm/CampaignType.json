@@ -1,6 +1,14 @@
 {
-	"M": "E-Mail",
-	"P": "Phone Call",
-	"L": "Letter",
-	"F": "Fax"
+	"code": {
+		"M": "E-Mail",
+		"P": "Phone Call",
+		"L": "Letter",
+		"F": "Fax"
+	},
+	"order": [
+		"M",
+		"P",
+		"L",
+		"F"
+	]
 }

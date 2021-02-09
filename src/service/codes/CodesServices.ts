@@ -16,9 +16,9 @@ class CodesService {
 			const data = jsonfile.readFileSync(filename);
 			const start = "resources/codes/".length;
 			let key = filename.substr(start, filename.length - start - ".json".length);
-			key = key.replace(/\//g, ".");
-			const array = this.toArray(data);
-			rt[key] = array;
+			//key = key.replace(/\//g, ".");
+			//const array = this.toArray(data);
+			rt[key] = data;
 		}
 		return rt;
 	}

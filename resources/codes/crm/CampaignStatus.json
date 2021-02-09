@@ -1,4 +1,10 @@
 {
-	"P": "Planned",
-	"A": "Active"
+	"code": {
+		"P": "Planned",
+		"A": "Active"
+	},
+	"order": [
+		"P",
+		"A"
+	]
 }

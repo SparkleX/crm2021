@@ -6,6 +6,7 @@
 	xmlns:mvc="sap.ui.core.mvc.View"
 	xmlns:f="sap.f"
 	xmlns:fb="sap.ui.comp.filterbar" 
+	xmlns:widget="sap.nsme.share.widget" 
 	displayBlock="true">	
 	<f:DynamicPage headerExpanded="true" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false">
 		<!-- DynamicPage Title -->
@@ -44,17 +45,29 @@
 				</t:extension>				
 				<t:columns>
 					<t:Column >
-						<Label text="Code" />
+						<Label text="Name" />
 						<t:template>
-							<Text text="{code}"/>
+							<widget:Text text="{name}"/>
 						</t:template>
 					</t:Column>
 					<t:Column >
-						<Label text="Name" />
+						<Label text="Classification" />
 						<t:template>
-							<Text text="{name}"/>
+							<widget:Text text="{classify}" dataBind="ResponseOption.classify"/>
 						</t:template>
 					</t:Column>
+					<t:Column >
+						<Label text="Status" />
+						<t:template>
+							<widget:Text text="{status}" dataBind="ResponseOption.status"/>
+						</t:template>
+					</t:Column>	
+					<t:Column >
+						<Label text="Generate Leads"/>
+						<t:template>
+							<widget:Text text="{genLeads}" dataBind="ResponseOption.genLeads"/>
+						</t:template>
+					</t:Column>											
 				</t:columns>
 				<t:rowActionTemplate>
 					<t:RowAction>

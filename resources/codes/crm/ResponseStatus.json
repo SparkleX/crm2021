@@ -1,4 +1,10 @@
 {
-	"A": "Active",
-	"O": "Obsolete"
+	"code": {
+		"A": "Active",
+		"O": "Obsolete"
+	},
+	"order": [
+		"A",
+		"O"
+	]
 }

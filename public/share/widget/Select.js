@@ -17,16 +17,19 @@ sap.ui.define(["sap/m/Select", "sap/ui/core/ListItem"], function (BaseClass, Lis
 	};
 
 	theClass.prototype.applySettings = function (mSettings, oScope) {
-		const modelName = mSettings.items.model;
-		mSettings.items.template = new ListItem({
-			key: `{${modelName}>value}`,
-			text: `{${modelName}>desc}`,
-			additionalText: `{${modelName}>value}`,
-		});
-		BaseClass.prototype.applySettings.call(this, mSettings, oScope);
 		if(!mSettings.width) {
 			this.setWidth("100%");
+		}		
+		if(!mSettings.bindingContexts) {
+			const modelName = mSettings.items.model;
+			mSettings.items.template = new ListItem({
+				key: `{${modelName}>value}`,
+				text: `{${modelName}>desc}`,
+				additionalText: `{${modelName}>value}`,
+			});		
 		}
+		BaseClass.prototype.applySettings.call(this, mSettings, oScope);
+
 		this.setShowSecondaryValues(true);
 	};
 	return theClass;

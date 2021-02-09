@@ -13,6 +13,7 @@ import { oDescController } from "./controller/desc/DescController";
 import { oValueSelectController } from "./ovs/ValueSelectController";
 import { oDebugController } from "./dbg/DebugController";
 import { oSetup } from "./Setup";
+import { oMetadataController } from "./controller/metadata/MetadataController";
 
 class Application {
 	async execute(): Promise<void> {
@@ -47,6 +48,7 @@ class Application {
 			oApiKoa.use(router.routes());
 		}
 		oApiKoa.use(oCodesController.routes());
+		oApiKoa.use(oMetadataController.routes());
 		oApiKoa.use(oDescController.routes());
 		oApiKoa.use(oValueSelectController.routes());
 		app.use(koaMount("/api", oApiKoa));

@@ -25,6 +25,14 @@ sap.ui.define(
 		theClass.prototype.onInit = function () {
 			var oRouter = UIComponent.getRouterFor(this);
 			oRouter.getRoute("list").attachPatternMatched(this._onObjectMatched, this);
+			const that = this;
+			jQuery.ajax({
+				url: "/api/codes",
+				success: function (data) {
+					const oCodesModel = new JSONModel(data);
+					that.getView().setModel(oCodesModel, "codes");
+				}
+			});			
 		};
 		theClass.prototype._onObjectMatched = function (oEvent) {
 			this.refresh();

@@ -1,5 +1,12 @@
 {
-	"P": "Positive",
-	"N": "Negative",
-	"A": "Nature"
+	"code": {
+		"P": "Positive",
+		"N": "Negative",
+		"A": "Nature"
+	},
+	"order": [
+		"P",
+		"N",
+		"A"
+	]
 }
