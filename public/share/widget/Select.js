@@ -20,7 +20,7 @@ sap.ui.define(["sap/m/Select", "sap/ui/core/ListItem", "sap/nsme/share/utils/Met
 		if(!mSettings.width) {
 			this.setWidth("100%");
 		}
-		if (mSettings.dataBind) {
+		if (mSettings.dataBind && !mSettings.items) {
 			const [table, field] = mSettings.dataBind.split(".");
 			const metadata = MetadataUtils.getMetadataSync();
 			const metaField = metadata.tables[table].fields[field];
