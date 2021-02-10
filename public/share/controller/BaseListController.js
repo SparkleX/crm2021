@@ -5,9 +5,11 @@ sap.ui.define(
 		"sap/ui/core/Fragment",
 		"sap/ui/model/json/JSONModel",
 		"sap/ui/core/UIComponent",
-		"sap/base/util/deepExtend"
+		"sap/base/util/deepExtend",
+		"sap/nsme/share/utils/ViewApi",
+		"sap/nsme/share/widget/Text"
 	],
-	function (Controller, MessageToast, Fragment, JSONModel, UIComponent, deepExtend) {
+	function (Controller, MessageToast, Fragment, JSONModel, UIComponent, deepExtend, ViewApi, Text) {
 		"use strict";
 
 		var theClass = Controller.extend("sap.nsme.share.controller.BaseListController", {
@@ -22,7 +24,7 @@ sap.ui.define(
 			return name;
 		};
 
-		theClass.prototype.onInit = function () {
+		theClass.prototype.onInit = async function () {
 			var oRouter = UIComponent.getRouterFor(this);
 			oRouter.getRoute("list").attachPatternMatched(this._onObjectMatched, this);
 			const that = this;
@@ -32,7 +34,14 @@ sap.ui.define(
 					const oCodesModel = new JSONModel(data);
 					that.getView().setModel(oCodesModel, "codes");
 				}
-			});			
+			});	
+			
+			var oTable = this.getView().byId("table");
+			var json = await ViewApi.getListView();
+			for(var col of json.columns) {
+				var column = new sap.ui.table.Column(col);
+				oTable.addColumn(column);
+			}
 		};
 		theClass.prototype._onObjectMatched = function (oEvent) {
 			this.refresh();

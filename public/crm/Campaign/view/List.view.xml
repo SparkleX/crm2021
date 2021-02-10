@@ -7,6 +7,7 @@
 	xmlns:f="sap.f"
 	xmlns:fb="sap.ui.comp.filterbar" 
 	xmlns:widget="sap.nsme.share.widget"
+	xmlns:microchart="sap.suite.ui.microchart"
 	displayBlock="true">
 
 
@@ -59,7 +60,7 @@
 			</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
-			<t:Table id="table1" rows="{/}" rowActionCount="1">
+			<t:Table id="table" rows="{/}" rowActionCount="1">
 				<t:extension>
 					<OverflowToolbar>
 						<Button text="New" type="Emphasized"  press="onClickNew" />
@@ -89,7 +90,7 @@
 					</OverflowToolbar>
 				</t:extension>				
 				<t:columns>
-					<t:Column >
+					<!--<t:Column >
 						<Label text="Name" />
 						<t:template>
 							<widget:Text text="{name}" dataBind="Campaign.name"/>
@@ -112,7 +113,19 @@
 						<t:template>
 							<widget:Text text="{endDate}" dataBind="Campaign.endDate"/>
 						</t:template>
-					</t:Column>					
+					</t:Column>	
+					<t:Column>
+						<Label text="Sales Target"/>
+						<t:template>									
+							<microchart:StackedBarMicroChart size="Responsive" press="press">
+								<microchart:bars>
+									<microchart:StackedBarMicroChartBar value="100"/>
+									<microchart:StackedBarMicroChartBar value="200"/>
+									<microchart:StackedBarMicroChartBar value="20"/>
+								</microchart:bars>
+							</microchart:StackedBarMicroChart>		
+						</t:template>																
+					</t:Column>	-->
 				</t:columns>
 				<t:rowActionTemplate>
 					<t:RowAction>

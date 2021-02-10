@@ -34,10 +34,17 @@ sap.ui.define(
 		};
 		theClass.prototype.applySettings = function (mSettings, oScope) {
 			const rt = BaseClass.prototype.applySettings.call(this, mSettings, oScope);
-			if (mSettings.text) {
+			/*if (mSettings.text) {
 				this.unbindText();
 				this.bindText({
 					parts: mSettings.text.parts,
+					formatter: this.formatter.bind(this)
+				});
+			}*/
+			if (mSettings.text) {
+				var bindInfo = this.getBindingInfo("text");
+				this.bindText({
+					parts: bindInfo.parts,
 					formatter: this.formatter.bind(this)
 				});
 			}
