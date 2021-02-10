@@ -8,7 +8,6 @@ sap.ui.define(
 	function (Controller, MessageToast, Fragment, JSONModel) {
 		"use strict";
 		var theClass = Controller.extend("sap.nsme.crm.Chart.controller.Detail", {
-			dataTable: "OCRD"
 		});
 		theClass.prototype.onChoose = function (data) {
 			alert(data);

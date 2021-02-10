@@ -5,49 +5,100 @@
 	xmlns:t="sap.ui.table"
 	xmlns:mvc="sap.ui.core.mvc.View"
 	xmlns:f="sap.f"
-	xmlns:fb="sap.ui.comp.filterbar" 
+	xmlns:fb="sap.ui.comp.filterbar"
 	xmlns:viz="sap.viz.ui5.controls"
 	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
-	xmlns:viz.data="sap.viz.ui5.data"		
-	displayBlock="true">
-	<f:DynamicPage headerExpanded="true" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false">
-		<!-- DynamicPage Title -->
-		<f:title>
-			<f:DynamicPageTitle>
-				<f:heading>
-					<Title text="Charts" />
-				</f:heading>
-			</f:DynamicPageTitle>
-		</f:title>
-		<f:header>
+	xmlns:viz.data="sap.viz.ui5.data" displayBlock="true">
+	<Page>
+		<headerContent>
+			<OverflowToolbar width="100%">
+				<Text text="Selection: default"/>
+				<Button icon="sap-icon://arrow-down"/>
+				<Text text="View: default"/>
+				<Button icon="sap-icon://arrow-down"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://synchronize"/>
+				<Button icon="sap-icon://activity-items"/>
+				<MenuButton icon="sap-icon://table-chart">
+					<menu>
+						<Menu>
+							<MenuItem text="Table" icon="sap-icon://table-chart" press="onPress" />
+							<MenuItem text="V. Bar" icon="sap-icon://vertical-bar-chart" press="onPress" />
+							<MenuItem text="H. Bar" icon="sap-icon://horizontal-bar-chart" press="onPress" />
+							<MenuItem text="Line" icon="sap-icon://line-chart" press="onPress" />
+							<MenuItem text="Pie" icon="sap-icon://pie-chart" press="onPress" />
+							<MenuItem text="Scatter" icon="sap-icon://scatter-chart" press="onPress" />
+							<MenuItem text="V. Stacked" icon="sap-icon://upstacked-chart" press="onPress" />
+							<MenuItem text="H. Stacked" icon="sap-icon://along-stacked-chart" press="onPress" />
+							<MenuItem text="Area" icon="sap-icon://area-chart" press="onPress" />
+							<MenuItem text="Bubble" icon="sap-icon://bubble-chart" press="onPress" />
+							<MenuItem text="V. Full Stacked" icon="sap-icon://full-stacked-column-chart" press="onPress" />
+							<MenuItem text="H. Full Stacked" icon="sap-icon://full-stacked-chart" press="onPress" />
+							<MenuItem text="Heatmap" icon="sap-icon://heatmap-chart" press="onPress" />
+							<MenuItem text="Chart Tree Map" icon="sap-icon://Chart-Tree-Map" press="onPress" />
 
-		</f:header>
-		<f:content>
-			<viz:Popover id="idPopOver"></viz:Popover>
-            <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
-                height='100%' width="100%" vizType='bar'>
-                <viz:dataset>
-                    <viz.data:FlattenedDataset data="{/milk}">
-                        <viz.data:dimensions>
-                            <viz.data:DimensionDefinition name="Store Name"
-                                value="{Store Name}" />
-                        </viz.data:dimensions>
-                        <viz.data:measures>
-                            <viz.data:MeasureDefinition name="Revenue"
-                                value="{Revenue}" />
-                            <viz.data:MeasureDefinition name="Cost"
-                                value="{Cost}" />
-                        </viz.data:measures>
-                    </viz.data:FlattenedDataset>
-                </viz:dataset>
+						</Menu>
+					</menu>
+				</MenuButton>				<Button icon="sap-icon://chart-table-view"/>
+				<Button icon="sap-icon://print"/>
+				<Button icon="sap-icon://action"/>
+				<Button icon="sap-icon://customize"/>
+				<Button icon="sap-icon://hint"/>
 
-                <viz:feeds>
-                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
-                        values="Revenue" />
-                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"
-                        values="Store Name" />
-                </viz:feeds>
-            </viz:VizFrame>
-		</f:content>
-	</f:DynamicPage>
+			</OverflowToolbar>
+		</headerContent>
+		<l:Splitter>
+			<IconTabBar id="idIconTabBarMulti">
+				<layoutData>
+					<l:SplitterLayoutData size="300px" />
+				</layoutData>
+				<items>
+					<IconTabFilter icon="sap-icon://filter">
+						<Text text="Selection" />
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://grid" key="attachments">
+						<Text text="Dim / Measure" />
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://bookmark" key="notes">
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<!--	<Panel width="auto">
+					<layoutData>
+						<l:SplitterLayoutData size="300px" />
+					</layoutData>
+					<headerToolbar>
+						<OverflowToolbar>
+							<Title text="Selection"/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<content>
+						<Label text="123" width="100%"></Label>
+						<Label text="123" width="100%"></Label>
+					</content>
+				</Panel>
+-->
+
+			<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}" height='100%' width="100%" vizType='bar'>
+				<viz:dataset>
+					<viz.data:FlattenedDataset data="{/milk}">
+						<viz.data:dimensions>
+							<viz.data:DimensionDefinition name="Store Name" value="{Store Name}" />
+						</viz.data:dimensions>
+						<viz.data:measures>
+							<viz.data:MeasureDefinition name="Revenue" value="{Revenue}" />
+							<viz.data:MeasureDefinition name="Cost" value="{Cost}" />
+						</viz.data:measures>
+					</viz.data:FlattenedDataset>
+				</viz:dataset>
+
+				<viz:feeds>
+					<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Revenue" />
+					<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name" />
+				</viz:feeds>
+			</viz:VizFrame>
+		</l:Splitter>
+
+
+	</Page>
 </mvc:View>

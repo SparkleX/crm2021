@@ -11,8 +11,8 @@ sap.ui.define(
 
 		var theClass = Controller.extend("sap.nsme.crm.Chart.controller.List", {});
 		theClass.prototype.onExit = function (evt) {
-			var oPopOver = this.getView().byId("idPopOver");
-			oPopOver.destroy();
+			//var oPopOver = this.getView().byId("idPopOver");
+			//oPopOver.destroy();
 
 		};
 		theClass.prototype.onInit = function (evt) {
