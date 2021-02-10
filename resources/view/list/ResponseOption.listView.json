@@ -13,6 +13,7 @@
 			}
 		},
 		"classify": {
+			"hAlign": "Center",
 			"label": {
 				"Type": "sap.m.Label",
 				"text": "Classification"
@@ -24,6 +25,7 @@
 			}
 		},
 		"status": {
+			"hAlign": "Center",
 			"label": {
 				"Type": "sap.m.Label",
 				"text": "Status"
@@ -35,13 +37,15 @@
 			}
 		},
 		"genLeads":{
+			"hAlign": "Center",
 			"label": {
 				"Type": "sap.m.Label",
 				"text": "Generate Leads"
 			},
 			"template": {
-				"Type": "sap.nsme.share.widget.Text",
-				"text": "{genLeads}",
+				"Type": "sap.m.CheckBox",
+				"selected": "{=${genLeads}==='Y'}",
+				"displayOnly": true,
 				"dataBind": "ResponseOption.genLeads"
 			}			
 		}
