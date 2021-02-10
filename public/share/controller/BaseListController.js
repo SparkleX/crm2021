@@ -7,9 +7,10 @@ sap.ui.define(
 		"sap/ui/core/UIComponent",
 		"sap/base/util/deepExtend",
 		"sap/nsme/share/utils/ViewApi",
-		"sap/nsme/share/widget/Text"
+		"sap/nsme/share/widget/Text",
+		"sap/suite/ui/commons/MicroProcessFlowItem"
 	],
-	function (Controller, MessageToast, Fragment, JSONModel, UIComponent, deepExtend, ViewApi, Text) {
+	function (Controller, MessageToast, Fragment, JSONModel, UIComponent, deepExtend, ViewApi, Text, MicroProcessFlowItem) {
 		"use strict";
 
 		var theClass = Controller.extend("sap.nsme.share.controller.BaseListController", {

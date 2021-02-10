@@ -19,9 +19,11 @@
 				"text": "Classification"
 			},
 			"template": {
-				"Type": "sap.nsme.share.widget.Text",
-				"text": "{classify}",
-				"dataBind": "ResponseOption.classify"
+				"Type": "sap.suite.ui.commons.MicroProcessFlow",
+				"content": {
+					"Type": "sap.suite.ui.commons.MicroProcessFlowItem",
+					"state": "{= ${classify} === 'P' ? 'Success' : (${classify} === 'A'? 'Information':'Error')}"
+				}				
 			}
 		},
 		"status": {
