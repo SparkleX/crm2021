@@ -33,9 +33,9 @@
 				"text": "Status"
 			},
 			"template": {
-				"Type": "sap.nsme.share.widget.Text",
-				"text": "{status}",
-				"dataBind": "ResponseOption.status"
+				"Type": "sap.ui.core.Icon",
+				"src": "{= ${status} === 'A' ? 'sap-icon://sys-enter-2' : 'sap-icon://sys-cancel-2'}",
+				"color": "{= ${status} === 'A' ? 'Positive' : 'Negative'}"
 			}
 		},
 		"genLeads":{
