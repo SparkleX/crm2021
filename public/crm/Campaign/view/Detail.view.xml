@@ -101,19 +101,19 @@
 												<t:Column>
 													<Label text="Status"/>
 													<t:template>
-														<Input value="{_id}"/>
+														<widget:Select value="{status}" dataBind="ResponseOption.status"/>
 													</t:template>
 												</t:Column>
 												<t:Column>
 													<Label text="Classification"/>
 													<t:template>
-														<Input value="{_id}"/>
+														<widget:Select value="{classify}" dataBind="ResponseOption.classify"/>
 													</t:template>
 												</t:Column>
 												<t:Column>
 													<Label text="Generated Leads"/>
 													<t:template>
-														<Input value="{_id}"/>
+														<widget:Select value="{genLeads}" dataBind="ResponseOption.genLeads"/>
 													</t:template>
 												</t:Column>
 												<t:Column>

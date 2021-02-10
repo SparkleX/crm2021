@@ -1,0 +1,12 @@
+{
+	"name": "CampaignResponseOption",
+	"fields": {
+		"optionId": {
+			"type": "string",
+			"size": 10
+		}
+	},
+	"fieldOrder": [
+		"optionId"
+	]
+}
