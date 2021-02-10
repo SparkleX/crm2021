@@ -1,10 +1,13 @@
 [
 	{
 		"id": "11eb-5bbe-022d5010-a8ce-3131a0451010",
-		"name": "IT Software"
+		"name": "IT Software",
+		"status": "Y"
 	},
 	{
 		"id": "11eb-5bbe-022d5011-a8ce-3131a0451010",
-		"name": "IT Hardware"
+		"name": "IT Hardware",
+		"status": "N"
+
 	}
 ]

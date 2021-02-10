@@ -1,0 +1,10 @@
+{
+	"code": {
+		"Y": "Active",
+		"N": "InActive"
+	},
+	"order": [
+		"Y",
+		"N"
+	]
+}

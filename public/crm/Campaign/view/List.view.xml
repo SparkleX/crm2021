@@ -92,7 +92,7 @@
 					<t:Column >
 						<Label text="Name" />
 						<t:template>
-							<widget:Text text="{name}"/>
+							<widget:Text text="{name}" dataBind="Campaign.name"/>
 						</t:template>
 					</t:Column>
 					<t:Column >

@@ -11,7 +11,7 @@
 		"status": {
 			"type": "string",
 			"size": 1,
-			"codeList": "common/YesNo"
+			"codeList": "crm/TargetGroupStatus"
 		},
 		"note": {
 			"type": "string",

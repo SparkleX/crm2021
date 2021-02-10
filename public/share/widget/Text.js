@@ -5,9 +5,7 @@ sap.ui.define(
 		var theClass = BaseClass.extend("sap.nsme.share.widget.Text", {
 			metadata: {
 				properties: {
-					dataBind: { type: "string", group: "Behavior" },
-					codeList: { type: "string", group: "Behavior" },
-					linkTo: { type: "string", group: "Behavior" }
+					dataBind: { type: "string", group: "Behavior" }
 				}
 			}
 		});
@@ -19,11 +17,18 @@ sap.ui.define(
 			if(a == null) {
 				return a;
 			}
-			const codeList = this.getCodeList();
+			var codeList = this.metaField.codeList;
 			if(codeList) {
 				var codes = MetadataUtils.getCodeListSync();
 				var rt = codes[codeList].code[a];
 				return rt;
+			}
+			switch(this.metaField.type) {
+				case "date":
+					var dateFormat = sap.ui.core.format.DateFormat.getDateInstance();   
+					var date = new Date(a);
+					var dateFormatted = dateFormat.format(date, false);
+					return dateFormatted;
 			}
 			return a;
 		};
@@ -36,21 +41,13 @@ sap.ui.define(
 					formatter: this.formatter.bind(this)
 				});
 			}
-			if (mSettings.dataBind) {
+			if (!mSettings.dataBind) {
+				console.error("missing [dataBind]");
+			}
+			//if (mSettings.dataBind) {
 				const dataBind = this.getDataBind();
-				CommonUtils.asyncCall(this, async function () {
-					const [table, field] = dataBind.split(".");
-					const metadata = await MetadataUtils.getMetadata();
-					const metaField = metadata.tables[table].fields[field];
-					this.setCodeList(metaField.codeList);
-				});
-				/*if (mSettings.codeList) {
-					console.warn("dataBind set, ignore codeList");
-				}*/
-			}
-			if (false== (mSettings.dataBind || mSettings.codeList ||  mSettings.linkTo)) {
-				console.warn("dataBind , codeList, linkTo undefined");
-			}
+				this.metaField = MetadataUtils.getTableFieldSync(dataBind);
+			//}
 			return rt;
 		};
 		return theClass;
