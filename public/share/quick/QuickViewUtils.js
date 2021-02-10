@@ -12,6 +12,7 @@ sap.ui.define(
 		"use strict";
 		var theClass = {};
 		theClass.show = function (params) {
+			this.params = params;
 			var oDataModel = new JSONModel(`/api/${params.object}/${params.id}`);
 			if (!this._pPopover) {
 				this._pPopover = Fragment.load({
@@ -29,7 +30,7 @@ sap.ui.define(
 		};
 		theClass.onGo = function (params) {
 			const id = params.getSource().getModel().getData().id;
-			window.open(`#Account-App&/detail/${id}`, "_blank");
+			window.open(`#${this.params.object}-App&/detail/${id}`, "_blank");
 		};
 		return theClass;
 	}

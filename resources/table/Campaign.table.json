@@ -7,7 +7,8 @@
 		},
 		"type": {
 			"type": "string",
-			"size": 1
+			"size": 1,
+			"codeList": "crm/CampaignType"
 		},
 		"startDate": {
 			"type": "date"
@@ -17,7 +18,8 @@
 		},
 		"status": {
 			"type": "string",
-			"size": 1
+			"size": 1,
+			"codeList": "crm/CampaignStatus"
 		},
 		"tgtGroup": {
 			"type": "guid",

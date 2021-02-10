@@ -10,7 +10,8 @@
 		},
 		"status": {
 			"type": "string",
-			"size": 1
+			"size": 1,
+			"codeList": "common/YesNo"
 		},
 		"note": {
 			"type": "string",

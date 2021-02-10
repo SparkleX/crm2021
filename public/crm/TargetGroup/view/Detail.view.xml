@@ -40,15 +40,11 @@
 							<layout:BlockLayout>
 								<layout:BlockLayoutRow>
 									<layout:BlockLayoutCell title="General">
-										<Label text="TargetGroup ID" />
-										<Input value="{/id}" />
-										<Label text="Description" />
-										<Input value="{/name}" />
-										<Label text="Status" />
-										<widget:Select selectedKey="{/status}" items="{codes>/common.YesNo}">
-										</widget:Select>
-										<Label text="Note" />
-										<Input value="{/note}"/>
+										<widget:LabelInput text="Description" value="{/name}" />
+										<widget:LabelSelect text="Status" selectedKey="{/status}" dataBind="TargetGroup.status"/>
+										<widget:LabelInput text="Note" value="{/note}"/>
+									</layout:BlockLayoutCell>
+									<layout:BlockLayoutCell>
 									</layout:BlockLayoutCell>
 								</layout:BlockLayoutRow>
 

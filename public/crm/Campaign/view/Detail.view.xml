@@ -57,10 +57,10 @@
 								<layout:BlockLayoutRow>
 									<layout:BlockLayoutCell title="General">
 										<widget:LabelInput text="Campaign" value="{/name}"/>
-										<widget:LabelSelect text="Campaign Type" selectedKey="{/type}" items="{codes>/crm.CampaignType}"/>
+										<widget:LabelSelect text="Campaign Type" selectedKey="{/type}" dataBind="Campaign.type"/>
 										<widget:LabelDatePicker text="Start Date" value="{/startDate}"/>
 										<widget:LabelDatePicker text="End Date" value="{/endDate}"/>
-										<widget:LabelSelect text="Status" selectedKey="{/status}" items="{codes>/crm.CampaignStatus}"/>
+										<widget:LabelSelect text="Status" selectedKey="{/status}" dataBind="Campaign.status"/>
 										<widget:LabelValueSelect text="Target Group" linkTo="TargetGroup" value="{/tgtGroup}"/>
 										<widget:LabelInput text="Target Group Members"/>
 										<widget:LabelTextArea text="Additional Information" value="{/note}"/>

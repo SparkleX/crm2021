@@ -57,8 +57,6 @@
 							<layout:BlockLayout id="blocks">
 								<layout:BlockLayoutRow>
 									<layout:BlockLayoutCell title="General">
-										<Label id="aaa" text="123" width="30%"></Label>
-										<Input id="bbb" value="{/code}" width="70%"></Input>
 										<widget:LabelInput id="code" text="Code" value="{/code}"/>
 										<widget:LabelInput id="name" text="Name" value="{/name}"/>
 										<widget:LabelSelect id="test" text="TEST">
