@@ -3,23 +3,28 @@
 	"fields": {
 		"code": {
 			"type": "string",
-			"size": 10
+			"size": 10,
+			"note": "Account Code"
 		},
 		"name": {
 			"type": "string",
-			"size": 10
+			"size": 10,
+			"note": "Account Name"
 		},
 		"country": {
 			"type": "string",
-			"size": 10
+			"size": 10,
+			"note": "Country"
 		},
 		"street": {
 			"type": "string",
-			"size": 10
+			"size": 10,
+			"note": "Street"
 		},
 		"city": {
 			"type": "string",
-			"size": 10
+			"size": 10,
+			"note": "City"
 		}
 	},
 	"fieldOrder": [

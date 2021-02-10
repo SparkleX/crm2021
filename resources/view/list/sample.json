@@ -1,4 +1,15 @@
 {
+	"filterItems": [
+		{
+			"Type":"sap.ui.comp.filterbar.FilterItem",
+			"name": "A",
+			"label":"Name",
+			"control": {
+				"Type":"sap.m.Input"
+			}
+
+		}
+	],
 	"columns": [
 		{
 			"label": {

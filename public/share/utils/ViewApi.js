@@ -4,7 +4,7 @@ sap.ui.define(["./AjaxUtils"], function (AjaxUtils) {
 
 	theClass.getListView = async function (viewName) {
 		const param = {};
-		param.url = "/web/test.json";
+		param.url = "/api/view/list/" + viewName;
 		const rt = await AjaxUtils.get(param);
 		return rt;
 	};	

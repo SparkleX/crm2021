@@ -24,9 +24,9 @@
 		<!-- DynamicPage Header -->
 		<f:header>
 			<f:DynamicPageHeader pinnable="true">
-				<fb:FilterBar id="idFilterBar" reset="onReset" useToolbar="false" showGoOnFB="true">
+				<fb:FilterBar id="sysFilterBar" reset="onReset" useToolbar="false" showGoOnFB="true">
 				 	<fb:filterItems>
-						<fb:FilterItem name="A" label="Name">
+						<!--<fb:FilterItem name="A" label="Name">
 							<fb:control>
 								<Input />
 							</fb:control>
@@ -40,7 +40,7 @@
 							<fb:control>
 								<Input />
 							</fb:control>
-						</fb:FilterItem> 
+						</fb:FilterItem> -->
 					</fb:filterItems>
 				</fb:FilterBar>
 				<Toolbar style = "Clear">
@@ -60,7 +60,7 @@
 			</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
-			<t:Table id="table" rows="{/}" rowActionCount="1">
+			<t:Table id="sysTable" rows="{/}" rowActionCount="1">
 				<t:extension>
 					<OverflowToolbar>
 						<Button text="New" type="Emphasized"  press="onClickNew" />

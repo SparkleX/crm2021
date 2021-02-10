@@ -1,0 +1,82 @@
+{
+	"filterItems": [],
+	"columns": {
+		"type": {
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "Type"
+			},
+			"template": {
+				"Type": "sap.nsme.share.widget.Text",
+				"text": "{type}",
+				"dataBind": "Campaign.type"
+			}
+		},
+		"status": {
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "Status"
+			},
+			"template": {
+				"Type": "sap.nsme.share.widget.Text",
+				"text": "{status}",
+				"dataBind": "Campaign.status"
+			}
+		},		
+		"startDate": {
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "Start Date"
+			},
+			"template": {
+				"Type": "sap.nsme.share.widget.Text",
+				"text": "{startDate}",
+				"dataBind": "Campaign.startDate"
+			}
+		},
+		"endDate": {
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "End Date"
+			},
+			"template": {
+				"Type": "sap.nsme.share.widget.Text",
+				"text": "{endDate}",
+				"dataBind": "Campaign.endDate"
+			}
+		},
+		"name": {
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "Name"
+			},
+			"template": {
+				"Type": "sap.nsme.share.widget.Text",
+				"text": "{name}",
+				"dataBind": "Campaign.name"
+			}
+		},
+		"target": {
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "Sales Target"
+			},
+			"template": {
+				"Type": "sap.suite.ui.microchart.StackedBarMicroChart",
+				"size": "Responsive",
+				"bars": [
+					{
+						"value": 100
+					},
+					{
+						"value": 200
+					},
+					{
+						"value": 300
+					}
+				]
+			}
+		}
+	},
+	"columnOrder" : ["name", "type", "status","startDate","endDate", "target"]
+}

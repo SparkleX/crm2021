@@ -35,9 +35,14 @@ sap.ui.define(
 					that.getView().setModel(oCodesModel, "codes");
 				}
 			});	
-			
-			var oTable = this.getView().byId("table");
-			var json = await ViewApi.getListView();
+			const tableName = this.getTableName();
+			var oFilterBar = this.getView().byId("sysFilterBar");
+			var json = await ViewApi.getListView(tableName);
+			for(var filter of json.filterItems) {
+				var oFilter = new sap.ui.comp.filterbar.FilterItem(filter);
+				oFilterBar.addFilterItem(oFilter);
+			}
+			var oTable = this.getView().byId("sysTable");
 			for(var col of json.columns) {
 				var column = new sap.ui.table.Column(col);
 				oTable.addColumn(column);

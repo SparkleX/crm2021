@@ -3,22 +3,26 @@
 	"fields": {
 		"name": {
 			"type": "string",
-			"size": 10
+			"size": 10,
+			"note": "Response Option"
 		},
 		"classify": {
 			"type": "string",
 			"size": 1,
-			"codeList": "crm/ResponseClassification"
+			"codeList": "crm/ResponseClassification",
+			"note": "Classification"
 		},
 		"status": {
 			"type": "string",
 			"size": 1,
-			"codeList": "crm/ResponseStatus"
+			"codeList": "crm/ResponseStatus",
+			"note": "Status"
 		},
 		"genLeads": {
 			"type": "string",
 			"size": 1,
-			"codeList": "common/YesNo"
+			"codeList": "common/YesNo",
+			"note": "Generated Leads"
 		}
 	},
 	"fieldOrder": [

@@ -19,42 +19,18 @@
 		<!-- DynamicPage Header -->
 		<f:header>
 			<f:DynamicPageHeader pinnable="true">
-				<fb:FilterBar id="idFilterBar" reset="onReset" useToolbar="false" showGoOnFB="true">
-				 	<fb:filterItems>
-						<fb:FilterItem name="A" label="Code">
-							<fb:control>
-								<Input />
-							</fb:control>
-						</fb:FilterItem>
-						<fb:FilterItem name="B" label="Name">
-							<fb:control>
-								<Input />	
-							</fb:control>
-						</fb:FilterItem>
-					</fb:filterItems>
+				<fb:FilterBar id="sysFilterBar" reset="onReset" useToolbar="false" showGoOnFB="true">
 				</fb:FilterBar>
 				</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
-			<t:Table id="table1" rows="{/}" rowActionCount="1">
+			<t:Table id="sysTable" rows="{/}" rowActionCount="1">
 				<t:extension>
 					<OverflowToolbar>
 						<Button text="New" type="Emphasized"  press="onClickNew" />
 					</OverflowToolbar>
 				</t:extension>				
 				<t:columns>
-					<t:Column >
-						<Label text="Code" />
-						<t:template>
-							<Text text="{code}"/>
-						</t:template>
-					</t:Column>
-					<t:Column >
-						<Label text="Name" />
-						<t:template>
-							<Text text="{name}"/>
-						</t:template>
-					</t:Column>
 				</t:columns>
 				<t:rowActionTemplate>
 					<t:RowAction>

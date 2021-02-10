@@ -3,37 +3,46 @@
 	"fields": {
 		"name": {
 			"type": "string",
-			"size": 10
+			"size": 10,
+			"note": "Name"
 		},
 		"type": {
 			"type": "string",
 			"size": 1,
-			"codeList": "crm/CampaignType"
+			"codeList": "crm/CampaignType",
+			"note": "Type"
 		},
 		"startDate": {
-			"type": "date"
+			"type": "date",
+			"note": "Start Date"
 		},		
 		"endDate": {
-			"type": "date"
+			"type": "date",
+			"note": "End Date"
 		},
 		"status": {
 			"type": "string",
 			"size": 1,
-			"codeList": "crm/CampaignStatus"
+			"codeList": "crm/CampaignStatus",
+			"note": "Status"
 		},
 		"tgtGroup": {
 			"type": "guid",
-			"linkTo": "TargetGroup"
+			"linkTo": "TargetGroup",
+			"note": "Target Group"
 		},
 		"createTs": {
-			"type": "date"
+			"type": "date",
+			"note": "Create Date"
 		},
 		"executeTs": {
-			"type": "date"
+			"type": "date",
+			"note": "Execute Date"
 		},
 		"note": {
 			"type": "string",
-			"size": 255
+			"size": 255,
+			"note": "Note"
 		}
 	},
 	"fieldOrder": [

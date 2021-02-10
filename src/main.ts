@@ -14,6 +14,7 @@ import { oValueSelectController } from "./ovs/ValueSelectController";
 import { oDebugController } from "./dbg/DebugController";
 import { oSetup } from "./Setup";
 import { oMetadataController } from "./controller/metadata/MetadataController";
+import { oListViewController } from "./controller/view/ListViewController";
 
 class Application {
 	async execute(): Promise<void> {
@@ -51,6 +52,8 @@ class Application {
 		oApiKoa.use(oMetadataController.routes());
 		oApiKoa.use(oDescController.routes());
 		oApiKoa.use(oValueSelectController.routes());
+		oApiKoa.use(oListViewController.routes());
+
 		app.use(koaMount("/api", oApiKoa));
 		app.use(oDebugController.routes());
 

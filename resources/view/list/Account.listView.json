@@ -1,0 +1,28 @@
+{
+	"filterItems": [],
+	"columns": {
+		"code": {
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "Account Code"
+			},
+			"template": {
+				"Type": "sap.nsme.share.widget.Text",
+				"text": "{code}",
+				"dataBind": "Account.code"
+			}
+		},
+		"name":{
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "Account Name"
+			},
+			"template": {
+				"Type": "sap.nsme.share.widget.Text",
+				"text": "{name}",
+				"dataBind": "Account.name"
+			}
+		}
+	},
+	"columnOrder" : ["code", "name"]
+}

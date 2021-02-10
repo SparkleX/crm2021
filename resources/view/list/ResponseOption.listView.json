@@ -1,0 +1,55 @@
+{
+	"filterItems": [],
+	"columns": {
+		"name": {
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "Name"
+			},
+			"template": {
+				"Type": "sap.nsme.share.widget.Text",
+				"text": "{name}",
+				"dataBind": "ResponseOption.name"
+			}
+		},
+		"classify": {
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "Classification"
+			},
+			"template": {
+				"Type": "sap.nsme.share.widget.Text",
+				"text": "{classify}",
+				"dataBind": "ResponseOption.classify"
+			}
+		},
+		"status": {
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "Status"
+			},
+			"template": {
+				"Type": "sap.nsme.share.widget.Text",
+				"text": "{status}",
+				"dataBind": "ResponseOption.status"
+			}
+		},
+		"genLeads":{
+			"label": {
+				"Type": "sap.m.Label",
+				"text": "Generate Leads"
+			},
+			"template": {
+				"Type": "sap.nsme.share.widget.Text",
+				"text": "{genLeads}",
+				"dataBind": "ResponseOption.genLeads"
+			}			
+		}
+	},
+	"columnOrder": [
+		"name",
+		"status",
+		"classify",
+		"genLeads"
+	]
+}
