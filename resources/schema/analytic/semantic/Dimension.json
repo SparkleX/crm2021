@@ -1,0 +1,10 @@
+{
+	"title": "Dimension",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"expr": {
+			"type": "string"
+		}
+	}
+}

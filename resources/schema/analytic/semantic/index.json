@@ -1,0 +1,23 @@
+{
+	"title": "SemanticLayer",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"view": {
+			"type": "string"
+		},
+		"dimension": {
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "Dimension.json"
+			}
+		},
+		"measure": {
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "Measure.json"
+			}
+		}
+	},
+	"required": []
+}

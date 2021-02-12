@@ -1,0 +1,3 @@
+{
+    "sql": "select * from Campaign T1 inner join Response T2 on T1.id = T2.parent"
+}

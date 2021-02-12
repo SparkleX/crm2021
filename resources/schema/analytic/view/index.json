@@ -1,0 +1,11 @@
+{
+	"title": "View",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"sql": {
+			"type": "string"
+		}
+	},
+	"required": []
+}

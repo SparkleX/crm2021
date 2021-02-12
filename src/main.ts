@@ -15,7 +15,7 @@ import { oDebugController } from "./dbg/DebugController";
 import { oSetup } from "./Setup";
 import { oMetadataController } from "./controller/metadata/MetadataController";
 import { oListViewController } from "./controller/view/ListViewController";
-
+import { oAnalyticController } from "./analytic/AnalyticController";
 class Application {
 	async execute(): Promise<void> {
 		oSetup.init();
@@ -56,6 +56,9 @@ class Application {
 
 		app.use(koaMount("/api", oApiKoa));
 		app.use(oDebugController.routes());
+
+		app.use(koaMount("/ana", contextMw));
+		app.use(koaMount("/ana", oAnalyticController.routes()));
 
 		app.use(
 			koaMount("/index.html", function (ctx: Context) {

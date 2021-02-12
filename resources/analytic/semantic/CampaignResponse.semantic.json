@@ -1,0 +1,9 @@
+{
+	"view": "CampaignResponse",
+	"measure": {
+		"a": {
+			"expr": "sum(\"aaa\")"
+		}
+	},
+	"dimension": {}
+}

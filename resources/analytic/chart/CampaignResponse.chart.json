@@ -1,0 +1,8 @@
+{
+    "query":"CampaignResponse",
+    "title":"Campaign Response",
+    "selection" :{
+        "a": 1,
+        "b": 1
+    }
+}

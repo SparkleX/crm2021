@@ -1,0 +1,10 @@
+{
+	"title": "Measure",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"expr": {
+			"type": "string"
+		}
+	}
+}

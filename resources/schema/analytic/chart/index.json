@@ -1,0 +1,20 @@
+{
+	"title": "Chart",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"title": {
+			"type": "string"
+		},
+		"query": {
+			"type": "string"
+		},
+		"selection": {
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "Selection.json"
+			}
+		}
+	},
+	"required": []
+}
