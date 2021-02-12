@@ -18,7 +18,7 @@ sap.ui.define(
 		theClass.prototype.onInit = function (evt) {
 			var formatPattern = ChartFormatter.DefaultPattern;
 			var oVizFrame = this.getView().byId("idVizFrame");
-			oVizFrame.setVizProperties({
+			/*oVizFrame.setVizProperties({
 				plotArea: {
 					dataLabel: {
 						formatString: formatPattern.SHORTFLOAT_MFD2,
@@ -42,9 +42,18 @@ sap.ui.define(
 					visible: false,
 					text: "Revenue by City and Store Name"
 				}
-			});
+			});*/
 			var dataModel = new JSONModel("/web/crm/Chart/data.json");
 			oVizFrame.setModel(dataModel);
+		};
+		theClass.prototype.onChartType = function(evt, type) {
+			var visFrame = this.getView().byId("idVizFrame");
+			visFrame.setVizType(type);
+			//visFrame.rerender();
+
+			//console.debug(evt);
+			//console.debug(type);
+
 		};
 
 		return theClass;
