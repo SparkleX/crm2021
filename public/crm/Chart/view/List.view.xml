@@ -27,11 +27,11 @@
 							<MenuItem text="Bar" icon="sap-icon://horizontal-bar-chart" press=".onChartType($event, 'bar')" />
 							<MenuItem text="Line" icon="sap-icon://line-chart" press=".onChartType($event, 'line')" />
 							<MenuItem text="Pie" icon="sap-icon://pie-chart" press="onChartType($event, 'pie')" />
-							<MenuItem text="Scatter" icon="sap-icon://scatter-chart" press="onPress" />
+							<MenuItem text="Scatter" icon="sap-icon://scatter-chart" press="onChartType($event, 'scatter')" />
 							<MenuItem text="Stacked Column" icon="sap-icon://upstacked-chart" press=".onChartType($event, 'stacked_column')" />
 							<MenuItem text="Stacked Bar" icon="sap-icon://along-stacked-chart" press=".onChartType($event, 'stacked_bar')" />
 							<MenuItem text="Area" icon="sap-icon://area-chart" press="onChartType($event, 'area')" />
-							<MenuItem text="Bubble" icon="sap-icon://bubble-chart" press="onPress" />
+							<MenuItem text="Bubble" icon="sap-icon://bubble-chart" press="onChartType($event, 'bubble')" />
 							<MenuItem text="Full Stacked Column" icon="sap-icon://full-stacked-column-chart" press=".onChartType($event, '100_stacked_column')" />
 							<MenuItem text="Full Stacked Bar" icon="sap-icon://full-stacked-chart" press=".onChartType($event, '100_stacked_bar')" />
 							<MenuItem text="Heatmap" icon="sap-icon://heatmap-chart" press="onChartType($event, 'heatmap')" />
@@ -63,7 +63,7 @@
 					</IconTabFilter>
 				</items>
 			</IconTabBar>
-			<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}" height='100%' width="100%" vizType='column'>
+			<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}" height='100%' width="100%" vizType='line'>
 				<viz:dataset>
 					<viz.data:FlattenedDataset data="{/milk}">
 						<viz.data:dimensions>
