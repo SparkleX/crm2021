@@ -5,7 +5,7 @@
 			"expr": "sum(\"docTotal\")"
 		},
 		"revenue": {
-			"expr": "sum(\"paidSum\")"
+			"expr": "sum(\"docTotal\") - sum(\"paidSum\")"
 		}
 	},
 	"dimension": {

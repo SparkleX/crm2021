@@ -7,6 +7,11 @@ sap.ui.define(["sap/m/MessageBox"], function (MessageBox) {
 		const rt = this.ajax(param);
 		return rt;
 	};	
+	theClass.post = async function (param) {
+		param.method = "post";
+		const rt = this.ajax(param);
+		return rt;
+	};
 	theClass.ajax = async function (param) {
 		param.contentType = "application/json";
 		param.processData = false;
