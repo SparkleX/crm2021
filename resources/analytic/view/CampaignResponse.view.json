@@ -1,3 +1,3 @@
 {
-    "sql": "select * from Campaign T1 inner join Response T2 on T1.id = T2.parent"
+	"sql": "SELECT T0.\"id\", T0.\"name\", T1.\"docTotal\", T1.\"paidSum\" from \"Campaign\" T0 inner join \"RDR0\" T1 on T0.\"id\" = T1.\"campaignId\""
 }

@@ -1,9 +1,15 @@
 {
 	"view": "CampaignResponse",
 	"measure": {
-		"a": {
-			"expr": "sum(\"aaa\")"
+		"docTotal": {
+			"expr": "sum(\"docTotal\")"
+		},
+		"revenue": {
+			"expr": "sum(\"paidSum\")"
 		}
 	},
-	"dimension": {}
+	"dimension": {
+		"id": {},
+		"name": {}
+	}
 }
