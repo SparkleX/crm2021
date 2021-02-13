@@ -1,0 +1,44 @@
+[
+	{
+		"id": "6db1f1fa-6db7-11eb-9439-0242ac130002",
+		"docTotal": 10000.0,
+		"paidSum": 8000.0,
+		"campaignId": "11eb-5bbe-022cdae0-a8ce-3131a0451010"
+	},
+	{
+		"id": "6db1f448-6db7-11eb-9439-0242ac130002",
+		"docTotal": 21000.0,
+		"paidSum": 19000.0,
+		"campaignId": "11eb-5bbe-022d2900-a8ce-3131a0451010"
+	},
+	{
+		"id": "6db1f52e-6db7-11eb-9439-0242ac130002",
+		"docTotal": 32000.0,
+		"paidSum": 32000.0,
+		"campaignId": "11eb-5bbe-022d2900-a8ce-3131a0451010"
+	},
+	{
+		"id": "6db1f5f6-6db7-11eb-9439-0242ac130002",
+		"docTotal": 17000.0,
+		"paidSum": 17000.0,
+		"campaignId": "c621cb4e-6db7-11eb-9439-0242ac130002"
+	},
+	{
+		"id": "6db1f6aa-6db7-11eb-9439-0242ac130002",
+		"docTotal": 18000.0,
+		"paidSum": 18000.0,
+		"campaignId": "c621cb4e-6db7-11eb-9439-0242ac130002"
+	},
+	{
+		"id": "6db1f75e-6db7-11eb-9439-0242ac130002",
+		"docTotal": 24000.0,
+		"paidSum": 24000.0,
+		"campaignId": "c621cfae-6db7-11eb-9439-0242ac130002"
+	},
+	{
+		"id": "6db1f812-6db7-11eb-9439-0242ac130002",
+		"docTotal": 35000.0,
+		"paidSum": 35000.0,
+		"campaignId": "c621d0a8-6db7-11eb-9439-0242ac130002"
+	}
+]

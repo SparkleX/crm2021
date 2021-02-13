@@ -1,0 +1,18 @@
+{
+	"name": "RDR0",
+	"fields": {
+		"docTotal": {
+			"type": "decimal",
+			"note": "Document Total"
+		},
+		"paidSum": {
+			"type": "decimal",
+			"note": "Paid Amount"
+		},
+		"campaignId": {
+			"type": "guid",
+			"note": "Campaign Id"
+		}
+	},
+	"fieldOrder": ["docTotal", "paidSum","campaignId"]
+}

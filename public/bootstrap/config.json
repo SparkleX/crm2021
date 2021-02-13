@@ -66,12 +66,12 @@
 								},								
 								{
 									"id": "sap_ushell_generated_tile_id_2",
-									"title": "Campines",
+									"title": "Campaignes",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.DynamicTile",
 									"properties": {
 										"chipId": "sap_ushell_generated_chip_id",
-										"title": "Campines",
+										"title": "Campaignes",
 										"info": "View Campines",
 										"targetURL": "#Campaign-App",
 										"content":[
