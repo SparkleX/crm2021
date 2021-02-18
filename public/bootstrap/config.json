@@ -113,7 +113,21 @@
 										]
 									}
 							
-								}								
+								},
+								{
+									"id": "sap_ushell_generated_tile_id_100",
+									"title": "HTML Tile",
+									"size": "1x1",
+									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"properties": {
+										"chipId": "sap_ushell_generated_chip_id",
+										"title": "HTML Tile",
+										"info": "HTML Tile Sample",
+										"targetURL": "#HTML-App",
+										"icon": "sap-icon://multi-select"
+
+									}
+								}									
 							]
 						},
 						{
@@ -144,7 +158,7 @@
 					"applications": {
 						"Account-App": {
 							"additionalInformation": "SAPUI5.Component=sap.nsme.crm.Account",
-							"applicationType": "URL",
+							"applicationType": "SAPUI5",
 							"url": "/web/crm/Account",
 							"description": "View Account",
 							"title": "Account"
@@ -186,6 +200,13 @@
 							"url": "/web/crm/Addon",
 							"description": "Addon",
 							"title": "Addon"
+						},
+						"HTML-App": {
+							"additionalInformation": "managed=FioriWave1",
+							"applicationType": "URL",
+							"url": "/web/crm/Html",
+							"description": "HTML",
+							"title": "HTML"
 						}
 					}
 				}
