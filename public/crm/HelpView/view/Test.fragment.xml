@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" >
+   <Label id="myLabel" text="123123"></Label>
+   <Button id="myButton" text="button" press=".onPress"></Button>
+</core:FragmentDefinition>
