@@ -1,0 +1,18 @@
+<mvc:View controllerName="sap.nsme.crm.Calendar.controller.List"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:t="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc.View"
+	xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data" displayBlock="true">
+	<Page id="page">
+		<headerContent>
+			<Label id="myLabel2" text="123"></Label>
+		</headerContent>
+		<!--<core:Fragment fragmentName="sap.nsme.crm.Calendar.view.Test" type="XML" />-->
+	</Page>	
+</mvc:View>

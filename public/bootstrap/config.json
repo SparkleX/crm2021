@@ -138,6 +138,19 @@
 										"targetURL": "#HelpView-App",
 										"icon": "sap-icon://multi-select"
 									}
+								},
+								{
+									"id": "sap_ushell_generated_tile_id_102",
+									"title": "Calendar Tile",
+									"size": "1x1",
+									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"properties": {
+										"chipId": "sap_ushell_generated_chip_id",
+										"title": "Calendar Tile",
+										"info": "Calendar Tile Sample",
+										"targetURL": "#Calendar-App",
+										"icon": "sap-icon://multi-select"
+									}
 								}
 							]
 						},
@@ -222,6 +235,13 @@
 							"url": "/web/crm/HelpView",
 							"description": "HelpView",
 							"title": "HelpView"
+						},
+						"Calendar-App": {
+							"additionalInformation": "SAPUI5.Component=sap.nsme.crm.Calendar",
+							"applicationType": "URL",
+							"url": "/web/crm/Calendar",
+							"description": "Calendar",
+							"title": "Calendar"
 						}
 					}
 				}
