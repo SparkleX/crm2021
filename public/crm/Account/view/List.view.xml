@@ -7,27 +7,27 @@
 	xmlns:f="sap.f"
 	xmlns:fb="sap.ui.comp.filterbar" 
 	displayBlock="true">	
-	<f:DynamicPage headerExpanded="true" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false">
+	<f:DynamicPage id="sysPage" headerExpanded="true" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false">
 		<!-- DynamicPage Title -->
 		<f:title>
-			<f:DynamicPageTitle>
+			<f:DynamicPageTitle id="Aaa">
 				<f:heading>
-					<Title text="Accounts" />
+					<Title id="sysTitle" text="Accounts" />
 				</f:heading>
 			</f:DynamicPageTitle>
 		</f:title>
 		<!-- DynamicPage Header -->
 		<f:header>
-			<f:DynamicPageHeader pinnable="true">
+			<f:DynamicPageHeader id="sysHeaderBar" pinnable="true">
 				<fb:FilterBar id="sysFilterBar" reset="onReset" useToolbar="false" showGoOnFB="true">
 				</fb:FilterBar>
-				</f:DynamicPageHeader>
+			</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
 			<t:Table id="sysTable" rows="{/}" rowActionCount="1">
 				<t:extension>
-					<OverflowToolbar>
-						<Button text="New" type="Emphasized"  press="onClickNew" />
+					<OverflowToolbar id="toolbar" >
+						<Button id="button" text="New" type="Emphasized"  press="onClickNew" />
 					</OverflowToolbar>
 				</t:extension>				
 				<t:columns>

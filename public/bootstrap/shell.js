@@ -14,9 +14,11 @@ function bootstrap(fnCallback) {
 		oRendererConfig.rootIntent = "Shell-home";
 	}
 	sap.ushell.bootstrap("local").done(fnCallback);
+
+
 }
 
-window["sap-ushell-config"] = {
+/*window["sap-ushell-config"] = {
 	defaultRenderer: "fiori2",
 	renderers: {
 		fiori2: {
@@ -28,7 +30,7 @@ window["sap-ushell-config"] = {
 		}
 	},
 	applications: []
-};
+};*/
 
 window["sap-ui-config"] = {
 	"xx-bootTask": bootstrap

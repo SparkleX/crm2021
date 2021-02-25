@@ -40,9 +40,9 @@
 		<uxap:headerContent>
 			<layout:HorizontalLayout>
 				<Toolbar style="Clear">
-					<Label text="Test 1"/>
-					<Label text="Test 2"/>
-					<Label text="Test 3"/>
+					<Label id="test1" text="Test 1"/>
+					<Label id="test2" text="Test 2"/>
+					<Label id="test3" text="Test 3"/>
 					<Button text="TEST" press=".onTest"></Button>
 					<Button text="To JSON" press=".onDebugToJson"></Button>
 				</Toolbar>

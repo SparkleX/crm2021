@@ -1,7 +1,7 @@
 {
-	"_version": "1.12.0",
+	"_version": "1.21.0",
 	"sap.app": {
-		"id": "app.logistics.bp",
+		"id": "sap.nsme.crm.Account",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"title": "{{appTitle}}",
@@ -23,6 +23,7 @@
 		}
 	},
 	"sap.ui5": {
+		"flexEnabled": true,
 		"rootView": {
 			"viewName": "sap.nsme.crm.Account.view.App",
 			"type": "XML",
@@ -41,7 +42,8 @@
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
 					"bundleName": "sap.nsme.crm.Account.i18n.i18n"
-				}
+				},
+				"async": true
 			}
 		},
 		"routing": {

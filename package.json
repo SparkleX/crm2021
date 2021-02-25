@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "npm run ddl && node dist/main",
+		"start": "set PORT=3001 && npm run ddl && node dist/main",
 		"schema": "ts-node scripts/schema",
 		"prebuild": "npm run clean && npm run schema && ts-index && ts-node scripts/prebuild",
 		"build": "tsc",

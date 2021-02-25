@@ -1,12 +1,28 @@
 {
 	"defaultRenderer": "fiori2",
+	"bootstrapPlugins": {
+		"RuntimeAuthoringPlugin" : {
+			"component": "sap.ushell.plugins.rta",
+			"config": {
+				"validateAppVersion": false
+			}
+		},
+		"PersonalizePlugin": {
+			"component": "sap.ushell.plugins.rta-personalize",
+			"config": {
+				"validateAppVersion": false
+			}
+		}
+	},	
 	"renderers": {
 		"fiori2": {
 			"componentData": {
 				"config": {
 					"enableActionModeMenuButton": true,
+					"enableMergeAppAndShellHeaders": false,
 					"search": "hidden"
 				}
+				
 			}
 		}
 	},
@@ -20,7 +36,7 @@
 							"title": "My Home",
 							"tiles": [
 								{
-									"id": "sap_ushell_generated_tile_id_0",
+									"id": "tile01",
 									"title": "Account",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.DynamicTile",
@@ -37,7 +53,7 @@
 									}
 								},
 								{
-									"id": "sap_ushell_generated_tile_id_1",
+									"id": "tile02",
 									"title": "Target Group",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.StaticTile",
@@ -50,7 +66,7 @@
 									}
 								},
 								{
-									"id": "sap_ushell_generated_tile_id_1",
+									"id": "tile03",
 									"title": "Response Options",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.StaticTile",
@@ -63,7 +79,7 @@
 									}
 								},
 								{
-									"id": "sap_ushell_generated_tile_id_2",
+									"id": "tile04",
 									"title": "Campaignes",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.DynamicTile",
@@ -81,7 +97,7 @@
 									}
 								},
 								{
-									"id": "sap_ushell_generated_tile_id_3",
+									"id": "tile05",
 									"title": "Chart",
 									"size": "1x1",
 									"tileType": "sap.nsme.flp.ChartTile",
@@ -114,7 +130,7 @@
 									}
 								},
 								{
-									"id": "sap_ushell_generated_tile_id_100",
+									"id": "tile06",
 									"title": "HTML Tile",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.StaticTile",
@@ -127,7 +143,7 @@
 									}
 								},
 								{
-									"id": "sap_ushell_generated_tile_id_101",
+									"id": "tile07",
 									"title": "HelpView Tile",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.StaticTile",
@@ -140,7 +156,7 @@
 									}
 								},
 								{
-									"id": "sap_ushell_generated_tile_id_102",
+									"id": "tile08",
 									"title": "Calendar Tile",
 									"size": "1x1",
 									"tileType": "sap.ushell.ui.tile.StaticTile",
@@ -225,7 +241,7 @@
 						"HTML-App": {
 							"additionalInformation": "managed=FioriWave1",
 							"applicationType": "URL",
-							"url": "/web/crm/Html",
+							"url": "http://www.sina.com.cn",
 							"description": "HTML",
 							"title": "HTML"
 						},

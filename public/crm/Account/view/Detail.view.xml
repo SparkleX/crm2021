@@ -44,8 +44,8 @@
 		<uxap:headerContent>
 			<layout:HorizontalLayout>
 				<Toolbar style="Clear">
-					<Button text="TEST" press=".onTest"></Button>
-					<Button text="To JSON" press=".onDebugToJson"></Button>
+					<Button id="tempTest" text="TEST" press=".onTest"></Button>
+					<Button id="tempToJson" text="To JSON" press=".onDebugToJson"></Button>
 				</Toolbar>
 			</layout:HorizontalLayout>
 		</uxap:headerContent>

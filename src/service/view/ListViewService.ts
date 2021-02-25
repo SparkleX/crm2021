@@ -23,11 +23,13 @@ export class ListViewService {
 		const rt = [];
 		for (const fieldName of metaTable.fieldOrder) {
 			const oItem = {
+				    "id": `label.${fieldName}`,
 					"Type":"sap.ui.comp.filterbar.FilterItem",
 					"name": fieldName,
 					"label":metaTable.fields[fieldName].note,
 					"control": {
-						"Type":"sap.m.Input"
+						"Type":"sap.m.Input",
+						"id": `input.${fieldName}`,
 					}
 			}
 			rt.push(oItem);
