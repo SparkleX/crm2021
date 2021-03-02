@@ -1,0 +1,54 @@
+{
+	"defaultRenderer": "fiori2",
+	"bootstrapPlugins": {
+		"RuntimeAuthoringPlugin": {
+			"component": "sap.ushell.plugins.rta",
+			"config": {
+				"validateAppVersion": false
+			}
+		},
+		"PersonalizePlugin": {
+			"component": "sap.ushell.plugins.rta-personalize",
+			"config": {
+				"validateAppVersion": false
+			}
+		}
+	},
+	"renderers": {
+		"fiori2": {
+			"componentData": {
+				"config": {
+					"enableActionModeMenuButton": true,
+					"enableMergeAppAndShellHeaders": false,
+					"search": "hidden"
+				}
+			}
+		}
+	},
+	"services": {
+		"LaunchPage": {
+			"module": "sap.ushell.services.LaunchPage",
+			"adapter": {
+				"module": "sap.nsme.ushell.adapters.LaunchPageAdapter",
+				"config": {
+					"groups": [],
+					"catalogs": []
+				}
+			}
+		},
+		"NavTargetResolution": {
+			"adapter": {
+				"config": {
+					"applications": {}
+				}
+			}
+		},
+		"AllMyApps": {
+			"config": {
+				"enabled": true,
+				"showHomePageApps": false,
+				"showCatalogApps": true
+			}
+		}
+	}
+}

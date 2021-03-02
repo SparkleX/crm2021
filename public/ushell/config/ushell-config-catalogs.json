@@ -1,0 +1,507 @@
+[
+	{
+		"id": "a0001",
+		"title": "Administration",
+		"name": "Administration",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0002",
+		"title": "Financials",
+		"name": "Financials",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0003",
+		"title": "CRM",
+		"name": "CRM",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Business Partner Master Data",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Business Partner Master Data",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "Activity",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Activity",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "Campaign",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Campaign",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "Opportunity",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Opportunity",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "Sales Quotation",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Sales Quotation",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "Sales Order",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Sales Order",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "My Activities",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Activities Overview",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},			
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Campaigns List",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Opportunities Forecast",
+					"subtitle": "Opportunities Forecast Report",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Opportunities Forecast Over Time",
+					"subtitle": "Forecast Over Time Report",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Opportunities Statistics Report",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Opportunities Report",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Stage Analysis",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Information Source Distribution",
+					"subtitle": "Distribution Over Time Report",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Won Opportunities Report",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Lost Opportunities Report",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			},
+			{
+				"id": "tile01",
+				"title": "1",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Opportunities Pipeline",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a00031",
+		"title": "Opportunities",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0004",
+		"title": "Sales - A/R",
+		"name": "Sales - A/R",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0005",
+		"title": "Purchasing A/P",
+		"name": "Purchasing A/P",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0006",
+		"title": "Business Partners",
+		"name": "Business Partners",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0007",
+		"title": "Banking",
+		"name": "Banking",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0008",
+		"title": "Inventory",
+		"name": "Inventory",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0009",
+		"title": "Resources",
+		"name": "Resources",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0010",
+		"title": "Production",
+		"name": "Production",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0011",
+		"title": "MRP",
+		"name": "MRP",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0012",
+		"title": "Service",
+		"name": "Service",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0013",
+		"title": "Human Resources",
+		"name": "Human Resources",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	},
+	{
+		"id": "a0014",
+		"title": "Reports",
+		"name": "Reports",
+		"tiles": [
+			{
+				"id": "tile01",
+				"title": "Account",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"title": "Account",
+					"subtitle": "----",
+					"info": "Manage Account",
+					"targetURL": "#HelpView-App",
+					"icon": "sap-icon://account"
+				}
+			}
+		]
+	}
+]
