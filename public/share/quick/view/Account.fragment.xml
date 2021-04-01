@@ -2,7 +2,7 @@
 	xmlns:core="sap.ui.core"
 	xmlns:l="sap.ui.layout"
 	xmlns:form="sap.ui.layout.form">
-	<Popover title="Account" class="sapUiContentPadding" placement="Auto" contentMinWidth="300px" titleAlignment="Center">
+	<Popover title="Account" placement="Auto" contentMinWidth="300px" titleAlignment="Center">
 		<footer>
 			<Toolbar>
 				<content>
@@ -17,16 +17,54 @@
 				</content>
 			</Toolbar>
 		</footer>
-		<l:VerticalLayout>
-			<Title text="Basic Information" titleStyle="H5"/>
-			<Label text=""/>
+		<form:Form>
+			<form:layout>
+				<form:ResponsiveGridLayout
+					labelSpanXL="4"
+					labelSpanL="3"
+					labelSpanM="4"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="0"
+					emptySpanL="4"
+					emptySpanM="0"
+					emptySpanS="0"
+					columnsXL="2"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</form:layout>			
+			<!--<Label text=""/>
 			<Label text="Code"/>
 			<Text id="idCode" text="{/code}"/>
 			<Label text="Name"/>
 			<Text text="{/name}" />
 			<Label text=""/>
-			<Title text="Main Address" titleStyle="H5"/>
-			<Text text="{/street}"/>
-		</l:VerticalLayout>
+			<Text text="{/street}"/>-->
+			<form:FormContainer>
+				<form:formElements>
+					<form:FormElement label="Code">
+						<form:fields>
+							<Text id="idCode" text="{/code}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Name">
+						<form:fields>
+							<Text text="{/name}" />
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Street">
+						<form:fields>
+							<Text text="{/street}"/>
+						</form:fields>
+					</form:FormElement>
+				</form:formElements>
+			</form:FormContainer>
+		</form:Form>
+		<!--<l:VerticalLayout>
+		<l:Grid containerQuery="true">
+		</l:Grid>
+
+		</l:VerticalLayout>-->
 	</Popover>
 </core:FragmentDefinition>
