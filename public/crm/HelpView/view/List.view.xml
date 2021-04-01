@@ -4,15 +4,101 @@
 	xmlns:core="sap.ui.core"
 	xmlns:t="sap.ui.table"
 	xmlns:mvc="sap.ui.core.mvc.View"
-	xmlns:f="sap.f"
-	xmlns:fb="sap.ui.comp.filterbar"
-	xmlns:viz="sap.viz.ui5.controls"
-	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
-	xmlns:viz.data="sap.viz.ui5.data" displayBlock="true">
-	<Page id="page">
-		<headerContent>
-			<Label id="myLabel2" text="123"></Label>
-		</headerContent>
-		<!--<core:Fragment fragmentName="sap.nsme.crm.HelpView.view.Test" type="XML" />-->
-	</Page>	
+	xmlns:widget="sap.nsme.crm.HelpView.widget"
+	xmlns:f="sap.f">
+	<l:VerticalLayout>
+		<MultiInput id="input3" placeholder="Enter product" showValueHelp="false" suggest=".onSuggest" suggestionRows="{search>/}">
+			<!--<suggestionItems> suggestionItems="{search>/}" 
+
+		<core:Item key="{search>code}" text="{search>name}" />
+	</suggestionItems>-->
+
+			<suggestionColumns>
+				<Column hAlign="Begin" popinDisplay="Inline" demandPopin="true">
+					<Label text="Name"/>
+				</Column>
+				<Column hAlign="Center" popinDisplay="Inline" demandPopin="true" minScreenWidth="Tablet">
+					<Label text="Product ID"/>
+				</Column>
+				<Column hAlign="Center" popinDisplay="Inline" demandPopin="false" minScreenWidth="Tablet">
+					<Label text="Supplier Name"/>
+				</Column>
+				<Column hAlign="End" popinDisplay="Inline" demandPopin="true">
+					<Label text="Price"/>
+				</Column>
+			</suggestionColumns>
+			<suggestionRows>
+				<ColumnListItem>
+					<cells>
+						<Label text="{search>code}"/>
+						<Label text="{search>name}"/>
+						<Label text="{search>code}"/>
+						<Label text="{search>name}"/>
+					</cells>
+				</ColumnListItem>
+			</suggestionRows>
+		</MultiInput>
+		<t:Table id="table" rows="{/details}" enableColumnReordering="false">
+			<t:columns>
+				<t:Column>
+					<Label text="lineNum"/>
+					<t:template>
+						<Input value="{lineNum}"/>
+					</t:template>
+				</t:Column>
+				<t:Column>
+					<Label text="itemCode"/>
+					<t:template>
+						<Input value="{itemCode}"/>
+					</t:template>
+				</t:Column>
+				<t:Column id="column">
+					<Label text="Serial and batch"/>
+					<t:template>
+						<widget:MultiTabularInput id="AAA" placeholder="Enter product" 
+						showValueHelp="false" suggest=".onSuggest" suggestionRows="{ path:'search>/', templateShareable:false}"
+						showTableSuggestionValueHelp="true"
+						valueHelpRequest=".showAll">
+							<!--<suggestionItems> suggestionItems="{search>/}" 
+
+							<core:Item key="{search>code}" text="{search>name}" />
+						</suggestionItems>-->
+
+							<widget:suggestionColumns>
+								<Column hAlign="Begin" popinDisplay="Inline" demandPopin="true">
+									<Label text="Name"/>
+								</Column>
+								<Column hAlign="Center" popinDisplay="Inline" demandPopin="true" minScreenWidth="Tablet">
+									<Label text="Product ID"/>
+								</Column>
+								<Column hAlign="Center" popinDisplay="Inline" demandPopin="false" minScreenWidth="Tablet">
+									<Label text="Supplier Name"/>
+								</Column>
+								<Column hAlign="End" popinDisplay="Inline" demandPopin="true">
+									<Label text="Price"/>
+								</Column>
+							</widget:suggestionColumns>
+							<widget:suggestionRows>
+								<ColumnListItem>
+									<cells>
+										<Label text="{search>code}"/>
+										<Label text="{search>name}"/>
+										<Label text="{search>code}"/>
+										<Label text="{search>name}"/>
+									</cells>
+								</ColumnListItem>
+							</widget:suggestionRows>
+						</widget:MultiTabularInput>
+					</t:template>
+				</t:Column>
+				<t:Column hAlign="Center" width="3.1rem">
+					<Label text="Serial and batch details"/>
+					<t:template>
+						<Button icon="sap-icon://bullet-text" press=".pressGetCurrentRow"/>
+					</t:template>
+				</t:Column>
+
+			</t:columns>
+		</t:Table>
+	</l:VerticalLayout>
 </mvc:View>

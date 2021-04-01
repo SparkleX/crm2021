@@ -1,0 +1,27 @@
+[
+	{
+		"code": "S1",
+		"name": "Apple"
+	},
+	{
+		"code": "S2",
+		"name": "Orange"
+	},
+	{
+		"code": "S3",
+		"name": "Serial3"
+	},
+	{
+		"code": "S4",
+		"name": "Serial4"
+	},
+	{
+		"code": "S5",
+		"name": "Serial5"
+	},
+	{
+		"code": "S6",
+		"name": "Serial6"
+	}	
+
+]

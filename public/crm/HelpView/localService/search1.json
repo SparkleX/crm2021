@@ -1,0 +1,18 @@
+[
+	{
+		"code": "SA",
+		"name": "SerialA"
+	},
+	{
+		"code": "SB",
+		"name": "SerialB"
+	},
+	{
+		"code": "SC",
+		"name": "SerialC"
+	},
+	{
+		"code": "SD",
+		"name": "SerialD"
+	}	
+]
