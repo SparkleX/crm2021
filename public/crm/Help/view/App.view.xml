@@ -2,5 +2,6 @@
 		  xmlns="sap.m"
 		  xmlns:mvc="sap.ui.core.mvc"
 		  displayBlock="true">
-		<Input/>
+		<Input value="{ path:'/amount', type:'sap.nsme.share.model.type.Currency'}"/>
+		<Input value="{/amount}"/>
 </mvc:View>
