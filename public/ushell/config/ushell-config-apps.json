@@ -61,5 +61,12 @@
 		"url": "/web/crm/Calendar",
 		"description": "Calendar",
 		"title": "Calendar"
+	},
+	"Help-App": {
+		"additionalInformation": "SAPUI5.Component=sap.nsme.crm.Help",
+		"applicationType": "URL",
+		"url": "/web/crm/Help",
+		"description": "Help",
+		"title": "Help"
 	}
 }

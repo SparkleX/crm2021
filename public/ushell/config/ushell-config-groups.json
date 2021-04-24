@@ -135,6 +135,19 @@
 					"targetURL": "#Calendar-App",
 					"icon": "sap-icon://multi-select"
 				}
+			},
+			{
+				"id": "tile09",
+				"title": "Help",
+				"size": "1x1",
+				"tileType": "sap.ushell.ui.tile.StaticTile",
+				"properties": {
+					"chipId": "sap_ushell_generated_chip_id1",
+					"title": "Help",
+					"info": "Help",
+					"targetURL": "#Help-App",
+					"icon": "sap-icon://multi-select"
+				}
 			}
 		]
 	},
