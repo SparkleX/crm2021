@@ -2,7 +2,9 @@
 		  xmlns="sap.m"
 		  xmlns:mvc="sap.ui.core.mvc"
 		  displayBlock="true">
-		<Input value="{ parts:['/amount','/currency'], type:'sap.nsme.share.model.type.Currency'}"/>
+		<Input value="{ parts:['/amount','/currency'], type:'sap.nsme.share.model.type.Currency'}"
+				valueState="{error>/amount}"
+				valueStateText="error value state text"/>
 		<Input value="{/amount}"/>
 		<Input value="{/currency}"/>
 </mvc:View>

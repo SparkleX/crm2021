@@ -16,6 +16,11 @@ sap.ui.define(
 			};
 			var oModel = new JSONModel(data);
 			oView.setModel(oModel);
+			var oError = {
+				amount: 'Warning'
+			};
+			var oModelError = new JSONModel(oError);
+			oView.setModel(oModelError,"error");
 		}
 		return theClass;
 	}
