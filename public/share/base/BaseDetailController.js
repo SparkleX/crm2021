@@ -30,7 +30,7 @@ sap.ui.define(
 		const idFirstButton = "sysFirstButton";
 		const idLastButton = "sysLastButton";
 
-		var theClass = Controller.extend("sap.nsme.share.controller.BaseDetailController", {
+		var theClass = Controller.extend("sap.nsme.share.base.BaseDetailController", {
 			metadata: {
 				properties: {
 					formMode: { type: "string", defaultValue: "ViewMode" }
@@ -48,7 +48,7 @@ sap.ui.define(
 			oRouter.getRoute("detail").attachMatched(function (oEvent) {
 				var args = oEvent.getParameter("arguments");
 				this.dataId = args.id;
-				var oQuery =args["?query"];
+				var oQuery = args["?query"];
 				if (this.dataId === "#") {
 					this.setFormMode(AddMode);
 					this.onInitData(oQuery);
@@ -65,46 +65,37 @@ sap.ui.define(
 
 		};
 		theClass.prototype.setFormMode = function (value) {
-			this.formMode = value;
-			const oObjectPage = this.byId(idObjectPageLayout);
-			const oEditButton = this.byId(idEditButton);
-			const oNewButton = this.byId(idNewButton);
-			const oDeleteButton = this.byId(idDeleteButton);
-			const oNextButton = this.byId(idNextButton);
-			const oPrevButton = this.byId(idPrevButton);
-			const oFirstButton = this.byId(idFirstButton);
-			const oLastButton = this.byId(idLastButton);
-
-			switch (this.formMode) {
-				case AddMode:
-				case EditMode:
-					oObjectPage.setShowFooter(true);
-					this.setEditable(true);
-					if (oDeleteButton) oDeleteButton.setVisible(false);
-					oEditButton.setVisible(false);
-					oNewButton.setVisible(false);
-					oNextButton.setVisible(false);
-					oPrevButton.setVisible(false);
-					oFirstButton.setVisible(false);
-					oLastButton.setVisible(false);
-					break;
-				case ViewMode:
-					oObjectPage.setShowFooter(false);
-					this.setEditable(false);
-					if (oDeleteButton) oDeleteButton.setVisible(true);
-					oEditButton.setVisible(true);
-					oNewButton.setVisible(true);
-					oNextButton.setVisible(true);
-					oPrevButton.setVisible(true);
-					oFirstButton.setVisible(true);
-					oLastButton.setVisible(true);
-					break;
-			}
+			var oView = this.getView();
+			var oModel = oView.getModel("form");
+			var data = {
+				formMode: value,
+				viewMode: false,
+				addMode: false,
+				editMode: false
+			};
+			data[value] = true;
+			oModel.setData(data);
+			oModel.refresh();
 		};
 		theClass.prototype.onInitData = function (query) {
+			var oView = this.getView();
 			var oModel = new JSONModel();
-			this.getView().setModel(oModel);
-			// to be override
+			oView.setModel(oModel);
+			var form = {
+				formMode: "viewMode",
+				viewMode: true,
+				addMode: false,
+				editMode: false
+			};
+			var oFormModel = new JSONModel(form);
+			oView.setModel(oFormModel, "form");
+
+			var code = {
+
+			}
+			var oCodeMode = new JSONModel(code);
+			oView.setModel(oCodeMode, "code");
+
 		};
 		theClass.prototype.onLoadData = function (id) {
 			const name = this.getTableName();

@@ -1,5 +1,5 @@
 sap.ui.define(
-	["sap/ui/core/UIComponent", 
+	["sap/nsme/share/base/BaseComponent", 
 	"sap/ui/model/json/JSONModel",
 	"sap/nsme/share/model/type/Currency"
 ],

@@ -13,7 +13,7 @@ sap.ui.define(
 	function (Controller, MessageToast, Fragment, JSONModel, UIComponent, deepExtend, ViewApi, Text, MicroProcessFlowItem) {
 		"use strict";
 
-		var theClass = Controller.extend("sap.nsme.share.controller.BaseListController", {
+		var theClass = Controller.extend("sap.nsme.share.base.BaseListController", {
 			metadata: {
 				properties: {}
 			}
@@ -26,33 +26,42 @@ sap.ui.define(
 		};
 
 		theClass.prototype.onInit = async function () {
+			var oView = this.getView();
+			var data = [];
+			var oModel = new JSONModel(data);
+			oView.setModel(oModel);
 			var oRouter = UIComponent.getRouterFor(this);
 			oRouter.getRoute("list").attachPatternMatched(this._onObjectMatched, this);
-			const that = this;
+			/*oconst that = this;
 			jQuery.ajax({
 				url: "/api/codes",
 				success: function (data) {
 					const oCodesModel = new JSONModel(data);
 					that.getView().setModel(oCodesModel, "codes");
 				}
-			});	
+			});
 			const tableName = this.getTableName();
 			var oFilterBar = this.getView().byId("sysFilterBar");
 			var json = await ViewApi.getListView(tableName);
-			for(var filterIndex in json.filterItems) {
+			for (var filterIndex in json.filterItems) {
 				var filter = json.filterItems[filterIndex];
 				var oFilter = new sap.ui.comp.filterbar.FilterItem(json.columnOrder[colIndex], filter);
 				oFilterBar.addFilterItem(oFilter);
 			}
 			var oTable = this.getView().byId("sysTable");
-			for(var colIndex in json.columns) {
+			for (var colIndex in json.columns) {
 				var col = json.columns[colIndex];
-				var column = new sap.ui.table.Column(json.columnOrder[colIndex] ,col);
+				var column = new sap.ui.table.Column(json.columnOrder[colIndex], col);
 				oTable.addColumn(column);
-			}
+			}*/
 		};
-		theClass.prototype._onObjectMatched = function (oEvent) {
-			this.refresh();
+
+		theClass.prototype.onLoadData = async function () {
+
+		};
+		theClass.prototype._onObjectMatched = async function (oEvent) {
+			//this.refresh();
+			await this.onLoadData();
 		};
 		theClass.prototype.refresh = function (oEvent) {
 			const name = this.getTableName();
