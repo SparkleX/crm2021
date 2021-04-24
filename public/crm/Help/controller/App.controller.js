@@ -10,7 +10,9 @@ sap.ui.define(
 		theClass.prototype.onInit = function () {
 			var oView = this.getView();
 			var data = {
-				amount: 123.45
+				amount: 123.45,
+				currency: "CNY"
+
 			};
 			var oModel = new JSONModel(data);
 			oView.setModel(oModel);
