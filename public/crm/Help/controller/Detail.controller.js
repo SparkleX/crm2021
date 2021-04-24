@@ -20,6 +20,19 @@ sap.ui.define(
 			oModel.refresh(true);
 
 		};
+		theClass.prototype.onLoadData = function (query) {
+			var oView = this.getView();
+			var oModel = oView.getModel();
+			var data = {
+				col1: 1,
+				col2: 12345.67,
+				col3: 98765.43,
+				col4: "abcd"
+			};
+			oModel.setData(data);
+			oModel.refresh();
+		};
+
 		return theClass;
 	}
 );

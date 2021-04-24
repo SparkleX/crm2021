@@ -12,9 +12,9 @@ sap.ui.define(
 	function (Controller, MessageToast, Fragment, JSONModel, History, ViewUtils, CommonUtils, MetadataUtils) {
 		"use strict";
 
-		const ViewMode = "ViewMode";
-		const AddMode = "AddMode";
-		const EditMode = "EditMode";
+		const ViewMode = "viewMode";
+		const AddMode = "addMode";
+		const EditMode = "editMode";
 
 		const idObjectPageLayout = "objectPageLayout";
 		const idFooterBar = "footBar";
@@ -43,6 +43,8 @@ sap.ui.define(
 			return name;
 		};
 		theClass.prototype.onInit = function () {
+			this._initModels();
+
 			var component = this.getOwnerComponent();
 			var oRouter = component.getRouter();
 			oRouter.getRoute("detail").attachMatched(function (oEvent) {
@@ -76,6 +78,26 @@ sap.ui.define(
 			data[value] = true;
 			oModel.setData(data);
 			oModel.refresh();
+		};
+		theClass.prototype._initModels = function (query) {
+			var oView = this.getView();
+			var oModel = new JSONModel({});
+			oView.setModel(oModel);
+			var form = {
+				formMode: "viewMode",
+				viewMode: true,
+				addMode: false,
+				editMode: false
+			};
+			var oFormModel = new JSONModel(form);
+			oView.setModel(oFormModel, "form");
+
+			var code = {
+
+			}
+			var oCodeMode = new JSONModel(code);
+			oView.setModel(oCodeMode, "code");
+
 		};
 		theClass.prototype.onInitData = function (query) {
 			var oView = this.getView();
@@ -175,7 +197,7 @@ sap.ui.define(
 			});
 		};
 
-		theClass.prototype.onEdit = function () {
+		theClass.prototype.onPressEdit = function () {
 			this.setFormMode(EditMode);
 		};
 
@@ -192,7 +214,8 @@ sap.ui.define(
 			});
 		};
 		theClass.prototype.onCancel = function () {
-			var oHistory = History.getInstance();
+			this.setFormMode(ViewMode);
+			/*var oHistory = History.getInstance();
 			var sPreviousHash = oHistory.getPreviousHash();
 
 			if (sPreviousHash !== undefined) {
@@ -200,7 +223,7 @@ sap.ui.define(
 			} else {
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 				oRouter.navTo("list");
-			}
+			}*/
 		};
 
 		theClass.prototype.setEditable = function (readonly) {

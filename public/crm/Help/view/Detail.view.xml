@@ -1,5 +1,9 @@
-<mvc:View id="idBpDetail" controllerName="sap.nsme.crm.Help.controller.Detail" xmlns:t="sap.ui.table" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:nsme="sap.nsme.share.control" displayBlock="true">
-	<uxap:ObjectPageLayout id="objectPageLayout" toggleHeaderOnTitleClick="false" preserveHeaderStateOnScroll="true" headerContentPinnable="false" upperCaseAnchorBar="false">
+<mvc:View id="idBpDetail" controllerName="sap.nsme.crm.Help.controller.Detail" 
+xmlns:t="sap.ui.table" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:core="sap.ui.core" 
+xmlns:layout="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" 
+xmlns:nsme="sap.nsme.share.control"
+xmlns:type="sap.nsme.share.model.type" displayBlock="true">
+	<uxap:ObjectPageLayout id="objectPageLayout" showFooter="{=! ${form>/viewMode}}" toggleHeaderOnTitleClick="false" preserveHeaderStateOnScroll="true" headerContentPinnable="false" upperCaseAnchorBar="false">
 		<uxap:headerTitle>
 			<uxap:ObjectPageDynamicHeaderTitle>
 				<uxap:expandedHeading>
@@ -28,7 +32,7 @@
 				<uxap:actions></uxap:actions>
 				<uxap:navigationActions>
 					<uxap:ObjectPageHeaderActionButton id="sysNewButton" type="Transparent" text="New" hideText="false" hideIcon="true" press="onNew" />
-					<uxap:ObjectPageHeaderActionButton id="sysEditButton" text="Edit" type="Emphasized" hideText="false" press="onEdit" />
+					<uxap:ObjectPageHeaderActionButton id="sysEditButton" text="Edit" type="Emphasized" hideText="false" press="onPressEdit" />
 					<uxap:ObjectPageHeaderActionButton id="sysDeleteButton" type="Transparent" text="Delete" hideText="false" hideIcon="true" press="onDelete" />
 				</uxap:navigationActions>
 			</uxap:ObjectPageDynamicHeaderTitle>
@@ -48,24 +52,32 @@
 		<uxap:sections>
 			<uxap:ObjectPageSection id="idSectionA">
 				<uxap:subSections>
-					<uxap:ObjectPageSubSection id="idGeneralPage" title="General">
+					<uxap:ObjectPageSubSection id="idGeneralPage" title="Tab 1">
 						<uxap:blocks>
-
+							<nsme:SuperDecimal id="col1" value = "{/col1}" editable="{=! ${form>/viewMode}}" visible="{=${form>/viewMode}}"/>
+							<nsme:SuperDecimal id="col2" value = "{path:'/col2', type:'sap.nsme.share.model.type.Precent'}" editable="{=! ${form>/viewMode}}" visible="{= !${form>/viewMode}}"/>
+							<nsme:SuperDecimal id="col3" value = "{path:'/col3', type:'sap.nsme.share.model.type.Price'}" editable="{=! ${form>/viewMode}}"/>
+							<nsme:SuperDecimal id="col4" value = "{/col4}"/>
 						</uxap:blocks>
 					</uxap:ObjectPageSubSection>
 				</uxap:subSections>
 			</uxap:ObjectPageSection>
 			<uxap:ObjectPageSection>
 				<uxap:subSections>
-					<uxap:ObjectPageSubSection title="Response Options">
+					<uxap:ObjectPageSubSection title="Tab 2">
 						<uxap:blocks>
+							<Input value = "{/col1}" editable="{=! ${form>/viewMode}}"/>
+							<Input value = "{/col2}" />
+							<Input value = "{/col3}" />
+							<Input value = "{/col4}" />
+							<Input value = "{/col5}" />
 						</uxap:blocks>
 					</uxap:ObjectPageSubSection>
 				</uxap:subSections>
 			</uxap:ObjectPageSection>
 		</uxap:sections>
 		<uxap:footer>
-			<OverflowToolbar>
+			<OverflowToolbar >
 				<ToolbarSpacer />
 				<Button type="Emphasized" text="Save" press="onSave" />
 				<Button type="Default" text="Cancel" press="onCancel" />
