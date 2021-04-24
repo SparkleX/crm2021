@@ -54,10 +54,17 @@ xmlns:type="sap.nsme.share.model.type" displayBlock="true">
 				<uxap:subSections>
 					<uxap:ObjectPageSubSection id="idGeneralPage" title="Tab 1">
 						<uxap:blocks>
-							<nsme:SuperDecimal id="col1" value = "{/col1}" editable="{=! ${form>/viewMode}}" visible="{=${form>/viewMode}}"/>
-							<nsme:SuperDecimal id="col2" value = "{path:'/col2', type:'sap.nsme.share.model.type.Precent'}" editable="{=! ${form>/viewMode}}" visible="{= !${form>/viewMode}}"/>
-							<nsme:SuperDecimal id="col3" value = "{path:'/col3', type:'sap.nsme.share.model.type.Price'}" editable="{=! ${form>/viewMode}}"/>
-							<nsme:SuperDecimal id="col4" value = "{/col4}"/>
+							<nsme:SuperInteger id="col1" value = "{/col1}" editable="{=! ${form>/viewMode}}" visible="{=${form>/viewMode}}"/>
+							<nsme:SuperInteger id="col2" value = "{path:'/col2', type:'sap.nsme.share.model.type.Precent'}" editable="{=! ${form>/viewMode}}" visible="{= !${form>/viewMode}}"/>
+							<nsme:SuperInteger id="col3" value = "{path:'/col3', type:'sap.nsme.share.model.type.Price'}" editable="{=! ${form>/viewMode}}"/>
+							<nsme:SuperInteger id="col4" value = "{/col4}"/>
+							<nsme:SuperSelect>
+								<core:Item text="First Half" key="abc"></core:Item>
+								<core:Item text="Second Half" key="xyz"></core:Item>
+							</nsme:SuperSelect>
+							<nsme:SuperSelect items="{/codes}">
+								<core:Item text="{desc}" key="{value}"></core:Item>
+							</nsme:SuperSelect>
 						</uxap:blocks>
 					</uxap:ObjectPageSubSection>
 				</uxap:subSections>

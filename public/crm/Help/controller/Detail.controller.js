@@ -27,7 +27,16 @@ sap.ui.define(
 				col1: 1,
 				col2: 12345.67,
 				col3: 98765.43,
-				col4: "abcd"
+				col4: "abcd",
+				codes: [
+					{
+						value: 1,
+						desc: "A"
+					},{
+						value: 2,
+						desc: "B"						
+					}
+				]
 			};
 			oModel.setData(data);
 			oModel.refresh();
