@@ -28,13 +28,17 @@ sap.ui.define(
 				col2: 12345.67,
 				col3: 98765.43,
 				col4: "abcd",
+				col5: "1",
+				money1: "1",
+				cur1: "CNY",
+				date1: "2011-12-30",
 				codes: [
 					{
 						value: 1,
 						desc: "A"
-					},{
+					}, {
 						value: 2,
-						desc: "B"						
+						desc: "B"
 					}
 				]
 			};

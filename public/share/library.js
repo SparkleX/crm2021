@@ -1,7 +1,8 @@
 sap.ui.define(["jquery.sap.global",
 	"sap/ui/base/DataType",
 	"sap/nsme/share/model/type/Precent",
-	"sap/nsme/share/model/type/Price"], function (jQuery, DataType, Precent, Price) {
+	"sap/nsme/share/model/type/Price",
+	"sap/nsme/share/model/type/Currency"], function (jQuery, DataType, Precent, Price, Currency) {
 		"use strict";
 
 		sap.ui.getCore().initLibrary({

@@ -25,10 +25,30 @@ sap.ui.define(
         theClass.prototype.init = function () {
             BaseClass.prototype.init.call(this);
             var id = this.getId();
-            var oInput = new Select(`${id}-input`);
+            var oInput = new Select(`${id}-input`, {
+                width:"100%",
+                visible: true,
+                change: this._onInputChange.bind(this)
+            });
             this.setAggregation("_input", oInput);
-            var oText = new Text(`${id}-text`);
+            var oText = new Text(`${id}-text`, {
+                visible: false
+            });
             this.setAggregation("_text", oText);
+        };
+        theClass.prototype._onInputChange = function (oEvent) {
+            var oParams = oEvent.getParameters();
+            var value = oParams.selectedItem.getKey();
+            this.setValue(value);
+           // this.setProperty("value", oEvent.getParameter("value"), true);
+            this.fireChange(oEvent);
+        };
+        theClass.prototype.setValue = function (val) {
+            this.setProperty("value", val, true);
+            const oText = this._getTextControl();
+            oText.setText(val);
+            const oInput = this._getInputControl();
+            oInput.setSelectedKey(val);
         };
         return theClass;
     }

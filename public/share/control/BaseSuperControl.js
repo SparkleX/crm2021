@@ -8,6 +8,13 @@ sap.ui.define(
                     editable: { type: "boolean", group: "Behavior", defaultValue: true },
                     value: { type: "string", group: "Data", defaultValue: null, bindable: "bindable" },
                 },
+                events: {
+                    change: {
+                        parameters: {
+                            value: { type: "string" }
+                        }
+                    }
+                },
                 aggregations: {
                     _text: { type: "sap.ui.core.Control", multiple: false, visibility: "hidden" },
                     _input: { type: "sap.ui.core.Control", multiple: false, visibility: "hidden" }

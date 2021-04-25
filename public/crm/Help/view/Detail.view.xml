@@ -54,17 +54,19 @@ xmlns:type="sap.nsme.share.model.type" displayBlock="true">
 				<uxap:subSections>
 					<uxap:ObjectPageSubSection id="idGeneralPage" title="Tab 1">
 						<uxap:blocks>
-							<nsme:SuperInteger id="col1" value = "{/col1}" editable="{=! ${form>/viewMode}}" visible="{=${form>/viewMode}}"/>
-							<nsme:SuperInteger id="col2" value = "{path:'/col2', type:'sap.nsme.share.model.type.Precent'}" editable="{=! ${form>/viewMode}}" visible="{= !${form>/viewMode}}"/>
-							<nsme:SuperInteger id="col3" value = "{path:'/col3', type:'sap.nsme.share.model.type.Price'}" editable="{=! ${form>/viewMode}}"/>
-							<nsme:SuperInteger id="col4" value = "{/col4}"/>
-							<nsme:SuperSelect>
-								<core:Item text="First Half" key="abc"></core:Item>
-								<core:Item text="Second Half" key="xyz"></core:Item>
+							<nsme:SuperInput id="col1" value = "{/col1}" editable="{=! ${form>/viewMode}}"/>
+							<nsme:SuperInput id="col2" value = "{path:'/col2', type:'sap.nsme.share.model.type.Precent'}" editable="{=! ${form>/viewMode}}"/>
+							<nsme:SuperInput id="col3" value = "{path:'/col3', type:'sap.nsme.share.model.type.Price'}" editable="{=! ${form>/viewMode}}"/>
+							<nsme:SuperInput id="col4" value = "{/col4}" editable="{=! ${form>/viewMode}}"/>
+							<nsme:SuperSelect value = "{/col5}"  editable="{=! ${form>/viewMode}}">
+								<core:Item text="First Half" key="1"></core:Item>
+								<core:Item text="Second Half" key="2"></core:Item>
 							</nsme:SuperSelect>
-							<nsme:SuperSelect items="{/codes}">
+							<nsme:SuperSelect value = "{/col5}" items="{/codes}"  editable="{=! ${form>/viewMode}}">
 								<core:Item text="{desc}" key="{value}"></core:Item>
 							</nsme:SuperSelect>
+							<nsme:SuperInput id="idCurrency" value = "{parts:['/money1','/cur1'], type:'sap.nsme.share.model.type.Currency'}" editable="{=! ${form>/viewMode}}"/>
+							<nsme:SuperDatePicker value= "{/date1}" editable="{=! ${form>/viewMode}}"/>
 						</uxap:blocks>
 					</uxap:ObjectPageSubSection>
 				</uxap:subSections>
@@ -78,6 +80,10 @@ xmlns:type="sap.nsme.share.model.type" displayBlock="true">
 							<Input value = "{/col3}" />
 							<Input value = "{/col4}" />
 							<Input value = "{/col5}" />
+							<Input value = "{parts:['/money1','/cur1'], type:'sap.nsme.share.model.type.Currency'}"/>
+							<DatePicker value= "{/date1}" valueFormat="yyyy-MM-dd"/>
+							<Input value= "{/date1}"/>
+
 						</uxap:blocks>
 					</uxap:ObjectPageSubSection>
 				</uxap:subSections>
